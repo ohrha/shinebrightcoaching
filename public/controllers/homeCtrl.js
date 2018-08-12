@@ -29,6 +29,8 @@
                $scope.codingPageOpen = false;
                    $scope.fadeout= false;
                    $scope.fadein= true;
+                   $scope.codeDisplay = false;
+                       $scope.fadeinCodeDisplay = false;
                
                },500)
            }
