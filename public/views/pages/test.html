@@ -1,0 +1,108 @@
+<div class = "row">
+
+  <div class="parallax-container  " style="height:1000px;">
+    <div class = "col s12 navbarshine animated center-align">
+      <i ng-click="openShineHome();"class = "material-icons white-text">home</i>
+    </div>
+       <div ng-show="codingPageOpen" class="ptext animated "  ng-class = "{fadeOut:fadeout,fadeIn:fadein}">
+            <div class = "col s4 center-align">
+      <span class="border trans hide-on-small-only ">
+                <p class = "animated slideInRight" > Projects</p>
+                </span>
+                     <span class="border trans show-on-small ">
+                <span class = "animated slideInRight" >   <i  class="material-icons">smartphone</i>|
+</span>
+                </span>
+         </div>
+                   <div class = "col s8 center-align" >
+                     <div class = "row">
+                     </div>
+                       <div class = "row">
+                     </div>
+                       <div class = "row">
+                     </div>
+                     <div ng-show="codeDisplay"  class = "col s12 animated" style="border:2px solid white;" ng-class = "{fadeOut:fadeoutCodeDisplay,fadeIn:fadeinCodeDisplay}"  >
+      <div class = "col s12">
+      <span class="border trans">
+                <p  > ROSE</p>
+                </span>
+                <span class="border trans">
+                <p  > QLH</p>
+                </span>
+      </div>
+                     </div>
+         </div>
+       </div>
+
+
+       <div ng-show="shineHomeOpen" class="ptext animated " ng-class = "{fadeOut:fadeout,fadeIn:fadein}">
+         <div ng-click="openCodingPage();" class = "col s12 center-align">
+               <span class="border trans">
+  <i  class="material-icons">smartphone</i>
+                </span>
+         </div>
+         <div class = "col s2 right-align">
+           <br>
+           <br>
+                 <span class="border trans">
+  <i class="material-icons">camera</i>
+                </span>
+         </div>
+         <div class = "col s8 center-align">
+        <span class="border trans">
+                <p > SHINE DESIGNS</p>
+                </span>
+         </div>
+   <div class = "col s2 left-align">
+           <br>
+           <br>
+                 <span >
+  <i class="material-icons white-text" >music_note</i>
+                </span>
+         </div>
+                     <div class = "col s12 center-align">
+               <span class="border trans">
+  <i class="material-icons">fingerprint</i>
+                </span>
+         </div>
+    </div>
+    
+
+
+    <div class="parallax"><img src="../img/backgroundCITYsmall.jpg"></div>
+  </div>
+
+
+  </div>
+   <script>
+    $(document).ready(function () {
+       $('.parallax').parallax();
+      console.log($('.tap-target'))
+      /*Form Validation*/
+          setTimeout(function () {
+
+        //$('.tap-target').tapTarget('open');
+        $('select').material_select();
+        $('.carousel.carousel-slider').carousel({ fullWidth: true });
+      }, 20000);
+
+    
+      /*Materialize initializations */
+  
+      //This method wasn't working
+      // $('select').material_select();
+      // $('select:not([multiple])').material_select();
+      console.log($('select'))
+      $('.carousel.carousel-slider').carousel({ fullWidth: true });
+
+      $(".button-collapse").sideNav({
+        menuWidth: 200, // Default is 300
+        edge: 'left', // Choose the horizontal origin
+        closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        draggable: true // Choose whether you can drag to open on touch screens,
+
+      }
+      );
+
+    })
+  </script>
