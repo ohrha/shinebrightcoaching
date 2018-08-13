@@ -1,12 +1,12 @@
 (function(){
 
-    var app = angular.module('homeController',['authServices'])
+    var app = angular.module('homeController',[])
     app.config(function(){
 
         console.log("Home Controller Loaded")
     })
 
-    app.controller('homeCtrl', function($scope,$rootScope,Auth,$timeout){
+    app.controller('homeCtrl', function($scope,$rootScope,$timeout){
        $scope.shineHomeOpen = true;
        $scope.codingPageOpen = false;
        $scope.fadein = true;

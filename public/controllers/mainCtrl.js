@@ -1,12 +1,12 @@
 (function () {
 
-    var app = angular.module('mainController', ['authServices', 'userServices', 'payperiodServices'])
+    var app = angular.module('mainController', [])
     app.config(function () {
 
         console.log("Main Controller Loaded")
     })
 
-    app.controller('mainCtrl', function ($scope, Auth, $timeout, $location, User, $rootScope, AuthToken, PayPeriod, $window) {
+    app.controller('mainCtrl', function ($scope,  $timeout, $location,  $rootScope,   $window) {
 
        $scope.shineHomeOpen = true;
        $scope.codingPageOpen = true;

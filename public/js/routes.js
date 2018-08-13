@@ -181,49 +181,12 @@
   
     })
 
-     app.run(['$rootScope', 'Auth', '$location', 'User', function ($rootScope, Auth, $location, User, $routeUpdate, $routeParams) {
+     app.run(['$rootScope', '$location', function ($rootScope,  $location,  $routeUpdate, $routeParams) {
 
         $rootScope.$on('$routeChangeStart', function (event, next, current) {
             //console.log(Auth.isLoggedIn());
             console.log(next.$$route.name);
-            $rootScope.title = next.$$route.name;
-            if (next.$$route !== undefined) {
-
-                if (next.$$route.authenticated == true) {
-                    //console.log("Requires authentication!")
-                    if (!Auth.isLoggedIn()) {
-                        //console.log("You're not logged in dude!");
-                        event.preventDefault();
-                        $location.path('/login');
-
-                    } else if (next.$$route.permission) {
-                        Auth.getUser().then(function (data) {
-                            console.log(data);
-
-                            if (next.$$route.permission[0] != data.data.userclass) {
-                                if (next.$$route.permission[1] != data.data.userclass) {
-
-                                    $location.path('/');
-                                }
-                            }
-                        });
-
-                    }
-
-                } else if (next.$$route.authenticated == false) {
-
-                    //console.log("Does not require authentication!")
-                    if (Auth.isLoggedIn()) {
-                        event.preventDefault();
-                        $location.path('/profile');
-                    }
-                } else {
-                    //console.log("Authenticated does not matter");
-                    //$route.reload();
-                }
-                //console.log(next.$$route.authenticated);
-            }
-
+          
             //if($routeParams.name == )
 
         });
