@@ -9,6 +9,7 @@
     app.controller('homeCtrl', function($scope,$rootScope,$timeout){
        $scope.shineHomeOpen = true;
        $scope.codingPageOpen = false;
+       $scope.rosePageOpen = false;
        $scope.fadein = true;
        $scope.fadeout = false;
         $scope.fadeinCodeDisplay = true;
@@ -19,8 +20,16 @@
        $scope.borderLeft = false;
        $scope.borderBottom = false;
 
+       $scope.openRosePage = function(){
+           console.log("clicked")
+        $scope.fadein = false;
+        $scope.rosePageOpen = true;
+        $scope.codeDisplay = false;
+        $scope.codingPageOpen = false;
+       }
        $scope.openShineHome = function(){
            if(!$scope.shineHomeOpen){
+               $scope.rosePageOpen = false;
                 $scope.fadein=false;
                $scope.fadeout = true;
                   $timeout(function(){
