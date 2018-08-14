@@ -19,7 +19,20 @@
        $scope.borderRight = false;
        $scope.borderLeft = false;
        $scope.borderBottom = false;
-
+       $scope.openQlhPage = function(){
+           console.log("clicked")
+        $scope.fadein = false;
+        $scope.qlhPageOpen = true;
+        $scope.codeDisplay = false;
+        $scope.codingPageOpen = false;
+       }
+              $scope.openHouseOfShoesPage = function(){
+           console.log("clicked")
+        $scope.fadein = false;
+        $scope.houseOfShoesPageOpen = true;
+        $scope.codeDisplay = false;
+        $scope.codingPageOpen = false;
+       }
        $scope.openRosePage = function(){
            console.log("clicked")
         $scope.fadein = false;
@@ -30,6 +43,8 @@
        $scope.openShineHome = function(){
            if(!$scope.shineHomeOpen){
                $scope.rosePageOpen = false;
+               $scope.houseOfShoesPageOpen = false;
+               $scope.qlhPageOpen = false;
                 $scope.fadein=false;
                $scope.fadeout = true;
                   $timeout(function(){
