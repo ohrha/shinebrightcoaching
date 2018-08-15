@@ -8,6 +8,7 @@
 
     app.controller('homeCtrl', function($scope,$rootScope,$timeout){
        $scope.shineHomeOpen = true;
+       $scope.navBar = false;
        $scope.codingPageOpen = false;
        $scope.rosePageOpen = false;
        $scope.fadein = true;
@@ -45,6 +46,7 @@
                $scope.rosePageOpen = false;
                $scope.houseOfShoesPageOpen = false;
                $scope.qlhPageOpen = false;
+               $scope.navBar = false;
                 $scope.fadein=false;
                $scope.fadeout = true;
                   $timeout(function(){
@@ -76,6 +78,9 @@
                        $scope.codeDisplay = true;
                        $scope.fadeinCodeDisplay = true;
                    },1300)
+                       $timeout(function(){
+                       $scope.navBar = true;
+                   },2100)
                
            }else{
                 

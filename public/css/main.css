@@ -292,6 +292,7 @@ body, html{
     font-size:27px;
     letter-spacing:8px;
     text-transform:uppercase;
+    transition:0.4s;
 }
 .ptext .border{
 
