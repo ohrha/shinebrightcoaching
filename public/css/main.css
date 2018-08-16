@@ -39,7 +39,7 @@ a{
     font-family: 'Raleway', sans-serif;
 }
 .underline{
-    border-bottom:1px solid rgba(0,0,0,.4);
+    border-bottom:1px solid white;
     display:inline-block;
 }
 .closedissue{

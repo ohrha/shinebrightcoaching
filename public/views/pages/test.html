@@ -5,7 +5,7 @@
     <div ng-show="navBar"class = "col s12 navbarshine animated center-align"ng-class = "{fadeOut:fadeout,fadeIn:fadein}">
       <div class = "row">
         <div class = "col s12">
-                          <i ng-click="openShineHome();"class = "material-icons white-text animated fadeInRight" style="font-size:14px;">home</i>
+                          <i ng-click="openShineHome();"class = "material-icons white-text animated fadeInRight" style="font-size:14px;">smartphone</i>
 
         </div>
    
@@ -16,7 +16,7 @@
 
         </div>
         <div class = "col s5 left-align">
-                          <i ng-click="openShineHome();"class = "material-icons white-text animated fadeInUp"style="font-size:15px;">home</i>
+                          <i ng-click="openMusicPage();"class = "material-icons white-text animated fadeInUp"style="font-size:15px;">music_note</i>
 
         </div>
 
@@ -47,7 +47,7 @@
         
 
               <div class = "col s5 right-align">
-                                              <i ng-click="openShineHome();"class = "material-icons white-text animated fadeInDown"style="font-size:15px;">home</i>
+                                              <i ng-click="openShineHome();"class = "material-icons white-text animated fadeInDown"style="font-size:15px;">camera</i>
 
         </div>
         <div class = "col s2">
@@ -62,11 +62,133 @@
         
         
         <div class = "col s12">
-                          <i class = "material-icons white-text animated fadeInLeft"style="font-size:20px;">home</i>
+                          <i class = "material-icons white-text animated fadeInLeft"style="font-size:20px;">fingerprint</i>
 
         </div>
       </div>
     </div>
+     <div ng-show="musicPageOpen" class="ptext animated "  ng-class = "{fadeOut:fadeout,fadeIn:fadein}">
+
+           <div class = "hide-on-small-only">
+             <div class ="row">
+</div>
+<div class ="row">
+</div>
+<div class ="row">
+</div>
+            <div class = "col s2 center-align">
+      <span class="border trans ">
+                <p class = "animated slideInRight" style="text-decoration:underline;" > Projects</p>
+                </span>
+     
+         </div>
+                   <div class = "col s10 " >
+                     <div class = "row">
+                     </div>
+                       <div class = "row">
+                     </div>
+                       <div class = "row">
+                     </div>
+                     <div ng-show="codeDisplay"  class = "col s12 animated" ng-class = "{fadeOut:fadeoutCodeDisplay,fadeIn:fadeinCodeDisplay}"  >
+      <div class = "col s12">
+      <span class="border trans">
+        <div class ="row">
+        </div>
+        <div class = "col s2">
+          <br>
+        <div style="border:1px solid white; width:30px; height:33px; box-shadow:2px 2px 2px white;"class="animated fadeIn">
+                <i ng-show="fadeOutMusic"ng-click="playTrack()" class = "material-icons animated black-text" style="font-size:30px;" ng-class="{fadeOut: fadeoutmusicpage}"> play_arrow</i>
+                  <i ng-show="fadeInMusic" ng-click="playTrack()" class = "material-icons animated white-text" style="font-size:30px;" ng-class="{fadeIn: fadeinmusicpage}"> play_arrow</i>
+        </div>
+        </div>
+        <div class = "col s10 left-align">
+           <p class = "montserrat underline">My Bride</p>
+          <p class = "montserrat" style='font-size:16px;'>[piano,rain]| C#</p>
+        </div>
+           <div class ="row">
+        </div>
+
+        <div style="border:1px solid white; width:30px; height:33px; box-shadow:2px 2px 2px white;"class="animated fadeIn">
+                <i ng-show="fadeOutMusic"ng-click="playTrack()" class = "material-icons animated black-text" style="font-size:30px;" ng-class="{fadeOut: fadeoutmusicpage}"> play_arrow</i> 
+                  <i ng-show="fadeInMusic" ng-click="playTrack()" class = "material-icons animated white-text" style="font-size:30px;" ng-class="{fadeIn: fadeinmusicpage}"> play_arrow</i>
+        </div>
+           <div class ="row">
+        </div>
+        <div style="border:1px solid white; width:30px; height:33px; box-shadow:2px 2px 2px white;" class="animated fadeIn">
+                <i ng-show="fadeOutMusic"ng-click="playTrack()" class = "material-icons animated black-text" style="font-size:30px;" ng-class="{fadeOut: fadeoutmusicpage}"> play_arrow</i>
+                  <i ng-show="fadeInMusic" ng-click="playTrack()" class = "material-icons animated white-text" style="font-size:30px;" ng-class="{fadeIn: fadeinmusicpage}"> play_arrow</i>
+        </div>
+                </span>
+          
+      </div>
+                     </div>
+
+
+         </div>
+           </div>
+
+           <div class = "hide-on-med-and-up">
+                <div class ="row">
+</div>
+<div class ="row">
+</div>
+<div class ="row">
+</div>
+            <div class = "col s2 center-align">
+      <span class="border trans ">
+                <p class = "animated slideInRight" style="text-decoration:underline;" > Projects</p>
+                </span>
+     
+         </div>
+                   <div class = "col s10 " >
+                     <div class = "row">
+                     </div>
+                       <div class = "row">
+                     </div>
+                       <div class = "row">
+                     </div>
+                     <div ng-show="codeDisplay"  class = "col s12 animated" ng-class = "{fadeOut:fadeoutCodeDisplay,fadeIn:fadeinCodeDisplay}"  >
+      <div class = "col s12">
+      <span class="border trans">
+        <div class ="row">
+        </div>
+        <div class = "col s2">
+          <br>
+        <div style="border:1px solid white; width:30px; height:33px; box-shadow:2px 2px 2px white;"class="animated fadeIn">
+                <i ng-show="fadeOutMusic"ng-click="playTrack()" class = "material-icons animated black-text" style="font-size:30px;" ng-class="{fadeOut: fadeoutmusicpage}"> play_arrow</i>
+                  <i ng-show="fadeInMusic" ng-click="playTrack()" class = "material-icons animated white-text" style="font-size:30px;" ng-class="{fadeIn: fadeinmusicpage}"> play_arrow</i>
+        </div>
+        </div>
+        <div class = "col s10 left-align">
+           <p class = "montserrat underline">My Bride</p>
+          <p class = "montserrat" style='font-size:16px;'>[piano,rain]| C#</p>
+        </div>
+           <div class ="row">
+        </div>
+
+        <div style="border:1px solid white; width:30px; height:33px; box-shadow:2px 2px 2px white;"class="animated fadeIn">
+                <i ng-show="fadeOutMusic"ng-click="playTrack()" class = "material-icons animated black-text" style="font-size:30px;" ng-class="{fadeOut: fadeoutmusicpage}"> play_arrow</i> 
+                  <i ng-show="fadeInMusic" ng-click="playTrack()" class = "material-icons animated white-text" style="font-size:30px;" ng-class="{fadeIn: fadeinmusicpage}"> play_arrow</i>
+        </div>
+           <div class ="row">
+        </div>
+        <div style="border:1px solid white; width:30px; height:33px; box-shadow:2px 2px 2px white;" class="animated fadeIn">
+                <i ng-show="fadeOutMusic"ng-click="playTrack()" class = "material-icons animated black-text" style="font-size:30px;" ng-class="{fadeOut: fadeoutmusicpage}"> play_arrow</i>
+                  <i ng-show="fadeInMusic" ng-click="playTrack()" class = "material-icons animated white-text" style="font-size:30px;" ng-class="{fadeIn: fadeinmusicpage}"> play_arrow</i>
+        </div>
+                </span>
+          
+      </div>
+                     </div>
+
+
+         </div>
+           </div>
+
+
+       </div>
+
+          
        <div ng-show="codingPageOpen" class="ptext animated "  ng-class = "{fadeOut:fadeout,fadeIn:fadein}">
 
            <div class = "hide-on-small-only">
@@ -255,7 +377,7 @@
            
            <br>
                  <span >
-  <i class="material-icons white-text animated fadeIn" >music_note</i>
+  <i ng-click="openMusicPage()" class="material-icons white-text animated fadeIn" >music_note</i>
                 </span>
          </div>
                      <div class = "col s12 center-align">
