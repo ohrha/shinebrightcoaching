@@ -93,17 +93,36 @@
         $scope.fadeinmusicpage = false;
         $scope.fadeInMusic = false;
         $scope.fadeOutMusic= true;
+        $scope.audio = new Audio('../audio/bride.wav')
         $scope.playTrack = function () {
             console.log("Play")
             if (!$scope.fadeoutmusicpage) {
                 $scope.fadeoutmusicpage = true;
-                $scope.fadeOutMusic = false;
+              $scope.fadeOutMusic = false;
                 $scope.fadeInMusic = true;
                 $scope.fadeinmusicpage = true;
-                var audio = new Audio('../audio/bride.wav');
-        audio.play();
+                //var audio = new Audio('../audio/bride.wav');
+        $scope.audio.play();
 
+            }else{
+  $scope.fadeOutMusic = false;
+                $scope.fadeInMusic = true;
             }
+        }
+            $scope.stopTrack = function () {
+        
+            //if (!$scope.fadeoutmusicpage) {
+                $scope.fadeoutmusicpage = false;
+                // $scope.fadeinmusicpage = true;
+                $scope.fadeInMusic = false;
+                $scope.fadeOutMusic = true;
+                
+               
+                //var audio = new Audio('../audio/bride.wav');
+        $scope.audio.pause();
+$scope.audio.currentTime = 0;;
+
+            //}
         }
         $scope.openCodingPage = function () {
             console.log("CLICKED")
