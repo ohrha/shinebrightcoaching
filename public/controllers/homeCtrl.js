@@ -72,6 +72,7 @@
                 $timeout(function () {
                     $scope.musicPageOpen = true;
                     $scope.shineHomeOpen = false;
+                    $scope.codingPageOpen = false;
                     $scope.fadeout = false;
                     $scope.fadein = true;
 
@@ -113,6 +114,7 @@
                 $timeout(function () {
                     $scope.codingPageOpen = true;
                     $scope.shineHomeOpen = false;
+                    $scope.musicPageOpen = false;
                     $scope.fadeout = false;
                     $scope.fadein = true;
 
