@@ -70,6 +70,7 @@
                 $timeout(function () {
                     $scope.musicPageOpen = false;
                     $scope.codeDisplay = false;
+                    $scope.codingPageOpen = false;
                     $scope.shineHomeOpen = true;
 
 
