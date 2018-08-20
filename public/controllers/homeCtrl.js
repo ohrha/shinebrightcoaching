@@ -84,6 +84,9 @@
                     $scope.fadeout = false;
                     $scope.fadein = true;
 
+ $scope.fadeinCodeDisplay = false;
+                    $scope.fadeoutCodeDisplay = true;
+                    //$scope.codeDisplay = false;
                     // $scope.codeDisplay = false;
 
 
@@ -91,9 +94,7 @@
                 $timeout(function () {
 
                     //
-                    $scope.fadeinCodeDisplay = false;
-                    $scope.fadeoutCodeDisplay = true;
-                    $scope.codeDisplay = false;
+                   
                     // $scope.musicPageOpen = false;
 
                 }, 800)
