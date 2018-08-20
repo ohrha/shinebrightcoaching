@@ -305,6 +305,17 @@ body, html{
     text-transform:uppercase;
     transition:0.4s;
 }
+.ptextcodingpage{
+    position:absolute;
+    top:10%;
+    width:100%;
+    text-align:center;
+    color:white;
+    font-size:27px;
+    letter-spacing:8px;
+    text-transform:uppercase;
+    transition:0.4s;
+}
 .ptextnavmenu{
     position:absolute;
     top:2%;
