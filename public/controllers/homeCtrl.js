@@ -69,6 +69,7 @@
                 // $scope.fadeout = true;
                 $timeout(function () {
                     $scope.musicPageOpen = false;
+                    $scope.codeDisplay = false;
                     $scope.shineHomeOpen = true;
 
 
@@ -84,7 +85,7 @@
                     $scope.fadeout = false;
                     $scope.fadein = true;
 
- $scope.fadeinCodeDisplay = false;
+                    $scope.fadeinCodeDisplay = false;
                     $scope.fadeoutCodeDisplay = true;
                     //$scope.codeDisplay = false;
                     // $scope.codeDisplay = false;
@@ -109,10 +110,11 @@
         $scope.openMusicPage = function () {
             console.log("clicked")
             if (!$scope.musicPageOpen) {
+
                 $scope.pageRefreshed = true;
                 $scope.fadein = false;
                 $scope.fadeout = true;
-
+                
 
 
                 $timeout(function () {
