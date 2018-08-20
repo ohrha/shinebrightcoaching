@@ -4,7 +4,70 @@
     <div class = "row">
     <div ng-show="navBar"class = "col s12 navbarshine animated center-align ptextnavmenu " ng-class = "{fadeOut:fadeout,fadeIn:fadein}">
        
+        <div ng-show="photoPageOpen">
+        <div class = "col s12">
+                          <i ng-click="openCodingPage();"class = "material-icons white-text animated " ng-class = "{fadeOutLeft:fadeoutleft,fadeInRight:fadeinright}"style="font-size:14px;">home</i>
+
+        </div>
+   
+        <div class = "col s5 right-align">
+
+        </div>
+        <div class = "col s2">
+
+        </div>
+        <div class = "col s5 left-align">
+                          <i ng-click="openMusicPage();"class = "material-icons white-text animated " ng-class = "{fadeInUp:fadeinup,fadeOutUp:fadeoutup}"style="font-size:15px;">music_note</i>
+
+        </div>
+
+
+                <div class = "col s5 right-align">
+
+        </div>
+        <div  class = "col s2">
+                <i ng-click="openShineHome();"class = "material-icons black-text animated"  ng-class = "{fadeOut:fadeouthome,fadeIn:fadeinhome, faster: fadeouthome}"style=" padding-right:3px;">camera</i>
+
+        </div>
+        <div class = "col s5 left-align">
+                          <i class = "material-icons white-text" style="opacity:0;">home</i>
+
+        </div>
+
+
+                <div class = "col s5 right-align">
+
+        </div>
+        <div class = "col s2">
+
+        </div>
+        <div class = "col s5 left-align">
+
+        </div>
+
+        
+
+              <div class = "col s5 right-align">
+                                              <i ng-click="openPhotoPage();"class = "material-icons white-text animated  "ng-class = "{fadeInDown:fadeindown,faster:fadeoutdown,fadeOutDown:fadeoutdown}"style="font-size:15px;">home</i>
+
+        </div>
+        <div class = "col s2">
+
+        </div>
+        <div class = "col s5 left-align">
+
+
+
+        </div>
        
+        
+        
+        <div class = "col s12">
+                          <i ng-click="openContactPage()" class = "material-icons white-text animated"style="font-size:20px;"ng-class = "{fadeInLeft:fadeinleft,fadeOutRight:fadeoutright}">fingerprint</i>
+
+        </div>
+  
+  </div>
        <div ng-show="codingPageOpen">
         <div class = "col s12">
                           <i ng-click="openCodingPage();"class = "material-icons white-text animated " ng-class = "{fadeOutLeft:fadeoutleft,fadeInRight:fadeinright}"style="font-size:14px;">home</i>
@@ -49,7 +112,7 @@
         
 
               <div class = "col s5 right-align">
-                                              <i ng-click="openShineHome();"class = "material-icons white-text animated  "ng-class = "{fadeInDown:fadeindown,faster:fadeoutdown,fadeOutDown:fadeoutdown}"style="font-size:15px;">camera</i>
+                                              <i ng-click="openPhotoPage();"class = "material-icons white-text animated  "ng-class = "{fadeInDown:fadeindown,faster:fadeoutdown,fadeOutDown:fadeoutdown}"style="font-size:15px;">camera</i>
 
         </div>
         <div class = "col s2">
@@ -64,7 +127,71 @@
         
         
         <div class = "col s12">
-                          <i class = "material-icons white-text animated"style="font-size:20px;"ng-class = "{fadeInLeft:fadeinleft,fadeOutRight:fadeoutright}">fingerprint</i>
+                          <i ng-click="openContactPage()" class = "material-icons white-text animated"style="font-size:20px;"ng-class = "{fadeInLeft:fadeinleft,fadeOutRight:fadeoutright}">fingerprint</i>
+
+        </div>
+  
+  </div>
+      <div ng-show="contactPageOpen">
+        <div class = "col s12">
+                          <i ng-click="openCodingPage();"class = "material-icons white-text animated " ng-class = "{fadeOutLeft:fadeoutleft,fadeInRight:fadeinright}"style="font-size:14px;">smartphone</i>
+
+        </div>
+   
+        <div class = "col s5 right-align">
+
+        </div>
+        <div class = "col s2">
+
+        </div>
+        <div class = "col s5 left-align">
+                          <i ng-click="openMusicPage();"class = "material-icons white-text animated " ng-class = "{fadeInUp:fadeinup,fadeOutUp:fadeoutup}"style="font-size:15px;">home</i>
+
+        </div>
+
+
+                <div class = "col s5 right-align">
+
+        </div>
+        <div  class = "col s2">
+                <i ng-click="openShineHome();"class = "material-icons black-text animated"  ng-class = "{fadeOut:fadeouthome,fadeIn:fadeinhome, faster: fadeouthome}"style=" padding-right:3px;">fingerprint</i>
+
+        </div>
+        <div class = "col s5 left-align">
+                          <i class = "material-icons white-text" style="opacity:0;">home</i>
+
+        </div>
+
+
+                <div class = "col s5 right-align">
+
+        </div>
+        <div class = "col s2">
+
+        </div>
+        <div class = "col s5 left-align">
+
+        </div>
+
+        
+
+              <div class = "col s5 right-align">
+                                              <i ng-click="openPhotoPage();"class = "material-icons white-text animated  "ng-class = "{fadeInDown:fadeindown,faster:fadeoutdown,fadeOutDown:fadeoutdown}"style="font-size:15px;">camera</i>
+
+        </div>
+        <div class = "col s2">
+
+        </div>
+        <div class = "col s5 left-align">
+
+
+
+        </div>
+       
+        
+        
+        <div class = "col s12">
+                          <i  ng-click="openContactPage()"class = "material-icons white-text animated"style="font-size:20px;"ng-class = "{fadeInLeft:fadeinleft,fadeOutRight:fadeoutright}">fingerprint</i>
 
         </div>
   
@@ -113,7 +240,7 @@
         
 
               <div class = "col s5 right-align">
-                                              <i ng-click="openShineHome();"class = "material-icons white-text animated  "ng-class = "{fadeInDown:fadeindown,faster:fadeoutdown,fadeOutDown:fadeoutdown}"style="font-size:15px;">camera</i>
+                                              <i ng-click="openPhotoPage();"class = "material-icons white-text animated  "ng-class = "{fadeInDown:fadeindown,faster:fadeoutdown,fadeOutDown:fadeoutdown}"style="font-size:15px;">camera</i>
 
         </div>
         <div class = "col s2">
@@ -128,7 +255,7 @@
         
         
         <div class = "col s12">
-                          <i class = "material-icons white-text animated"style="font-size:20px;"ng-class = "{fadeInLeft:fadeinleft,fadeOutRight:fadeoutright}">fingerprint</i>
+                          <i ng-click="openContactPage();" class = "material-icons white-text animated"style="font-size:20px;"ng-class = "{fadeInLeft:fadeinleft,fadeOutRight:fadeoutright}">fingerprint</i>
 
         </div>
   

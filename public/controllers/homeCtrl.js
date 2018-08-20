@@ -122,6 +122,7 @@
                 $timeout(function () {
                     $scope.musicPageOpen = true;
                     $scope.shineHomeOpen = false;
+                    $scope.photoPageOpen = false;
                     $scope.codingPageOpen = false;
                     $scope.fadeout = false;
                     $scope.fadein = true;
@@ -151,7 +152,7 @@
                 }, 2100)
 
             } 
-               if (!$scope.musicPageOpen && $scope.codingPageOpen) {
+               if (!$scope.musicPageOpen && ($scope.contactPageOpen || $scope.codingPageOpen || $scope.photoPageOpen)) {
 
                     $scope.fadeinright = false;
                 $scope.fadeinup = false
@@ -196,6 +197,101 @@
 
             } 
         }
+        $scope.contactPageOpen = false;
+        $scope.openContactPage = function () {
+            console.log("clicked")
+            if (!$scope.contactPageOpen) {
+            
+                $scope.pageRefreshed = true;
+                $scope.fadein = false;
+                $scope.fadeout = true;
+                
+
+
+                $timeout(function () {
+                     $scope.contactPageOpen = true;
+                     $scope.codingPageOpen = false;
+                    $scope.musicPageOpen = false;
+                    $scope.photoPageOpen = false;
+                    $scope.shineHomeOpen = false;
+                   
+                    $scope.fadeout = false;
+                    $scope.fadein = true;
+                    $scope.fadeoutleft = false;
+                    $scope.fadeoutright = false;
+                    $scope.fadeinleft = true;
+
+                    $scope.fadeinright = true;
+                    $scope.fadeoutup = false;
+                    $scope.fadeoutdown = false
+
+                    $scope.fadeindown = true;
+
+                    $scope.fadeinup = true
+                    $scope.fadeouthome = false;
+                    $scope.fadeinhome = true;
+                    $scope.fadeinright = true;
+
+                }, 500)
+                $timeout(function () {
+                    $scope.codeDisplay = true;
+                    $scope.fadeoutCodeDisplay = false;
+                    $scope.fadeinCodeDisplay = true;
+                }, 1200)
+                $timeout(function () {
+                    $scope.navBar = true;
+                }, 2100)
+
+            }   
+             if (!$scope.contactPageOpen && ($scope.musicPageOpen || $scope.codingPageOpen || $scope.photoPageOpen)) {
+console.log("music page open")
+                    $scope.fadeinright = false;
+                $scope.fadeinup = false
+                $scope.fadeoutup = true;
+                $scope.fadeinleft = false
+                $scope.fadeoutleft = true;
+                $scope.fadeoutright = true;
+                $scope.fadeindown = false;
+                $scope.fadeoutdown = true
+
+
+                $timeout(function () {
+                    $scope.contactPageOpen = true;
+                    $scope.photoPageOpen = false;
+                    $scope.codingPageOpen = false;
+                    $scope.shineHomeOpen = false;
+                    $scope.musicPageOpen = false;
+                    $scope.fadeout = false;
+                    $scope.fadein = true;
+                    $scope.fadeoutleft = false;
+                    $scope.fadeoutright = false;
+                    $scope.fadeinleft = true;
+
+                    $scope.fadeinright = true;
+                    $scope.fadeoutup = false;
+                    $scope.fadeoutdown = false
+
+                    $scope.fadeindown = true;
+
+                    $scope.fadeinup = true
+                    $scope.fadeouthome = false;
+                    $scope.fadeinhome = true;
+                    $scope.fadeinright = true;
+
+                }, 500)
+                $timeout(function () {
+                    $scope.codeDisplay = true;
+                    $scope.fadeoutCodeDisplay = false;
+                    $scope.fadeinCodeDisplay = true;
+                }, 1200)
+                $timeout(function () {
+                    $scope.navBar = true;
+                }, 2100)
+
+            } 
+        
+        }
+
         $scope.openCodingPage = function () {
             console.log("clicked")
             if (!$scope.codingPageOpen) {
@@ -209,6 +305,7 @@
                 $timeout(function () {
                      $scope.codingPageOpen = true;
                     $scope.musicPageOpen = false;
+                    $scope.photoPageOpen = false;
                     $scope.shineHomeOpen = false;
                    
                     $scope.fadeout = false;
@@ -276,6 +373,76 @@
 
             //}
         }
+        $scope.photoPageOpen = false;
+          $scope.openPhotoPage = function () {
+            console.log("CLICKED")
+            if (!$scope.photoPageOpen) {
+                $scope.fadein = false;
+                $scope.fadeout = true;
+
+                $timeout(function () {
+                    $scope.photoPageOpen = true;
+                    $scope.codingPageOpen = false;
+                    $scope.shineHomeOpen = false;
+                    $scope.musicPageOpen = false;
+                    $scope.fadeout = false;
+                    $scope.fadein = true;
+
+                }, 500)
+                $timeout(function () {
+                    $scope.codeDisplay = true;
+                    $scope.fadeinCodeDisplay = true;
+                }, 1300)
+                $timeout(function () {
+                    $scope.navBar = true;
+                }, 2100)
+
+            }     if (!$scope.photoPageOpen && ($scope.musicPageOpen || $scope.codingPageOpen)) {
+console.log("music page open")
+                    $scope.fadeinright = false;
+                $scope.fadeinup = false
+                $scope.fadeoutup = true;
+                $scope.fadeinleft = false
+                $scope.fadeoutleft = true;
+                $scope.fadeoutright = true;
+                $scope.fadeindown = false;
+                $scope.fadeoutdown = true
+
+
+                $timeout(function () {
+                    $scope.photoPageOpen = true;
+                    $scope.codingPageOpen = false;
+                    $scope.shineHomeOpen = false;
+                    $scope.musicPageOpen = false;
+                    $scope.fadeout = false;
+                    $scope.fadein = true;
+                    $scope.fadeoutleft = false;
+                    $scope.fadeoutright = false;
+                    $scope.fadeinleft = true;
+
+                    $scope.fadeinright = true;
+                    $scope.fadeoutup = false;
+                    $scope.fadeoutdown = false
+
+                    $scope.fadeindown = true;
+
+                    $scope.fadeinup = true
+                    $scope.fadeouthome = false;
+                    $scope.fadeinhome = true;
+                    $scope.fadeinright = true;
+
+                }, 500)
+                $timeout(function () {
+                    $scope.codeDisplay = true;
+                    $scope.fadeoutCodeDisplay = false;
+                    $scope.fadeinCodeDisplay = true;
+                }, 1200)
+                $timeout(function () {
+                    $scope.navBar = true;
+                }, 2100)
+
+            } 
+        }
         $scope.openCodingPage = function () {
             console.log("CLICKED")
             if (!$scope.codingPageOpen) {
@@ -298,7 +465,7 @@
                     $scope.navBar = true;
                 }, 2100)
 
-            }     if (!$scope.codingPageOpen && $scope.musicPageOpen) {
+            }     if (!$scope.codingPageOpen && ($scope.musicPageOpen || $scope.contactPageOpen || $scope.photoPageOpen) {
 console.log("music page open")
                     $scope.fadeinright = false;
                 $scope.fadeinup = false
