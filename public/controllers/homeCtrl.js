@@ -167,6 +167,7 @@
                 $timeout(function () {
                     $scope.musicPageOpen = true;
                     $scope.shineHomeOpen = false;
+                    $scope.contactPageOpen = false;
                     $scope.codingPageOpen = false;
                     $scope.fadeout = false;
                     $scope.fadein = true;
