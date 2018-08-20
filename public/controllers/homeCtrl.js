@@ -83,6 +83,7 @@
 
                     // $scope.codingPageOpen = false;
                     // $scope.musicPageOpen = false;
+                     $scope.codingPageOpen = false;
                     $scope.fadeout = false;
                     $scope.fadein = true;
 
