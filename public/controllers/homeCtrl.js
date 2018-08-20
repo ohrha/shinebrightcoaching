@@ -465,7 +465,7 @@ console.log("music page open")
                     $scope.navBar = true;
                 }, 2100)
 
-            }     if (!$scope.codingPageOpen && ($scope.musicPageOpen || $scope.contactPageOpen || $scope.photoPageOpen) {
+            }     if (!$scope.codingPageOpen && ($scope.musicPageOpen || $scope.contactPageOpen || $scope.photoPageOpen)) {
 console.log("music page open")
                     $scope.fadeinright = false;
                 $scope.fadeinup = false
