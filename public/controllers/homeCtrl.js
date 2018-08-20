@@ -41,33 +41,78 @@
             $scope.codeDisplay = false;
             $scope.codingPageOpen = false;
         }
+        $scope.fadeinright = false;
+        $scope.fadeoutleft = false;
+        $scope.fadeinup = false;
+        $scope.fadeoutup = false;
+        $scope.fadeindown = false;
+        $scope.fadeoutdown = false;
+        $scope.fadeinleft = false;
+        $scope.fadeoutright = false;
+        $scope.fadeouthome = false;
         $scope.openShineHome = function () {
+            console.log("clicked")
             if (!$scope.shineHomeOpen) {
+                $scope.fadeinright = false;
+                $scope.fadeinup = false
+                $scope.fadeoutup = true;
+                $scope.fadeinleft = false
+                $scope.fadeoutleft = true;
+                $scope.fadeoutright = true;
+                $scope.fadeindown = false;
+                $scope.fadeoutdown = true
                 $scope.rosePageOpen = false;
                 $scope.houseOfShoesPageOpen = false;
                 $scope.qlhPageOpen = false;
-                $scope.navBar = false;
-                $scope.fadein = false;
-                $scope.fadeout = true;
+                // $scope.navBar = false;
+                // $scope.fadein = false;
+                // $scope.fadeout = true;
+                $timeout(function () {
+                    $scope.musicPageOpen = false;
+                    $scope.shineHomeOpen = true;
+
+
+                }, 1600)
                 $timeout(function () {
 
-                    $scope.shineHomeOpen = true;
-                    $scope.codingPageOpen = false;
+                    //
+
+                    $scope.fadeouthome = true;
+
+                    // $scope.codingPageOpen = false;
+                    // $scope.musicPageOpen = false;
                     $scope.fadeout = false;
                     $scope.fadein = true;
-                    $scope.codeDisplay = false;
-                    $scope.fadeinCodeDisplay = false;
 
-                }, 500)
+                    // $scope.codeDisplay = false;
+
+
+                }, 600)
+                $timeout(function () {
+
+                    //
+                    $scope.fadeinCodeDisplay = false;
+                    $scope.fadeoutCodeDisplay = true;
+                    $scope.codeDisplay = false;
+                    // $scope.musicPageOpen = false;
+
+                }, 800)
+                $timeout(function () {
+
+
+                }, 900)
+
             }
         }
-        $scope.musicPageOpen = false;
-
+        $scope.pageRefreshed = false;
         $scope.openMusicPage = function () {
             console.log("clicked")
             if (!$scope.musicPageOpen) {
+                $scope.pageRefreshed = true;
                 $scope.fadein = false;
                 $scope.fadeout = true;
+
+
 
                 $timeout(function () {
                     $scope.musicPageOpen = true;
@@ -75,12 +120,71 @@
                     $scope.codingPageOpen = false;
                     $scope.fadeout = false;
                     $scope.fadein = true;
+                    $scope.fadeoutleft = false;
+                    $scope.fadeoutright = false;
+                    $scope.fadeinleft = true;
+
+                    $scope.fadeinright = true;
+                    $scope.fadeoutup = false;
+                    $scope.fadeoutdown = false
+
+                    $scope.fadeindown = true;
+
+                    $scope.fadeinup = true
+                    $scope.fadeouthome = false;
+                    $scope.fadeinhome = true;
+                    $scope.fadeinright = true;
 
                 }, 500)
                 $timeout(function () {
                     $scope.codeDisplay = true;
+                    $scope.fadeoutCodeDisplay = false;
                     $scope.fadeinCodeDisplay = true;
-                }, 1300)
+                }, 1200)
+                $timeout(function () {
+                    $scope.navBar = true;
+                }, 2100)
+
+            } else {
+
+            }
+        }
+        $scope.openCodingPage = function () {
+            console.log("clicked")
+            if (!$scope.codingPageOpen) {
+                $scope.fadein = false;
+                $scope.fadeout = true;
+
+
+
+                $timeout(function () {
+                    $scope.codingPageOpen = true;
+
+                    $scope.musicPageOpen = false;
+                    $scope.shineHomeOpen = false;
+                    $scope.fadeout = false;
+                    $scope.fadein = true;
+                    $scope.fadeoutleft = false;
+                    $scope.fadeoutright = false;
+                    $scope.fadeinleft = true;
+
+                    $scope.fadeinright = true;
+                    $scope.fadeoutup = false;
+                    $scope.fadeoutdown = false
+
+                    $scope.fadeindown = true;
+
+                    $scope.fadeinup = true
+                    $scope.fadeouthome = false;
+                    $scope.fadeinhome = true;
+                    $scope.fadeinright = true;
+
+                }, 500)
+                $timeout(function () {
+                    $scope.codeDisplay = true;
+                    $scope.fadeoutCodeDisplay = false;
+                    $scope.fadeinCodeDisplay = true;
+                }, 1200)
                 $timeout(function () {
                     $scope.navBar = true;
                 }, 2100)
@@ -92,35 +196,35 @@
         $scope.fadeoutmusicpage = false;
         $scope.fadeinmusicpage = false;
         $scope.fadeInMusic = false;
-        $scope.fadeOutMusic= true;
+        $scope.fadeOutMusic = true;
         $scope.audio = new Audio('../audio/bride.wav')
         $scope.playTrack = function () {
             console.log("Play")
             if (!$scope.fadeoutmusicpage) {
                 $scope.fadeoutmusicpage = true;
-              $scope.fadeOutMusic = false;
+                $scope.fadeOutMusic = false;
                 $scope.fadeInMusic = true;
                 $scope.fadeinmusicpage = true;
                 //var audio = new Audio('../audio/bride.wav');
-        $scope.audio.play();
+                $scope.audio.play();
 
-            }else{
-  $scope.fadeOutMusic = false;
+            } else {
+                $scope.fadeOutMusic = false;
                 $scope.fadeInMusic = true;
             }
         }
-            $scope.stopTrack = function () {
-        
+        $scope.stopTrack = function () {
+
             //if (!$scope.fadeoutmusicpage) {
-                $scope.fadeoutmusicpage = false;
-                // $scope.fadeinmusicpage = true;
-                $scope.fadeInMusic = false;
-                $scope.fadeOutMusic = true;
-                
-               
-                //var audio = new Audio('../audio/bride.wav');
-        $scope.audio.pause();
-$scope.audio.currentTime = 0;;
+            $scope.fadeoutmusicpage = false;
+            // $scope.fadeinmusicpage = true;
+            $scope.fadeInMusic = false;
+            $scope.fadeOutMusic = true;
+
+
+            //var audio = new Audio('../audio/bride.wav');
+            $scope.audio.pause();
+            $scope.audio.currentTime = 0;;
 
             //}
         }

@@ -285,7 +285,18 @@ body, html{
 }
 .ptext{
     position:absolute;
-    top:10%;
+    top:5%;
+    width:100%;
+    text-align:center;
+    color:black;
+    font-size:27px;
+    letter-spacing:8px;
+    text-transform:uppercase;
+    transition:0.4s;
+}
+.ptextnavmenu{
+    position:absolute;
+    top:5%;
     width:100%;
     text-align:center;
     color:black;
