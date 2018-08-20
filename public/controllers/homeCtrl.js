@@ -150,9 +150,51 @@
                     $scope.navBar = true;
                 }, 2100)
 
-            } else {
+            } 
+               if (!$scope.musicPageOpen && $scope.codingPageOpen) {
 
-            }
+                    $scope.fadeinright = false;
+                $scope.fadeinup = false
+                $scope.fadeoutup = true;
+                $scope.fadeinleft = false
+                $scope.fadeoutleft = true;
+                $scope.fadeoutright = true;
+                $scope.fadeindown = false;
+                $scope.fadeoutdown = true
+
+
+                $timeout(function () {
+                    $scope.musicPageOpen = true;
+                    $scope.shineHomeOpen = false;
+                    $scope.codingPageOpen = false;
+                    $scope.fadeout = false;
+                    $scope.fadein = true;
+                    $scope.fadeoutleft = false;
+                    $scope.fadeoutright = false;
+                    $scope.fadeinleft = true;
+
+                    $scope.fadeinright = true;
+                    $scope.fadeoutup = false;
+                    $scope.fadeoutdown = false
+
+                    $scope.fadeindown = true;
+
+                    $scope.fadeinup = true
+                    $scope.fadeouthome = false;
+                    $scope.fadeinhome = true;
+                    $scope.fadeinright = true;
+
+                }, 500)
+                $timeout(function () {
+                    $scope.codeDisplay = true;
+                    $scope.fadeoutCodeDisplay = false;
+                    $scope.fadeinCodeDisplay = true;
+                }, 1200)
+                $timeout(function () {
+                    $scope.navBar = true;
+                }, 2100)
+
+            } 
         }
         $scope.openCodingPage = function () {
             console.log("clicked")
@@ -196,9 +238,8 @@
                     $scope.navBar = true;
                 }, 2100)
 
-            } else {
-
-            }
+            }   
+        
         }
         $scope.fadeoutmusicpage = false;
         $scope.fadeinmusicpage = false;
@@ -257,9 +298,50 @@
                     $scope.navBar = true;
                 }, 2100)
 
-            } else {
+            }     if (!$scope.codingPageOpen && $scope.musicPageOpen) {
+console.log("music page open")
+                    $scope.fadeinright = false;
+                $scope.fadeinup = false
+                $scope.fadeoutup = true;
+                $scope.fadeinleft = false
+                $scope.fadeoutleft = true;
+                $scope.fadeoutright = true;
+                $scope.fadeindown = false;
+                $scope.fadeoutdown = true
 
-            }
+
+                $timeout(function () {
+                    $scope.codingPageOpen = true;
+                    $scope.shineHomeOpen = false;
+                    $scope.musicPageOpen = false;
+                    $scope.fadeout = false;
+                    $scope.fadein = true;
+                    $scope.fadeoutleft = false;
+                    $scope.fadeoutright = false;
+                    $scope.fadeinleft = true;
+
+                    $scope.fadeinright = true;
+                    $scope.fadeoutup = false;
+                    $scope.fadeoutdown = false
+
+                    $scope.fadeindown = true;
+
+                    $scope.fadeinup = true
+                    $scope.fadeouthome = false;
+                    $scope.fadeinhome = true;
+                    $scope.fadeinright = true;
+
+                }, 500)
+                $timeout(function () {
+                    $scope.codeDisplay = true;
+                    $scope.fadeoutCodeDisplay = false;
+                    $scope.fadeinCodeDisplay = true;
+                }, 1200)
+                $timeout(function () {
+                    $scope.navBar = true;
+                }, 2100)
+
+            } 
         }
     })
 
