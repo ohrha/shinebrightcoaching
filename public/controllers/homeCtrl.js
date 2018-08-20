@@ -155,16 +155,18 @@
         $scope.openCodingPage = function () {
             console.log("clicked")
             if (!$scope.codingPageOpen) {
+            
+                $scope.pageRefreshed = true;
                 $scope.fadein = false;
                 $scope.fadeout = true;
-
+                
 
 
                 $timeout(function () {
-                    $scope.codingPageOpen = true;
-
+                     $scope.codingPageOpen = true;
                     $scope.musicPageOpen = false;
                     $scope.shineHomeOpen = false;
+                   
                     $scope.fadeout = false;
                     $scope.fadein = true;
                     $scope.fadeoutleft = false;
