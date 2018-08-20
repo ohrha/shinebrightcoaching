@@ -384,6 +384,7 @@ console.log("music page open")
                 $timeout(function () {
                     $scope.photoPageOpen = true;
                     $scope.codingPageOpen = false;
+                    $scope.contactPageOpen = false;
                     $scope.shineHomeOpen = false;
                     $scope.musicPageOpen = false;
                     $scope.fadeout = false;
@@ -412,6 +413,7 @@ console.log("music page open")
 
                 $timeout(function () {
                     $scope.photoPageOpen = true;
+                    $scope.contactPageOpen = false;
                     $scope.codingPageOpen = false;
                     $scope.shineHomeOpen = false;
                     $scope.musicPageOpen = false;
@@ -481,6 +483,8 @@ console.log("music page open")
                 $timeout(function () {
                     $scope.codingPageOpen = true;
                     $scope.shineHomeOpen = false;
+                    $scope.contactPageOpen = false;
+                    $scope.photoPageOpen = false;
                     $scope.musicPageOpen = false;
                     $scope.fadeout = false;
                     $scope.fadein = true;
