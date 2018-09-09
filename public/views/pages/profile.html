@@ -12,7 +12,88 @@
         <div class="col s9">
         </div>
     </div>
-    <div class="row">
+    <div class="row show-on-small">
+        <div class="col s12" style="border-right:2px solid white;">
+            <div>
+                <div class="col s3 animated" ng-class="{fadeOut:fadeOutMenu}">
+                    <a href="#">
+                        <p class="montserrat grey-text" ng-click="openInfoPage()">Info</p>
+                    </a>
+                </div>
+                <div class=" col s3 animated" ng-class="{fadeOut:fadeOutMenu}">
+
+                    <a href="#">
+                        <p class="montserrat grey-text" ng-click="openSchedulePage()">Schedule</p>
+                    </a>
+                </div>
+                <div class=" col s3 animated " ng-class="{fadeOut:fadeOutMenu}">
+
+                    <a href="#" class="animated">
+                        <p class="montserrat grey-text truncate" ng-click="openTimesheetPage()">Timesheets</p>
+                    </a>
+                </div>
+                <div class=" col s3 animated " ng-class="{fadeOut:fadeOutMenu}">
+
+                    <a href="#">
+                        <p class="montserrat grey-text" ng-click="selectMessageMenu()">Messages</p>
+                    </a>
+                    <div class="col s1">
+                    </div>
+                    <div ng-show="messageMenuSelected" class="col s11 blue-grey lighten-1">
+                        <a href="#">
+                            <p class="montserrat white-text" ng-click="openMessagePage()" style="font-size:14px;">Inbox</p>
+                        </a>
+                        <a href="#">
+                            <p class="montserrat white-text" ng-click="openComposeMessagePage()" style="font-size:14px;">Compose</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-show="infoPageOpen" class="col 12 animated fadeIn">
+            <info-page></info-page>
+
+        </div>
+        <div ng-show="schedulePageOpen" class="col s12 animated fadeIn" >
+            <!--<div fc fc-options="calendarOoptions" ng-model="events"   >  </div> -->
+            <div ng-show="!scheduledJobPageOpen">
+                <schedule-page></schedule-page>
+            </div>
+             <div ng-show="scheduledJobPageOpen">
+                <scheduled-job-page></scheduled-job-page>
+            </div>
+        </div>
+        <div ng-show="timesheetPageOpen" class="col s12 animated fadeIn" style="height:59px;">
+
+            <timesheet-page></timesheet-page>
+
+        </div>
+        <div ng-show="messagePageOpen" class="col s12 animated fadeIn center-align" style="height:59px;">
+
+            <div ng-show="!composeMessagePageOpen  && !loadingMessages">
+
+                <message-page></message-page>
+
+            </div>
+            <div ng-show="!composeMessagePageOpen && loadingMessages">
+                <br>
+                <br>
+                <br>
+                <br>
+                <i class="fa fa-spin fa-circle-o-notch" style="font-size:40px;" aria-hidden="true"></i>
+
+            </div>
+            <div ng-show="composeMessagePageOpen &&!loadingMessages">
+
+                <compose-message-page></compose-message-page>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row hide-on-small-only">
         <div class="col s2" style="border-right:2px solid white;">
             <div>
                 <div class="animated" ng-class="{fadeOut:fadeOutMenu}">
