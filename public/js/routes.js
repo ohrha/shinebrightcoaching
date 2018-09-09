@@ -97,6 +97,13 @@
                 controllerAs: 'profile'
 
             })
+                       .when('/schedule/:date', {
+                templateUrl: '../views/pages/schedule.html',
+                name: "QLH | PROFILE",
+                controller: "profileCtrl",
+                controllerAs: 'profile'
+
+            })
                  .when('/clienttoc', {
                 templateUrl: '../views/pages/clienttoc.html',
                 name: "QLH | CLIENT TOC",

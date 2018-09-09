@@ -2,6 +2,7 @@
      display: flex;
      min-height: 100vh;
      flex-direction: column;
+     background-color:#414143;
  }
  main {
      flex: 1 0 auto;
@@ -26,14 +27,14 @@ a{
 }
 /* label focus color */
  .input-field input:focus + label {
-   color: black !important;
+   color: white !important;
    height:30%;
    border-radius:0px 0px 0px 0px;
  }
  /* label underline focus color */
  .row .input-field input:focus {
-   border-bottom: 1px solid black !important;
-   box-shadow: 0 1px 0 0 black !important
+   border-bottom: 1px solid white !important;
+   box-shadow: 0 1px 0 0 white !important
  }
 .railway{
     font-family: 'Raleway', sans-serif;
@@ -334,6 +335,7 @@ body, html{
    
 
 }
+
 .menuhover{
 color:white
 }
@@ -341,3 +343,41 @@ color:white
     color:#ff8533;
     transition:.3s;
 }
+h2{
+    color:grey;
+}
+th{
+    color:grey;
+}
+span{
+    color:grey;
+}
+.row-cover { overflow: hidden; }
+.row-wrap { margin: 0 -8.33333%; }
+ @media only screen and (max-width: 2000px) {
+    .row-wrap { margin: 0; }
+ }
+ .centered{
+     margin-left: 5%
+ }
+ .noUi-connect{
+    background: #2980b9;
+ }
+ .datehover{
+          border-top:2px solid grey;         
+         border-left:2px solid grey;
+ border-bottom:2px solid grey;
+  border-right:2px solid grey;
+
+
+
+ }
+ .datehover:hover{
+     border-top:2px solid white;
+               border-left:2px solid white;
+          border-bottom:2px solid white;
+            border-right:2px solid white;
+
+
+     
+ }

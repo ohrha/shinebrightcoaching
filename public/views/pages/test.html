@@ -1,607 +1,161 @@
-
-
-  <div class="parallax-container  " style="height:1000px;">
-    <div class = "row">
-    <div ng-show="navBar"class = "col s12 navbarshine animated center-align ptextnavmenu " ng-class = "{fadeOut:fadeout,fadeIn:fadein}">
-       
-        <div ng-show="photoPageOpen">
-        <div class = "col s12">
-                          <i ng-click="openCodingPage();"class = "material-icons white-text animated " ng-class = "{fadeOutLeft:fadeoutleft,fadeInRight:fadeinright}"style="font-size:14px;">smartphone</i>
-
-        </div>
-   
-        <div class = "col s5 right-align">
-
-        </div>
-        <div class = "col s2">
-
-        </div>
-        <div class = "col s5 left-align">
-                          <i ng-click="openMusicPage();"class = "material-icons white-text animated " ng-class = "{fadeInUp:fadeinup,fadeOutUp:fadeoutup}"style="font-size:15px;">music_note</i>
-
-        </div>
-
-
-                <div class = "col s5 right-align">
-
-        </div>
-        <div  class = "col s2">
-                <i ng-click="openShineHome();"class = "material-icons red-text text-lighten-5 animated"  ng-class = "{fadeOut:fadeouthome,fadeIn:fadeinhome, faster: fadeouthome}"style=" padding-right:3px; color: rgba(155,144,140,0);">camera</i>
-
-        </div>
-        <div class = "col s5 left-align">
-                          <i class = "material-icons white-text" style="opacity:0;">home</i>
-
-        </div>
-
-
-                <div class = "col s5 right-align">
-
-        </div>
-        <div class = "col s2">
-
-        </div>
-        <div class = "col s5 left-align">
-
-        </div>
-
-        
-
-              <div class = "col s5 right-align">
-                                              <i ng-click="openPhotoPage();"class = "material-icons red-text text-lighten-5 animated  "ng-class = "{fadeInDown:fadeindown,faster:fadeoutdown,fadeOutDown:fadeoutdown}"style="font-size:15px;">home</i>
-
-        </div>
-        <div class = "col s2">
-
-        </div>
-        <div class = "col s5 left-align">
-
-
-
-        </div>
-       
-        
-        
-        <div class = "col s12">
-                          <i ng-click="openContactPage()" class = "material-icons white-text animated"style="font-size:20px;"ng-class = "{fadeInLeft:fadeinleft,fadeOutRight:fadeoutright}">fingerprint</i>
-
-        </div>
-  
-  </div>
-       <div ng-show="codingPageOpen">
-        <div class = "col s12">
-                          <i ng-click="openCodingPage();"class = "material-icons white-text animated " ng-class = "{fadeOutLeft:fadeoutleft,fadeInRight:fadeinright}"style="font-size:14px;">home</i>
-
-        </div>
-   
-        <div class = "col s5 right-align">
-
-        </div>
-        <div class = "col s2">
-
-        </div>
-        <div class = "col s5 left-align">
-                          <i ng-click="openMusicPage();"class = "material-icons white-text animated " ng-class = "{fadeInUp:fadeinup,fadeOutUp:fadeoutup}"style="font-size:15px;">music_note</i>
-
-        </div>
-
-
-                <div class = "col s5 right-align">
-
-        </div>
-        <div  class = "col s2">
-                <i ng-click="openShineHome();"class = "material-icons red-text text-lighten-5 animated"  ng-class = "{fadeOut:fadeouthome,fadeIn:fadeinhome, faster: fadeouthome}"style=" padding-right:3px;">smartphone</i>
-
-        </div>
-        <div class = "col s5 left-align">
-                          <i class = "material-icons white-text" style="opacity:0;">home</i>
-
-        </div>
-
-
-                <div class = "col s5 right-align">
-
-        </div>
-        <div class = "col s2">
-
-        </div>
-        <div class = "col s5 left-align">
-
-        </div>
-
-        
-
-              <div class = "col s5 right-align">
-                                              <i ng-click="openPhotoPage();"class = "material-icons white-text animated  "ng-class = "{fadeInDown:fadeindown,faster:fadeoutdown,fadeOutDown:fadeoutdown}"style="font-size:15px;">camera</i>
-
-        </div>
-        <div class = "col s2">
-
-        </div>
-        <div class = "col s5 left-align">
-
-
-
-        </div>
-       
-        
-        
-        <div class = "col s12">
-                          <i ng-click="openContactPage()" class = "material-icons white-text animated"style="font-size:20px;"ng-class = "{fadeInLeft:fadeinleft,fadeOutRight:fadeoutright}">fingerprint</i>
-
-        </div>
-  
-  </div>
-      <div ng-show="contactPageOpen">
-        <div class = "col s12">
-                          <i ng-click="openCodingPage();"class = "material-icons white-text animated " ng-class = "{fadeOutLeft:fadeoutleft,fadeInRight:fadeinright}"style="font-size:14px;">smartphone</i>
-
-        </div>
-   
-        <div class = "col s5 right-align">
-
-        </div>
-        <div class = "col s2">
-
-        </div>
-        <div class = "col s5 left-align">
-                          <i ng-click="openMusicPage();"class = "material-icons white-text animated " ng-class = "{fadeInUp:fadeinup,fadeOutUp:fadeoutup}"style="font-size:15px;">music_note</i>
-
-        </div>
-
-
-                <div class = "col s5 right-align">
-
-        </div>
-        <div  class = "col s2">
-                <i ng-click="openShineHome();"class = "material-icons red-text text-lighten-5 animated"  ng-class = "{fadeOut:fadeouthome,fadeIn:fadeinhome, faster: fadeouthome}"style=" padding-right:3px;">fingerprint</i>
-
-        </div>
-        <div class = "col s5 left-align">
-                          <i class = "material-icons white-text" style="opacity:0;">home</i>
-
-        </div>
-
-
-                <div class = "col s5 right-align">
-
-        </div>
-        <div class = "col s2">
-
-        </div>
-        <div class = "col s5 left-align">
-
-        </div>
-
-        
-
-              <div class = "col s5 right-align">
-                                              <i ng-click="openPhotoPage();"class = "material-icons white-text animated  "ng-class = "{fadeInDown:fadeindown,faster:fadeoutdown,fadeOutDown:fadeoutdown}"style="font-size:15px;">camera</i>
-
-        </div>
-        <div class = "col s2">
-
-        </div>
-        <div class = "col s5 left-align">
-
-
-
-        </div>
-       
-        
-        
-        <div class = "col s12">
-                          <i  ng-click="openShineHome()"class = "material-icons white-text animated"style="font-size:20px;"ng-class = "{fadeInLeft:fadeinleft,fadeOutRight:fadeoutright}">home</i>
-
-        </div>
-  
-  </div>
-       <div ng-show="musicPageOpen">
-        <div class = "col s12">
-                          <i ng-click="openCodingPage();"class = "material-icons white-text animated " ng-class = "{fadeOutLeft:fadeoutleft,fadeInRight:fadeinright}"style="font-size:14px;">smartphone</i>
-
-        </div>
-   
-        <div class = "col s5 right-align">
-
-        </div>
-        <div class = "col s2">
-
-        </div>
-        <div class = "col s5 left-align">
-                          <i ng-click="openMusicPage();"class = "material-icons white-text animated " ng-class = "{fadeInUp:fadeinup,fadeOutUp:fadeoutup}"style="font-size:15px;">home</i>
-
-        </div>
-
-
-                <div class = "col s5 right-align">
-
-        </div>
-        <div  class = "col s2">
-                <i ng-click="openShineHome();"class = "material-icons red-text text-lighten-5 animated pulse"  ng-class = "{fadeOut:fadeouthome,fadeIn:fadeinhome, faster: fadeouthome}"style=" padding-right:3px;">music_note</i>
-
-        </div>
-        <div class = "col s5 left-align">
-                          <i class = "material-icons white-text" style="opacity:0;">home</i>
-
-        </div>
-
-
-                <div class = "col s5 right-align">
-
-        </div>
-        <div class = "col s2">
-
-        </div>
-        <div class = "col s5 left-align">
-
-        </div>
-
-        
-
-              <div class = "col s5 right-align">
-                                              <i ng-click="openPhotoPage();"class = "material-icons white-text animated  "ng-class = "{fadeInDown:fadeindown,faster:fadeoutdown,fadeOutDown:fadeoutdown}"style="font-size:15px;">camera</i>
-
-        </div>
-        <div class = "col s2">
-
-        </div>
-        <div class = "col s5 left-align">
-
-
-
-        </div>
-       
-        
-        
-        <div class = "col s12">
-                          <i ng-click="openContactPage();" class = "material-icons white-text animated"style="font-size:20px;"ng-class = "{fadeInLeft:fadeinleft,fadeOutRight:fadeoutright}">fingerprint</i>
-
-        </div>
-  
-  </div>
-    </div>
-
-    <div class = "row">
-    </div>
-     <div ng-show="musicPageOpen" class="ptextmusicpage animated "  ng-class = "{fadeOut:fadeout,fadeIn:fadein}">
-
-           <div class = "hide-on-med-and-up">
-                <div class ="row">
-</div>
-           <div class = "col s12 " >
-                     
-                     
-                     <div ng-show="codeDisplay"  class = "col s12 animated " ng-class = "{fadeOut:fadeoutCodeDisplay,faster:fadeoutCodeDisplay,fadeIn:fadeinCodeDisplay}"  >
-      <div class = "col s12">
-      <span class="border trans">
-       
-        
-        <div class = "col s2">
-          <br>
-        <div style="border:1px solid white; width:30px; height:33px; box-shadow:2px 2px 2px white;"class="animated fadeIn">
-                <i ng-show="fadeOutMusic"ng-click="playTrack()" class = "material-icons animated white-text" style="font-size:30px;" ng-class="{fadeOut: fadeoutmusicpage}"> play_arrow</i>
-                  <i ng-show="fadeInMusic" ng-click="stopTrack()" class = "material-icons animated white-text" style="font-size:30px;" ng-class="{fadeIn: fadeinmusicpage}"> stop</i>
-        </div>
-        </div>
-        <div class = "col s10 left-align">
-           <p class = "montserrat underline">My Bride</p>
-          <p class = "montserrat" style='font-size:16px;'>[piano,rain]| C#</p>
-        </div>
-        
-                </span>
-          
-      </div>
-                     </div>
-
-
-         </div>
-           </div>
 <div class = "row">
-</div>
-<div class = "row">
-</div>
-           <div class = "hide-on-small-only"ng-click="openShineHome();">
-             <div class ="row">
-</div>
-<div class ="row">
-</div>
-<div class ="row">
-</div>
-<div class ="row">
-</div>
-<div class ="row">
-</div>
-<!--
-            <div class = "col s2 center-align">
-      <span class="border trans ">
-                <p class = "animated slideInRight" style="text-decoration:underline;" > Music</p>
-                </span>
-     
-         </div>-->
-                   <div class = "col s12 center-align " >
-                     <div class = "row">
-                     </div>
-                      
-                     
-                     <div ng-show="codeDisplay"  class = "col s12 animated center-align" ng-class = "{fadeOut:fadeoutCodeDisplay,fadeIn:fadeinCodeDisplay}"  >
-      
-      <div class = "col s12 center-align">
-      <span class="border trans">
-        <div class ="row">
-        </div>
-         <div class = "row">
-                     </div>
-                      <div class = "row">
-                     </div>
-                        <div class = "row">
-                     </div>
-                        <div class = "row">
-                     </div>
-        <div class = "col s5 right-align">
-          <br>
-        <div style="border:1px solid white; width:30px; height:33px; box-shadow:2px 2px 2px white; float:right;">
-                <i ng-show="fadeOutMusic"ng-click="playTrack()" class = "material-icons animated white-text" style="font-size:30px;" ng-class="{fadeOut: fadeoutmusicpage}"> play_arrow</i>
-                  <i ng-show="fadeInMusic"ng-click="stopTrack()" ng-click="playTrack()" class = "material-icons animated white-text" style="font-size:30px;" ng-class="{fadeIn: fadeinmusicpage}"> stop</i>
-        </div>
-        </div>
-        <div class = "col s7 left-align">
-           <p class = "montserrat underline">My Bride</p>
-          <p class = "montserrat" style='font-size:16px;'>[piano,rain]| C#</p>
-        </div>
-       
-     
-                </span>
-          
-      </div>
-                     </div>
+  <div class = "col s2" style="border:2px solid white; height:100%;">
+    <div class = "col s12" style="border-bottom:2px solid grey;">
+      <p class = 'montserrat grey-text' style="font-size:20px;">Employee List</p>
 
-
-         </div>
-           </div>
-
-
-       </div>
-
-          
-       <div ng-show="codingPageOpen" class="ptextcodingpage animated "  ng-class = "{fadeOut:fadeout,fadeIn:fadein}">
-
-           <div class = "hide-on-small-only">
-             <div class ="row">
-</div>
-<div class ="row">
-</div>
-<div class ="row">
-</div>
-            <div class = "col s3 center-align">
-      <span class="border trans ">
-                <p class = "animated slideInRight" style="text-decoration:underline;" > Projects</p>
-                </span>
-     
-         </div>
-                   <div class = "col s9 center-align" >
-                     <div class = "row">
-                     </div>
-                       <div class = "row">
-                     </div>
-                       <div class = "row">
-                     </div>
-                     <div ng-show="codeDisplay"  class = "col s12 animated" style="border:2px solid white;" ng-class = "{fadeOut:fadeoutCodeDisplay,fadeIn:fadeinCodeDisplay}"  >
-      <div class = "col s12">
-      <span class="border trans">
-                <p  ng-click="openRosePage();" > ROSE</p>
-                </span>
-                <span class="border trans">
-                <p ng-click="openQlhPage();" > QLH</p>
-                </span>
-                     <span class="border trans">
-                <p ng-click="openHouseOfShoesPage();"  > HOUSE OF SHOES</p>
-                </span>
-      </div>
-                     </div>
-
-
-         </div>
-           </div>
-
-           <div class = "hide-on-med-and-up">
-             <div class ="row">
-</div>
-<div class ="row">
-</div>
-<div class ="row">
-</div>
-
-<div class ="row">
-</div>
-<div class ="row">
-</div>
-            <div class = "col s3 center-align animated slideInDown" >
-      
-                     <span class="border trans ">
-                <span class = "animated slideInDown" >   <i ng-click="openCodingPage();" class="material-icons">smartphone</i>|
-</span>
-                </span>
-                    
-         </div>
-                   <div class = "col s9 center-align" >
-                    
-                     
-                       
-                     <div ng-show="codeDisplay"  class = "col s12 animated" style="border:2px solid white;" ng-class = "{fadeOut:fadeoutCodeDisplay,fadeIn:fadeinCodeDisplay}"  >
-      <div class = "col s12">
-      <span class="border trans">
-                <p  ng-click="openRosePage();" > ROSE</p>
-                </span>
-                <span class="border trans">
-                <p ng-click="openQlhPage();"  > QLH</p>
-                </span>
-                      <span class="border trans">
-                <p ng-click="openHouseOfShoesPage();"  > HOUSE OF SHOES</p>
-                </span>
-      </div>
-                     </div>
-         </div>
-
-         
-           </div>
-
-
-       </div>
-
-          
- <div ng-show="qlhPageOpen" class = "ptext animated fadeIn">
-         <p class = "montserrat orange-text text-lighten-3"> Quality Labour Hire </p>
-          
-          <div class = "col s7">
-            <br>
-          <img class="responsive-img" src="../img/QLH.jpg">
-            
-          </div>
-          <div class = "col s5">
-             
-             <p class = "montserrat white-text" style="text-decoration:underline;"> Employee Management System </p>
-          <div class = "row">
-          <div class = "col s12" style="border:2px solid white;">
-            <p class = "flow-text montserrat" style:"font-size:15px;">flajsdlkfjaklsdjflajskldjflkajs
-              kdfklajksdjfklasdfj
-              adsjfklasdjflkajsldkfjalkd
-              asdjflajsdlkfa
-              asdflaksdjfklajsldfajskdlfajd
-              adsfjlasjdfkljaksdf
-              asdfjlasdjfklasdfkl</p>
-          </div>
-          </div>
-          </div>
-        </div>
-
- <div ng-show="houseOfShoesPageOpen" class = "ptext animated fadeIn">
-         <p class = "montserrat pink-text text-lighten-5"> The House Of Shoes </p>
-          
-          <div class = "col s7">
-            <br>
-          <img class="responsive-img" src="../img/MEAN-Shop-W-Url.jpg">
-            
-          </div>
-          <div class = "col s5">
-             
-             <p class = "montserrat white-text" style="text-decoration:underline;"> Shop Solution </p>
-          <div class = "row">
-          <div class = "col s12" style="border:2px solid white;">
-            <p class = "flow-text montserrat" style:"font-size:15px;">flajsdlkfjaklsdjflajskldjflkajs
-              kdfklajksdjfklasdfj
-              adsjfklasdjflkajsldkfjalkd
-              asdjflajsdlkfa
-              asdflaksdjfklajsldfajskdlfajd
-              adsfjlasjdfkljaksdf
-              asdfjlasdjfklasdfkl</p>
-          </div>
-          </div>
-          </div>
-        </div>
-        
-        <div ng-show="rosePageOpen" class = "ptext animated fadeIn">
-         <p class = "montserrat pink-text text-lighten-5"> Rose Building Maintenance </p>
-          
-          <div class = "col s7">
-            <br>
-          <img class="responsive-img" src="../img/ROSE-APP-W-URL.jpg">
-            
-          </div>
-          <div class = "col s5">
-             
-             <p class = "montserrat white-text" style="text-decoration:underline;"> Inventory Management/Tracking </p>
-          <div class = "row">
-          <div class = "col s12" style="border:2px solid white;">
-            <p class = "flow-text montserrat" style:"font-size:15px;">flajsdlkfjaklsdjflajskldjflkajs
-              kdfklajksdjfklasdfj
-              adsjfklasdjflkajsldkfjalkd
-              asdjflajsdlkfa
-              asdflaksdjfklajsldfajskdlfajd
-              adsfjlasjdfkljaksdf
-              asdfjlasdjfklasdfkl</p>
-          </div>
-          </div>
-          </div>
-        </div>
-
-       <div ng-show="shineHomeOpen" class="ptext animated " ng-class = "{fadeOut:fadeout,fadeIn:fadein}">
-         <div ng-click="openCodingPage();" class = "col s12 center-align">
-               <span class="border trans">
-  <i  class="material-icons animated fadeIn">smartphone</i>
-    <div class = "row">
-                       </div>
-                        <div class = "row">
-                       </div>
-                </span>
-         </div>
-         <div class = "col s2 right-align">
-           <br>
-           
-                 <span class="border trans">
-  <i class="material-icons animated fadeIn
-  ">camera</i>
-                </span>
-         </div>
-         <div class = "col s8 center-align">
-        <span class="border trans">
-                <p > SHINE DESIGNS</p>
-                </span>
-         </div>
-   <div class = "col s2 left-align">
-           
-           <br>
-                 <span >
-  <i ng-click="openMusicPage()" class="material-icons white-text animated fadeIn" >music_note</i>
-                </span>
-         </div>
-                     <div class = "col s12 center-align">
-                       <div class = "row">
-                       </div>
-                        <div class = "row">
-                       </div>
-               <span class="border trans">
-  <i class="material-icons animated fadeIn">fingerprint</i>
-                </span>
-         </div>
     </div>
-    
+    <div class = "col s12" style="border-bottom:2px solid grey;">
+      <p class = 'montserrat grey-text' style="font-size:20px;">Employee List</p>
 
+    </div>
+    <div class = "col s12" style="border-bottom:2px solid grey;">
+      <p class = 'montserrat grey-text' style="font-size:20px;">Employee List</p>
 
-    <div class="parallax"><img src="../img/backgroundCITYsmall.jpg"></div>
+    </div>
+    <div class = "col s12" style="border-bottom:2px solid grey;">
+      <p class = 'montserrat grey-text' style="font-size:20px;">Employee List</p>
+
+    </div>
   </div>
+  <div class = "col s10 center-align">
+<p class = 'montserrat grey-text' style="font-size:20px;">Employee List</p>
+    <div class = "row">
+    </div>
 
 
+<div ng-show='!page1' class = "animated fadeIn">
+
+<div class = "col s2">
+</div>
+<div class = "col s2 left-align" style="border:2px solid white; ">
+  <a href="/profile/dianamoon">
+  <div  style="border-radius:100px; background-image:url('./img/moon.jpg'); border:2px solid white; width:80px; height:80px;">
   </div>
-   <script>
-    $(document).ready(function () {
-       $('.parallax').parallax();
-      console.log($('.tap-target'))
-      /*Form Validation*/
-          setTimeout(function () {
+  </a>
+  <div class = "col s12"style="border-bottom:1px solid white;">
+  </div>
+  <p class = 'montserrat grey-text'>Name: <span class = "railway">Diana Moon</span></p>
+    <p class = 'montserrat'>Email: <span class = "railway">Diana Moon</span></p>
 
-        //$('.tap-target').tapTarget('open');
-        $('select').material_select();
-        $('.carousel.carousel-slider').carousel({ fullWidth: true });
-      }, 20000);
+  <p class = 'montserrat'>Phone Number: <span class = "railway">Diana Moon</span></p>
 
-    
-      /*Materialize initializations */
   
-      //This method wasn't working
-      // $('select').material_select();
-      // $('select:not([multiple])').material_select();
-      console.log($('select'))
-      $('.carousel.carousel-slider').carousel({ fullWidth: true });
 
-      $(".button-collapse").sideNav({
-        menuWidth: 200, // Default is 300
-        edge: 'left', // Choose the horizontal origin
-        closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-        draggable: true // Choose whether you can drag to open on touch screens,
+</div>
 
-      }
-      );
+<div class = "col s2 left-align" style="border:2px solid white; ">
+  <div style="border-radius:100px; background-image:url('./img/pine.jpg'); border:2px solid white; width:80px; height:80px;">
+  </div>
+  <div class = "col s12"style="border-bottom:1px solid white;">
+  </div>
+ <p class = 'montserrat grey-text'>Name: <span class = "railway">Diana Moon</span></p>
+    <p class = 'montserrat'>Email: <span class = "railway">Diana Moon</span></p>
 
-    })
-  </script>
+  <p class = 'montserrat'>Phone Number: <span class = "railway">Diana Moon</span></p>
+
+  
+
+</div>
+
+<div class = "col s2 left-align" style="border:2px solid white; ">
+  <div style="border-radius:100px; background-image:url('./img/moon.jpg'); border:2px solid white; width:80px; height:80px;">
+  </div>
+  <div class = "col s12"style="border-bottom:1px solid white;">
+  </div>
+ <p class = 'montserrat grey-text'>Name: <span class = "railway">Diana Moon</span></p>
+    <p class = 'montserrat'>Email: <span class = "railway">Diana Moon</span></p>
+
+  <p class = 'montserrat'>Phone Number: <span class = "railway">Diana Moon</span></p>
+
+  
+
+</div>
+
+<div class = "col s2 left-align" style="border:2px solid white; ">
+  <div style="border-radius:100px; background-image:url('./img/moon.jpg'); border:2px solid white; width:80px; height:80px;">
+  </div>
+  <div class = "col s12"style="border-bottom:1px solid white;">
+  </div>
+ <p class = 'montserrat grey-text'>Name: <span class = "railway">Diana Moon</span></p>
+    <p class = 'montserrat'>Email: <span class = "railway">Diana Moon</span></p>
+
+  <p class = 'montserrat'>Phone Number: <span class = "railway">Diana Moon</span></p>
+
+  
+</div>
+
+<div class = "col s2">
+</div>
+</div>
+
+<div ng-show='page1' class = "animated fadeIn">
+
+<div class = "col s2">
+</div>
+<div class = "col s2 left-align" style="border:2px solid white; ">
+  <div style="border-radius:100px; background-image:url('./img/pine.jpg'); border:2px solid white; width:80px; height:80px;">
+  </div>
+  <div class = "col s12"style="border-bottom:1px solid white;">
+  </div>
+  <p class = 'montserrat grey-text'>Name: <span class = "railway">Diana Moon</span></p>
+    <p class = 'montserrat'>Email: <span class = "railway">Diana Moon</span></p>
+
+  <p class = 'montserrat'>Phone Number: <span class = "railway">Diana Moon</span></p>
+
+  
+
+</div>
+
+<div class = "col s2 left-align" style="border:2px solid white; ">
+  <div style="border-radius:100px; background-image:url('./img/moon.jpg'); border:2px solid white; width:80px; height:80px;">
+  </div>
+  <div class = "col s12"style="border-bottom:1px solid white;">
+  </div>
+ <p class = 'montserrat grey-text'>Name: <span class = "railway">Diana Moon</span></p>
+    <p class = 'montserrat'>Email: <span class = "railway">Diana Moon</span></p>
+
+  <p class = 'montserrat'>Phone Number: <span class = "railway">Diana Moon</span></p>
+
+  
+
+</div>
+
+<div class = "col s2 left-align" style="border:2px solid white; ">
+  <div style="border-radius:100px; background-image:url('./img/moon.jpg'); border:2px solid white; width:80px; height:80px;">
+  </div>
+  <div class = "col s12"style="border-bottom:1px solid white;">
+  </div>
+ <p class = 'montserrat grey-text'>Name: <span class = "railway">Diana Moon</span></p>
+    <p class = 'montserrat'>Email: <span class = "railway">Diana Moon</span></p>
+
+  <p class = 'montserrat'>Phone Number: <span class = "railway">Diana Moon</span></p>
+
+  
+
+</div>
+
+<div class = "col s2 left-align" style="border:2px solid white; ">
+  <div style="border-radius:100px; background-image:url('./img/moon.jpg'); border:2px solid white; width:80px; height:80px;">
+  </div>
+  <div class = "col s12"style="border-bottom:1px solid white;">
+  </div>
+ <p class = 'montserrat grey-text'>Name: <span class = "railway">Diana Moon</span></p>
+    <p class = 'montserrat'>Email: <span class = "railway">Diana Moon</span></p>
+
+  <p class = 'montserrat'>Phone Number: <span class = "railway">Diana Moon</span></p>
+
+  
+</div>
+
+<div class = "col s2">
+</div>
+</div>
+
+<div class = "col s6 center-align">
+  <i class=" medium material-icons" >chevron_left</i>
+</div>
+<div class = "col s6 center-align">
+  <i class=" medium material-icons" ng-click="changePage()" >chevron_right</i>
+</div>
+  </div>
+</div>

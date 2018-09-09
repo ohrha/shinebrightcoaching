@@ -2,8 +2,8 @@
 
 //console.log("app.js loaded");
 
-var app = angular.module('qlc',['appRoutes', 'mainController',"homeController"]);
-																																																  
+var app = angular.module('qlc',['appRoutes', 'mainController',"homeController","profileController","chart.js",'storeDirectives']);
+												//,'angular-fullcalendar'																																				  
 app.config(function($compileProvider){
 
 	//$httpProvider.interceptors.push('AuthInterceptors');
@@ -12,8 +12,13 @@ app.config(function($compileProvider){
 	$compileProvider.preAssignBindingsEnabled(true);
 
 });
-app.controller('QlhController', [  function() {
+app.controller('QlhController', [  function($scope) {
 console.log("QlhController")
+$scope.closeModal = function(){
+	              $('#modal1').modal('close');
+
+
+}
 
 
 }])

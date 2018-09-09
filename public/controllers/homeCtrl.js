@@ -20,6 +20,18 @@
         $scope.borderRight = false;
         $scope.borderLeft = false;
         $scope.borderBottom = false;
+        $scope.page1 = false;
+        $scope.changePage = function(){
+
+            if(!$scope.page1){
+
+            $scope.page1 = true;
+                
+            }else{
+                $scope.page1 = false;
+            }
+
+        }
         $scope.openQlhPage = function () {
             console.log("clicked")
             $scope.fadein = false;
