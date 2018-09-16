@@ -143,6 +143,27 @@ app.directive('timesheetPage',function(){
 		}
 
 	});
+	 app.directive('scheduleSDOrCiPage',function(){
+
+
+		return{
+
+			restrict: 'E',
+			templateUrl:'../views/schedule-s-d-or-ci-page.html',
+				controller: function() {
+					
+    	this.imageIndex = 0;
+		     this.labels = ["Activity"];
+  this.data = [ 100];
+    	this.currentImageChange = function(imageNumber) {
+      	console.log(imageNumber);
+      	this.imageIndex = imageNumber || 0;
+    	};},
+		controllerAs: 'scheduledJob'
+		
+		}
+
+	});
 	
     app.directive('landingGalleryShop',function(){
 

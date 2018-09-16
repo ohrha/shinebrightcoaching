@@ -1,4 +1,4 @@
 module.exports =
 {
-    url: 'mongodb://ohrha:ohrha@ds251849.mlab.com:51849/qualitylabourhire',
+    url: 'mongodb://ohrhaahrho:dragonball1@ds155862.mlab.com:55862/shinebrightcoaching',
 }

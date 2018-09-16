@@ -8,29 +8,38 @@
 <div class = "row center-align show-on-small">
     
    <div class ="col s3 datehover">
-       <i class = "material-icons red-text">clear</i>
+      
+
+<div ng-show = "slot1 == 6" ng-click="openModal()">
+ <span class = " red-text">Fully Booked</span>
        <p class = "montserrat">8:00am </p>
               <span class = "montserrat">- </span>
 
        <p class = "montserrat">8:50am </p>
-
+       <div class = "row">
+       </div>
+</div>
 
    </div>
     <div class ="col s3 datehover">
-        <i class = "material-icons red-text">clear</i>
-               <p class = "montserrat">9:00am </p>
-              <p class = "montserrat">- </p>
+<div ng-show = "slot2 <= 2"ng-click="openModal()">
+ <span class = " green-text">Discovery Or Checkup Available</span>
+       <p class = "montserrat">9:00am </p>
+              <span class = "montserrat">- </span>
 
        <p class = "montserrat">9:50am </p>
-
+</div>
    </div>
     <div class ="col s3 datehover">
-        <i class = "material-icons red-text">clear</i>
-               <p class = "montserrat">10:00am </p>
-              <p class = "montserrat">- </p>
+ <div ng-show = "slot3 == 0" ng-click="openScheduleSDOrCiPage()">
+ <span class = " green-text">Fully Available</span>
+       <p class = "montserrat">10:00am </p>
+              <span class = "montserrat">- </span>
 
        <p class = "montserrat">10:50am </p>
-
+       <div class = "row">
+       </div>
+</div>
    </div>
     <div class ="col s3 datehover">
         <i class = "material-icons green-text">check</i>

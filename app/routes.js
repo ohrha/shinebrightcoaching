@@ -3,6 +3,7 @@ var PayPeriod = require('./models/payperiod')
 var Client = require('./models/client')
 var Location = require('./models/location');
 var Supervisor = require('./models/supervisor')
+var Date = require('./models/date');
 var Hogan = require('hogan.js')
 var bcrypt = require('bcrypt-nodejs');
 var fs = require('fs');
@@ -58,7 +59,44 @@ module.exports = function (app) {
         })
 
         */
+    app.put('/months/getdate/:id', function(req,res){
 
+        Date.findOne({_id:req.params.id}, function(err,date){
+            if(err)throw err;
+            if(!date){
+                res.json({success: false, message:"Date not found.."})
+            }else{
+                res.json({success: true, message:"Date found..", date:date})
+            }
+        })
+
+    })
+    app.post('/months/createdate', function(req,res){
+
+        var date = new Date()
+        date[1] = [1,1,1,1,1,1],
+        date[2] = [1,1,1,1,1,1],
+        date[3] = [1,1,1,1,1,1],
+        date[4] = [1,1,1,1,1,1],
+        date[5] = [1,1,1,1,1,1],
+        date[6] = [1,1,1,1,1,1],
+        date[7] = [1,1,1,1,1,1],
+        date[8] = [1,1,1,1,1,1]
+        date.name = req.body.name,
+        date.month = req.body.month,
+        date.date = req.body.date
+        date.save(function(err,date){
+
+            if(err){
+                res.json({success:false, message: "Save failed...",err:err})
+            }else{
+                res.json({success: true, message: "Successful save...", date: date})
+            }
+
+
+        })
+
+    })
     app.post('/users/addhourstopayperioddelinquent', function (req, res) {
         console.log(req.body)
         User.find({ name: req.body.currentuser }, function (err, user) {

@@ -1,13 +1,13 @@
 (function () {
 
 
-    var app = angular.module('profileController', [])
+    var app = angular.module('profileController', ['userServices'])
     app.config(function () {
 
         console.log("Profile Controller Loaded")
     })
 
-    app.controller('profileCtrl', function ($scope,  $routeParams, $timeout, $window, $rootScope) {
+    app.controller('profileCtrl', function ($scope,  $routeParams, $timeout, $window, $rootScope,User) {
         $scope.$on('$routeChangeSuccess', function () {
             $('.carousel').carousel();
         });
@@ -18,19 +18,73 @@
          $scope.messagePageOpen = false;
          $scope.messageMenuSelected = false;
          $scope.scheduledJobPageOpen = false;
+         $scope.scheduleSDOrCiPageOpen = false;
          $scope.currentDate = ""
          $scope.openModal = function(){
              console.log("clicked")
               $('#modal1').modal('open');
          }
-         $scope.openScheduledJobPage = function(currentdate){
+         $scope.openScheduleSDOrCiPage= function(){
+             console.log("clicked")
+             if(!$scope.scheduleSDOrCiPageOpen){
+                 $scope.scheduledJobPageOpen = false;
+                 $scope.scheduleSDOrCiPageOpen = true;
+
+             }
+         }
+         $scope.reducer = function(acc,currentValue){
+             return acc + currentValue
+         }
+         $scope.slot1 = 0
+         $scope.slot2 = 0
+         $scope.slot3 = 0
+         $scope.slot4 = 0
+         $scope.slot5 = 0
+         $scope.slot6 = 0
+         $scope.slot7 = 0
+         $scope.slot8 = 0
+         $scope.slotTotal = 0;
+         $scope.openScheduledJobPage = function(currentdate,id){
              if(!$scope.scheduledJobPageOpen){
                  $scope.scheduledJobPageOpen = true;
                  $scope.currentDate = currentdate
+                 User.getDate(id).then(function(data){
+                     console.log(data)
+                     console.log(data.data.date[1].reduce($scope.reducer))
+                              $scope.slot1 = data.data.date[1].reduce($scope.reducer)
+                                $scope.slot2 = data.data.date[2].reduce($scope.reducer)
+                                $scope.slot3 = data.data.date[3].reduce($scope.reducer)
+                                $scope.slot4 = data.data.date[4].reduce($scope.reducer)
+                                $scope.slot5 = data.data.date[5].reduce($scope.reducer)
+                                $scope.slot6 = data.data.date[6].reduce($scope.reducer)
+                                $scope.slot7 = data.data.date[7].reduce($scope.reducer)
+                                $scope.slot8 = data.data.date[8].reduce($scope.reducer)
+                                $scope.slotTotal = $scope.slot1 + $scope.slot2 + $scope.slot3 + $scope.slot4 + $scope.slot5 + $scope.slot6 + 
+                                                   $scope.slot7 + $scope.slot8
+                                console.log($scope.slotTotal)
+                 })
                  console.log(currentdate)
              }
          }
+         $scope.dateInfo = {
+             name:"October 1",
+             date:"1",
+             month:"October",
+             1:[1,1,1,1,1,1],
+             2:[1,1,1,1,1,1],
+             3:[1,1,1,1,1,1],
+             4:[1,1,1,1,1,1],
+             5:[1,1,1,1,1,1],
+             6:[1,1,1,1,1,1],
+             7:[1,1,1,1,1,1],
+             8:[1,1,1,1,1,1]
+            
+             
+         }
+            /*User.createDate($scope.dateInfo).then(function(data){
 
+                console.log(data)
+            })*/
          $scope.fadeOutMenu = false;
          console.log(new Date())
         $scope.calendarOoptions =  {

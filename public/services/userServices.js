@@ -1,13 +1,19 @@
 console.log("testing")
-angular.module('userServices',['authServices']).config(function(){
+angular.module('userServices',[]).config(function(){
 
     console.log("UserService")
 
 })
-.factory('User', function($http,Auth,AuthToken){
+.factory('User', function($http){
 
     userFactory = {};
     //User.create(regData)
+    userFactory.createDate = function(dateInfo){
+        return $http.post('/api/months/createdate',dateInfo)
+    }
+    userFactory.getDate = function(id){
+        return $http.put('/api/months/getdate/'+id)
+    }
     userFactory.create = function(regData){
 
         return $http.post('/api/users', regData);
@@ -151,15 +157,7 @@ angular.module('userServices',['authServices']).config(function(){
         return $http.post('/api/users/changepayperiodhistoryentrytounpaid', payperiodDetails)
     }
 
-       //User.getPermission();
- userFactory.getUserClass= function(){
-    if(AuthToken.getToken()){
-        var token = AuthToken.getToken()
-            return $http.put('/api/getuserclass'+token);
 
-    }
-
- }
     userFactory.generatePdf = function(){
         return $http.get('/api/generatepdf')
     }
