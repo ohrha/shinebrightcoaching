@@ -35,7 +35,25 @@ console.log(hearto);
 }
 
 
+
 });
+app.directive('nineToTen',function(){
+
+
+		return{
+
+			restrict: 'E',
+			templateUrl:'../views/9-10.html',
+					controller: function() {
+    	this.imageIndex = 0;
+    	this.currentImageChange = function(imageNumber) {
+      	console.log(imageNumber);
+      	this.imageIndex = imageNumber || 0;
+    	};},
+		controllerAs: 'gallery'
+		}
+
+	});
 app.directive('composeMessagePage',function(){
 
 

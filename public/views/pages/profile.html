@@ -50,11 +50,14 @@
         </div>
         <div ng-show="schedulePageOpen" class="col s12 animated fadeIn" >
             <!--<div fc fc-options="calendarOoptions" ng-model="events"   >  </div> -->
-            <div ng-show="!scheduledJobPageOpen && !scheduleSDOrCiPageOpen">
+            <div ng-show="!scheduledJobPageOpen && !scheduleSDOrCiPageOpen && !bookingPageOpen">
                 <schedule-page></schedule-page>
             </div>
              <div ng-show="scheduledJobPageOpen">
                 <scheduled-job-page></scheduled-job-page>
+            </div>
+            <div ng-show="bookingPageOpen">
+                <nine-to-ten></nine-to-ten>
             </div>
                <div ng-show="scheduleSDOrCiPageOpen">
                 <schedule-s-d-or-ci-page></schedule-s-d-or-ci-page>

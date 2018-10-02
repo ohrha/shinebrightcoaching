@@ -7,225 +7,275 @@
         console.log("Profile Controller Loaded")
     })
 
-    app.controller('profileCtrl', function ($scope,  $routeParams, $timeout, $window, $rootScope,User) {
+    app.controller('profileCtrl', function ($scope, $routeParams, $timeout, $window, $rootScope, User) {
         $scope.$on('$routeChangeSuccess', function () {
             $('.carousel').carousel();
         });
-         
-         $scope.infoPageOpen = true;
-         $scope.schedulePageOpen = false;
-         $scope.timesheetPageOpen = false;
-         $scope.messagePageOpen = false;
-         $scope.messageMenuSelected = false;
-         $scope.scheduledJobPageOpen = false;
-         $scope.scheduleSDOrCiPageOpen = false;
-         $scope.currentDate = ""
-         $scope.openModal = function(){
-             console.log("clicked")
-              $('#modal1').modal('open');
-         }
-         $scope.openScheduleSDOrCiPage= function(){
-             console.log("clicked")
-             if(!$scope.scheduleSDOrCiPageOpen){
-                 $scope.scheduledJobPageOpen = false;
-                 $scope.scheduleSDOrCiPageOpen = true;
 
+        $scope.infoPageOpen = true;
+        $scope.schedulePageOpen = false;
+        $scope.timesheetPageOpen = false;
+        $scope.messagePageOpen = false;
+        $scope.messageMenuSelected = false;
+        $scope.scheduledJobPageOpen = false;
+        $scope.scheduleSDOrCiPageOpen = false;
+        $scope.currentDate = ""
+        $scope.openModal = function () {
+            console.log("clicked")
+            $('#modal1').modal('open');
+        }
+        $scope.openScheduleSDOrCiPage = function () {
+            console.log("clicked")
+            if (!$scope.scheduleSDOrCiPageOpen) {
+                $scope.scheduledJobPageOpen = false;
+                $scope.scheduleSDOrCiPageOpen = true;
+
+            }
+        }
+        $scope.reducer = function (acc, currentValue) {
+            return acc + currentValue
+        }
+        $scope.slot1 = 0
+        $scope.slot2 = 0
+        $scope.slot3 = 0
+        $scope.slot4 = 0
+        $scope.slot5 = 0
+        $scope.slot6 = 0
+        $scope.slot7 = 0
+        $scope.slot8 = 0
+        $scope.slotTotal = 0;
+        $scope.bookingPageOpen = false;
+        $scope.openBookingPage = function (slot) {
+            $scope.bookingPageOpen = true;
+            $scope.scheduledJobPageOpen = false;
+            $scope.scheduleSDOrCiPageOpen = false;
+            console.log($scope.dateInfo[slot])
+            if ($scope.dateInfo[slot][0] == 1 && $scope.dateInfo[slot][1] == 1 && $scope.dateInfo[slot][2] == 0 && $scope.dateInfo[slot][3] == 0 && $scope.dateInfo[slot][4] == 0 && $scope.dateInfo[slot][5] == 0) {
+
+                //$scope.
+                if(slot == 2){
+
+                    console.log("9:40am available")
+                    console.log("9:30am available")
+
+                }
+
+            }
+                    if ($scope.dateInfo[slot][0] == 1 && $scope.dateInfo[slot][1] == 1 && $scope.dateInfo[slot][2] == 1 && $scope.dateInfo[slot][3] == 0 && $scope.dateInfo[slot][4] == 0 && $scope.dateInfo[slot][5] == 0) {
+
+                //$scope.
+                if(slot == 2){
+
+                    //console.log("9:40am available")
+                    console.log("9:30am available")
+
+                }
+
+            }
+            if ($scope.dateInfo[slot][1] == 1) {
+
+            }
+            if ($scope.dateInfo[slot][2] == 1) {
+
+            }
+            if ($scope.dateInfo[slot][3] == 1) {
+
+            }
+            if ($scope.dateInfo[slot][4] == 1) {
+
+            }
+            if ($scope.dateInfo[slot][5] == 1) {
+
+            }
+            if ($scope.dateInfo[slot][6] == 1) {
+
+            }
+            console.log($scope.slot2)
+        }
+        $scope.openScheduledJobPage = function (currentdate, id) {
+            console.log(id)
+            if (!$scope.scheduledJobPageOpen) {
+                $scope.scheduledJobPageOpen = true;
+                $scope.currentDate = currentdate
+                User.getDate(id).then(function (data) {
+                    console.log(data)
+                    $scope.dateInfo = data.data.date
+                    console.log(data.data.date[1].reduce($scope.reducer))
+                    $scope.slot1 = data.data.date[1].reduce($scope.reducer)
+                    $scope.slot2 = data.data.date[2].reduce($scope.reducer)
+                    $scope.slot3 = data.data.date[3].reduce($scope.reducer)
+                    $scope.slot4 = data.data.date[4].reduce($scope.reducer)
+                    $scope.slot5 = data.data.date[5].reduce($scope.reducer)
+                    $scope.slot6 = data.data.date[6].reduce($scope.reducer)
+                    $scope.slot7 = data.data.date[7].reduce($scope.reducer)
+                    $scope.slot8 = data.data.date[8].reduce($scope.reducer)
+                    $scope.slotTotal = $scope.slot1 + $scope.slot2 + $scope.slot3 + $scope.slot4 + $scope.slot5 + $scope.slot6 +
+                        $scope.slot7 + $scope.slot8
+                    console.log($scope.slotTotal)
+                })
+                console.log(currentdate)
+            }
+        }
+        $scope.dateInfo = {
+            name: "October 1",
+            date: "1",
+            month: "October",
+            1: [1, 1, 1, 1, 1, 1],
+            2: [1, 1, 1, 1, 1, 1],
+            3: [1, 1, 1, 1, 1, 1],
+            4: [1, 1, 1, 1, 1, 1],
+            5: [1, 1, 1, 1, 1, 1],
+            6: [1, 1, 1, 1, 1, 1],
+            7: [1, 1, 1, 1, 1, 1],
+            8: [1, 1, 1, 1, 1, 1]
+
+
+        }
+        /*User.createDate($scope.dateInfo).then(function(data){
+
+            console.log(data)
+        })*/
+        $scope.fadeOutMenu = false;
+        console.log(new Date())
+        $scope.calendarOoptions = {
+            //.. Fullcalendar.js options click here to view details
+            contentHeight: 600
+        };
+        $scope.events = [
+            /* {
+                 title: 'My Event',
+                 start: new Date(),// :) how you can use Date
+                 description: 'This is a cool event',
+                 color:'#5f6dd0'
+             },
+             {
+                 title: 'My Event',
+                 start: new moment().add(1,'days'), // :) or MomentJS
+                 description: 'This is a cool event',
+                 color:'#af6dd0'
              }
-         }
-         $scope.reducer = function(acc,currentValue){
-             return acc + currentValue
-         }
-         $scope.slot1 = 0
-         $scope.slot2 = 0
-         $scope.slot3 = 0
-         $scope.slot4 = 0
-         $scope.slot5 = 0
-         $scope.slot6 = 0
-         $scope.slot7 = 0
-         $scope.slot8 = 0
-         $scope.slotTotal = 0;
-         $scope.openScheduledJobPage = function(currentdate,id){
-             if(!$scope.scheduledJobPageOpen){
-                 $scope.scheduledJobPageOpen = true;
-                 $scope.currentDate = currentdate
-                 User.getDate(id).then(function(data){
-                     console.log(data)
-                     console.log(data.data.date[1].reduce($scope.reducer))
-                              $scope.slot1 = data.data.date[1].reduce($scope.reducer)
-                                $scope.slot2 = data.data.date[2].reduce($scope.reducer)
-                                $scope.slot3 = data.data.date[3].reduce($scope.reducer)
-                                $scope.slot4 = data.data.date[4].reduce($scope.reducer)
-                                $scope.slot5 = data.data.date[5].reduce($scope.reducer)
-                                $scope.slot6 = data.data.date[6].reduce($scope.reducer)
-                                $scope.slot7 = data.data.date[7].reduce($scope.reducer)
-                                $scope.slot8 = data.data.date[8].reduce($scope.reducer)
-                                $scope.slotTotal = $scope.slot1 + $scope.slot2 + $scope.slot3 + $scope.slot4 + $scope.slot5 + $scope.slot6 + 
-                                                   $scope.slot7 + $scope.slot8
-                                console.log($scope.slotTotal)
-                 })
-                 console.log(currentdate)
+             ,
+             {
+                 title: 'My Event',
+                 start: new moment().add(1,'days'), // :) or MomentJS
+                 description: 'This is a cool event',
+                 color:'#af6dd0'
              }
-         }
-         $scope.dateInfo = {
-             name:"October 1",
-             date:"1",
-             month:"October",
-             1:[1,1,1,1,1,1],
-             2:[1,1,1,1,1,1],
-             3:[1,1,1,1,1,1],
-             4:[1,1,1,1,1,1],
-             5:[1,1,1,1,1,1],
-             6:[1,1,1,1,1,1],
-             7:[1,1,1,1,1,1],
-             8:[1,1,1,1,1,1]
-            
-             
-         }
-            /*User.createDate($scope.dateInfo).then(function(data){
-
-                console.log(data)
-            })*/
-         $scope.fadeOutMenu = false;
-         console.log(new Date())
-        $scope.calendarOoptions =  {
-                //.. Fullcalendar.js options click here to view details
-                contentHeight: 600
-                };
-                $scope.events = [
-                     /* {
-                          title: 'My Event',
-                          start: new Date(),// :) how you can use Date
-                          description: 'This is a cool event',
-                          color:'#5f6dd0'
-                      },
-                      {
-                          title: 'My Event',
-                          start: new moment().add(1,'days'), // :) or MomentJS
-                          description: 'This is a cool event',
-                          color:'#af6dd0'
-                      }
-                      ,
-                      {
-                          title: 'My Event',
-                          start: new moment().add(1,'days'), // :) or MomentJS
-                          description: 'This is a cool event',
-                          color:'#af6dd0'
-                      }
-                      ,
-                      {
-                          title: 'My Event',
-                          start: new moment().add(1,'days'), // :) or MomentJS
-                          description: 'This is a cool event',
-                          color:'#af6dd0'
-                      }
-                      ,
-                      {
-                          title: 'My Event',
-                          start: new moment().add(1,'days'), // :) or MomentJS
-                          description: 'This is a cool event',
-                          color:'#af6dd0'
-                      }
-                      ,
-                      {
-                          title: 'My Event',
-                          start: new moment().add(1,'days'), // :) or MomentJS
-                          description: 'This is a cool event',
-                          color:'#af6dd0'
-                      }*/
-                ];
-         $scope.selectMessageMenu = function(){
-               if(!$scope.messageMenuSelected){
-                  //$scope.messagePageOpen = true;
-                  $scope.messagePageSelected = true;
-                  //$scope.fadeOutMenu = true;
-         //$scope.schedulePageOpen = false;
-         //$scope.timesheetPageOpen = false;
-             //     $scope.infoPageOpen = false;
-                  //$timeout(function(){
-                      $scope.messageMenuSelected = true;
-                  //},200)
-
-             }else{
-                                       $scope.messageMenuSelected = false;
-
+             ,
+             {
+                 title: 'My Event',
+                 start: new moment().add(1,'days'), // :) or MomentJS
+                 description: 'This is a cool event',
+                 color:'#af6dd0'
              }
-         }
-         $scope.composeMessagePageOpen = false;
-         $scope.openComposeMessagePage = function(){
-             console.log("clicked")
-            
-                if(!$scope.composeMessagePageOpen){
-                  $scope.composeMessagePageOpen = true;
-                  $scope.messagePageSelected = true;
-                  //$scope.fadeOutMenu = true;
-         $scope.schedulePageOpen = false;
-         $scope.timesheetPageOpen = false;
-                  $scope.infoPageOpen = false;
-                  //$timeout(function(){
-                      $scope.messageMenuSelected = true;
-                  //},200)
-
-             }else{
-                                   $scope.composeMessagePageOpen = true;
-
+             ,
+             {
+                 title: 'My Event',
+                 start: new moment().add(1,'days'), // :) or MomentJS
+                 description: 'This is a cool event',
+                 color:'#af6dd0'
              }
-         }
-         $scope.loadingMessages = false;
-             $scope.openMessagePage = function(){
-                 
-             if(!$scope.messagePageOpen){
-                 $scope.composeMessagePageOpen = false;
-                 $scope.loadingMessages = true;
-                              
-                  $scope.messagePageOpen = true;
-                  $scope.messagePageSelected = true;
-                  //$scope.fadeOutMenu = true;
-         $scope.schedulePageOpen = false;
-         $scope.timesheetPageOpen = false;
-                  $scope.infoPageOpen = false;
-                      $scope.messageMenuSelected = true;
-         
-                  $timeout(function(){
-                      $scope.loadingMessages = false;
-                 
-                  },1000)
+             ,
+             {
+                 title: 'My Event',
+                 start: new moment().add(1,'days'), // :) or MomentJS
+                 description: 'This is a cool event',
+                 color:'#af6dd0'
+             }*/
+        ];
+        $scope.selectMessageMenu = function () {
+            if (!$scope.messageMenuSelected) {
+                //$scope.messagePageOpen = true;
+                $scope.messagePageSelected = true;
+                //$scope.fadeOutMenu = true;
+                //$scope.schedulePageOpen = false;
+                //$scope.timesheetPageOpen = false;
+                //     $scope.infoPageOpen = false;
+                //$timeout(function(){
+                $scope.messageMenuSelected = true;
+                //},200)
 
-             }else{
-                                      // $scope.messageMenuSelected = false;
- $scope.composeMessagePageOpen = false;
-             }
-         }
-           $scope.openInfoPage = function(){
-             if(!$scope.infoPageOpen){
-                  $scope.infoPageOpen = true;
-         $scope.schedulePageOpen = false;
-         $scope.timesheetPageOpen = false;
-                           $scope.messagePageOpen = false;
+            } else {
+                $scope.messageMenuSelected = false;
 
-             }
-         }
-         $scope.openSchedulePage = function(){
-         if(!$scope.schedulePageOpen){
-             //$('#calendar').fullCalendar({})
-                      $scope.schedulePageOpen = true;
+            }
+        }
+        $scope.composeMessagePageOpen = false;
+        $scope.openComposeMessagePage = function () {
+            console.log("clicked")
 
-                  $scope.infoPageOpen = false;
-         $scope.timesheetPageOpen = false;
-                           $scope.messagePageOpen = false;
+            if (!$scope.composeMessagePageOpen) {
+                $scope.composeMessagePageOpen = true;
+                $scope.messagePageSelected = true;
+                //$scope.fadeOutMenu = true;
+                $scope.schedulePageOpen = false;
+                $scope.timesheetPageOpen = false;
+                $scope.infoPageOpen = false;
+                //$timeout(function(){
+                $scope.messageMenuSelected = true;
+                //},200)
 
-             }
-         }
-           $scope.openTimesheetPage = function(){
-                      if(!$scope.timesheetPageOpen){
-                                   $scope.timesheetPageOpen = true;
+            } else {
+                $scope.composeMessagePageOpen = true;
 
-                  $scope.infoPageOpen = false;
-         $scope.schedulePageOpen = false;
-                           $scope.messagePageOpen = false;
+            }
+        }
+        $scope.loadingMessages = false;
+        $scope.openMessagePage = function () {
 
-             }
-         }
-                        $rootScope.userClassy = $rootScope.userClass
+            if (!$scope.messagePageOpen) {
+                $scope.composeMessagePageOpen = false;
+                $scope.loadingMessages = true;
+
+                $scope.messagePageOpen = true;
+                $scope.messagePageSelected = true;
+                //$scope.fadeOutMenu = true;
+                $scope.schedulePageOpen = false;
+                $scope.timesheetPageOpen = false;
+                $scope.infoPageOpen = false;
+                $scope.messageMenuSelected = true;
+
+                $timeout(function () {
+                    $scope.loadingMessages = false;
+
+                }, 1000)
+
+            } else {
+                // $scope.messageMenuSelected = false;
+                $scope.composeMessagePageOpen = false;
+            }
+        }
+        $scope.openInfoPage = function () {
+            if (!$scope.infoPageOpen) {
+                $scope.infoPageOpen = true;
+                $scope.schedulePageOpen = false;
+                $scope.timesheetPageOpen = false;
+                $scope.messagePageOpen = false;
+
+            }
+        }
+        $scope.openSchedulePage = function () {
+            if (!$scope.schedulePageOpen) {
+                //$('#calendar').fullCalendar({})
+                $scope.schedulePageOpen = true;
+
+                $scope.infoPageOpen = false;
+                $scope.timesheetPageOpen = false;
+                $scope.messagePageOpen = false;
+
+            }
+        }
+        $scope.openTimesheetPage = function () {
+            if (!$scope.timesheetPageOpen) {
+                $scope.timesheetPageOpen = true;
+
+                $scope.infoPageOpen = false;
+                $scope.schedulePageOpen = false;
+                $scope.messagePageOpen = false;
+
+            }
+        }
+        $rootScope.userClassy = $rootScope.userClass
 
         $scope.name = "";
         $scope.email = "";
@@ -329,33 +379,33 @@
         $scope.emailData = {
             email: null
         }
-              $scope.phoneNumberDataClient = {
+        $scope.phoneNumberDataClient = {
             newphonenumber: null
         }
         $scope.emailDataClient = {
             newemail: null
         }
-        
-       $scope.labels = ["Activity"];
-  $scope.data = [ 100];
-         $scope.labels = ["Activity"];
-  $scope.data2 = [ 50,50];
-  $scope.options ={
-      responsive: true,
-maintainAspectRatio: false
-  }
+
+        $scope.labels = ["Activity"];
+        $scope.data = [100];
+        $scope.labels = ["Activity"];
+        $scope.data2 = [50, 50];
+        $scope.options = {
+            responsive: true,
+            maintainAspectRatio: false
+        }
         $scope.phoneDataCannotBeEmpty = false;
         $scope.emailDataCannotBeEmpty = false;
-           $scope.submitNewPhoneNumberClient = function () {
-               console.log("clicked")
-              console.log($scope.phoneDataClient)
+        $scope.submitNewPhoneNumberClient = function () {
+            console.log("clicked")
+            console.log($scope.phoneDataClient)
             $scope.phoneNumberDataClient.name = $scope.currentClientObject.name;
 
             if ($scope.phoneNumberDataClient.newphonenumber !== null) {
                 console.log($scope.phoneData)
                 User.editPhoneNumber($scope.phoneNumberDataClient).then(function (data) {
                     console.log(data)
-                   $scope.currentClientObject.phonenumber= data.data.user.phonenumber
+                    $scope.currentClientObject.phonenumber = data.data.user.phonenumber
                     $scope.closeEditPhoneNumberPage();
                 })
             } else {
@@ -382,7 +432,7 @@ maintainAspectRatio: false
                 }, 1000)
             }
         }
-          $scope.submitNewEmailClient = function () {
+        $scope.submitNewEmailClient = function () {
             $scope.emailDataClient.name = $scope.currentClientObject.name;
 
             if ($scope.emailDataClient.newemail !== null) {
@@ -711,7 +761,7 @@ maintainAspectRatio: false
         }
         $scope.showChart = true;
         //$scope.individualPayPeriodOpen = false;
-     
+
         $scope.onClick = function (points, evt) {
             console.log(points, evt);
         };
@@ -776,20 +826,20 @@ maintainAspectRatio: false
         $scope.hrVarOut = ""
         $scope.hrVarIn = ""
         $scope.supervisorListOpen = false;
-        $scope.openSupervisorList = function(){
-            if(!$scope.supervisorListOpen){
+        $scope.openSupervisorList = function () {
+            if (!$scope.supervisorListOpen) {
                 $scope.supervisorListOpen = true;
                 $scope.submitSupervisorPageOpen = false;
-            }else{
+            } else {
                 $scope.supervisorListOpen = false;
             }
         }
         $scope.locationListOpen = false;
-        $scope.openLocationList = function(){
-            if(!$scope.locationListOpen){
+        $scope.openLocationList = function () {
+            if (!$scope.locationListOpen) {
                 $scope.locationListOpen = true;
                 $scope.submitLocationPageOpen = false;
-            }else{
+            } else {
                 $scope.locationListOpen = false;
             }
         }
@@ -935,8 +985,8 @@ maintainAspectRatio: false
             }
         }
 
-            $scope.userToken = $window.localStorage.getItem('token');
-          
+        $scope.userToken = $window.localStorage.getItem('token');
+
         /*$scope.addPayPeriodToPayPeriodHistory = function (details) {
             console.log(details)
             $scope.employeeJobDetails.payperiod = $rootScope.payPeriod;
@@ -1231,7 +1281,7 @@ maintainAspectRatio: false
 
             User.removeMessage($scope.name, $scope.messageIndex).then(function (data) {
                 console.log(data)
-                $scope.page=0;
+                $scope.page = 0;
                 $scope.pageLimit = 4;
                 $scope.messagesPaginated = [];
                 $scope.messageForPagination = [];
@@ -1395,7 +1445,7 @@ maintainAspectRatio: false
                 $scope.addLocationPageOpen = false;
                 $scope.locationIndex = null;
                 $scope.openAddLocationPage();
-                $scope.page=0;
+                $scope.page = 0;
             })
         }
         $scope.openIndividualLocation = function (index) {
@@ -1504,29 +1554,29 @@ maintainAspectRatio: false
             }
 
         }
-        $scope.openClientHome = function(){
-           // if(!$scope.clientHome){
-                $scope.clientHome= true;
-                $scope.addLocationPageOpen = false;
-                $scope.addSupervisorPageOpen = false;
-                $scope.requestListOpen = false;
-                $scope.messagePageOpen = false;
-                $scope.messagePageSelected = false;
-                $scope.composeMessagePageOpen = false;
-                $scope.reviewSubmittedTimeSheetsPageOpen = false;
+        $scope.openClientHome = function () {
+            // if(!$scope.clientHome){
+            $scope.clientHome = true;
+            $scope.addLocationPageOpen = false;
+            $scope.addSupervisorPageOpen = false;
+            $scope.requestListOpen = false;
+            $scope.messagePageOpen = false;
+            $scope.messagePageSelected = false;
+            $scope.composeMessagePageOpen = false;
+            $scope.reviewSubmittedTimeSheetsPageOpen = false;
             //}
         }
         $scope.openAddSupervisorPage = function (index) {
 
             if (!$scope.addSupervisorPageOpen) {
-                $scope.page=0;
+                $scope.page = 0;
                 $scope.addSupervisorPageOpen = true;
                 $scope.addLocationPageOpen = false
                 $scope.requestEmployeePageOpen = false;
                 $scope.requestEmployeePageOpen = false;
                 $scope.messagePageOpen = false;
                 $scope.composeMessagePageOpen = false;
-                  $scope.locationListOpen = false;
+                $scope.locationListOpen = false;
                 $scope.supervisorListOpen = false;
                 $scope.requestListOpen = false;
                 $scope.requestJobFormOpen = false;
@@ -1697,9 +1747,9 @@ maintainAspectRatio: false
 
         $scope.openAddLocationPage = function () {
             if (!$scope.addLocationPageOpen) {
-                $scope.page=0;
+                $scope.page = 0;
                 $scope.addLocationPageOpen = true;
-                $scope.reviewSubmittedTimeSheetsPageOpen= false;
+                $scope.reviewSubmittedTimeSheetsPageOpen = false;
                 $scope.messagePageOpen = false;
                 $scope.composeMessagePageOpen = false;
                 $scope.locationListOpen = false;
@@ -1708,7 +1758,7 @@ maintainAspectRatio: false
                 $scope.requestJobFormOpen = false;
                 $scope.submitSupervisorPageOpen = false;
                 $scope.submitLocationPageOpen = false;
-               // $scope.addLocationPageOpen = false;
+                // $scope.addLocationPageOpen = false;
                 $scope.addSupervisorPageOpen = false;
                 $scope.requestEmployeePageOpen = false;
                 $scope.clientHome = false;
@@ -2207,7 +2257,7 @@ maintainAspectRatio: false
 
 
         $scope.changePage = function () {
-$scope.currentIndex = null;
+            $scope.currentIndex = null;
             if ($scope.page < $scope.messagesPaginated.length - 1) {
                 $scope.page++
             }
@@ -2221,8 +2271,8 @@ $scope.currentIndex = null;
             }
 
         }
-                $scope.changePageAddSupervisorsPage = function () {
-$scope.currentIndex = null;
+        $scope.changePageAddSupervisorsPage = function () {
+            $scope.currentIndex = null;
             if ($scope.page < $scope.supervisorsPaginated.length - 1) {
                 $scope.page++
             }
@@ -2252,13 +2302,13 @@ $scope.currentIndex = null;
             }
 
         }
-                $scope.changePageRequestedJobsPage = function () {
+        $scope.changePageRequestedJobsPage = function () {
             //$scope.messageIndex = null
             if ($scope.page < $scope.requestedJobsPaginated.length - 1) {
                 $scope.page++
             }
             console.log($scope.page)
-            
+
         }
         $scope.decreasePageRequestedJobsPage = function () {
             if ($scope.page > 0) {
@@ -2267,13 +2317,13 @@ $scope.currentIndex = null;
             }
 
         }
-              $scope.changePageLocationsPage = function () {
+        $scope.changePageLocationsPage = function () {
             //$scope.messageIndex = null
             if ($scope.page < $scope.locationsPaginated.length - 1) {
                 $scope.page++
             }
             console.log($scope.page)
-            
+
         }
         $scope.decreasePageLocationsPage = function () {
             if ($scope.page > 0) {
@@ -2339,7 +2389,7 @@ $scope.currentIndex = null;
             }
 
         }
-       
+
         $scope.decreaseJobInDate = function () {
 
             $scope.slideOut = true;
@@ -2536,8 +2586,8 @@ $scope.currentIndex = null;
                 var hoursDif = 0;
                 console.log(hours)
                 console.log(minutes)
-              
-                 if (minutes == 0 && $scope.timeData.lunch == "Yes") {
+
+                if (minutes == 0 && $scope.timeData.lunch == "Yes") {
                     minutes = 30
 
                     hours = hours - 1
@@ -2744,7 +2794,7 @@ $scope.currentIndex = null;
                 }
 
                 console.log("$scope.timeData", $scope.timeData)
-              User.addHoursToPayPeriod($scope.timeData).then(function (data) {
+                User.addHoursToPayPeriod($scope.timeData).then(function (data) {
                     console.log(data)
                     $scope.payPeriodHistory = data.data.user.payperiodhistory
                     $scope.timeData = {}
@@ -2753,7 +2803,7 @@ $scope.currentIndex = null;
                     $scope.addHoursPageOpen = false;
 
                 })
-                
+
                 console.log(hours)
                 console.log(minutes)
             }
@@ -3255,7 +3305,7 @@ $scope.currentIndex = null;
                 }
             })
         }
-     
+
         $scope.generatePaySlip = function (index) {
             console.log(index)
             console.log($scope.payPeriodHistory[index])
@@ -3311,11 +3361,11 @@ $scope.currentIndex = null;
             doc.text("Tax Code:", 10, 80)
             doc.text("M", 30, 80)
             doc.setFontSize(13)
-doc.setDrawColor(0,0,0)
-doc.setFillColor(175, 175, 175);
-doc.rect(0, 83,250, 10,'f');
+            doc.setDrawColor(0, 0, 0)
+            doc.setFillColor(175, 175, 175);
+            doc.rect(0, 83, 250, 10, 'f');
             doc.text("Taxable Earnings", 10, 87)
-           
+
             doc.text("Rate", 120, 90)
 
             doc.text("Hours", 150, 90)
@@ -3327,12 +3377,12 @@ doc.rect(0, 83,250, 10,'f');
             doc.text(String($scope.totalHours * $scope.userPayRate), 170, 100)
             doc.text(String("Holiday Pay @ 8% (Pay As You Go)"), 10, 120)
             doc.text(String(Number(($scope.totalHours * $scope.userPayRate) * .08).toFixed(2)), 170, 120)
-            doc.setDrawColor(0,0,0);
-doc.rect(0, 132,250, 0);
+            doc.setDrawColor(0, 0, 0);
+            doc.rect(0, 132, 250, 0);
             doc.text(String("Total Gross Earnings"), 10, 130)
             doc.text(String(($scope.totalHours * $scope.userPayRate) * .08 + ($scope.totalHours * $scope.userPayRate)), 170, 130)
-                      doc.setDrawColor(100,0,0);
-doc.rect(0, 142,250, 0);
+            doc.setDrawColor(100, 0, 0);
+            doc.rect(0, 142, 250, 0);
             doc.text(String("Taxable Earnings"), 10, 140)
             doc.text(String($scope.totalHours * $scope.userPayRate), 170, 140)
 
@@ -3340,40 +3390,40 @@ doc.rect(0, 142,250, 0);
             doc.text(String((($scope.totalHours * $scope.userPayRate) * .1)), 170, 150)
             doc.text(String("Take Home Pay"), 10, 160)//NEED TO ADD TAX CODE TO USER MODEL TO CALCULATE THIS...
             doc.text(String(($scope.totalHours * $scope.userPayRate) - (($scope.totalHours * $scope.userPayRate) * .1)), 170, 160)
-                    doc.setDrawColor(0,0,0)
-doc.setFillColor(175, 175, 175);
-doc.rect(130, 172,30, 5,'FD');
-                  doc.setDrawColor(0,0,0)
-doc.setFillColor(175, 175, 175);
-doc.rect(160, 172,30, 5,'FD');
-                  doc.setDrawColor(0,0,0)
-doc.setFillColor(175, 175, 175);
-doc.rect(190, 172,30, 5,'FD');
-                    doc.setDrawColor(0,0,0)
-doc.setFillColor(175, 175, 175);
-doc.rect(130, 182,30, 13,'FD');
-                  doc.setDrawColor(0,0,0)
-doc.setFillColor(175, 175, 175);
-doc.rect(160, 182,30, 13,'FD');
-                  doc.setDrawColor(0,0,0)
-doc.setFillColor(175, 175, 175);
-doc.rect(190, 182,30, 13,'FD');
-                    doc.setDrawColor(0,0,0);
-doc.rect(0, 172,250, 0);
-doc.text(String("Summary"), 133, 176)
-doc.text(String("This Pay"), 162, 176)
- doc.text(String("YTD"), 190, 176)
-doc.text(String("Gross"), 133, 185)
-doc.text(String("PAYE"), 133, 189)
- doc.text(String("Take Home"), 133, 193)
- doc.text(String(($scope.totalHours * $scope.userPayRate) * .08 + ($scope.totalHours * $scope.userPayRate)),162,185)
+            doc.setDrawColor(0, 0, 0)
+            doc.setFillColor(175, 175, 175);
+            doc.rect(130, 172, 30, 5, 'FD');
+            doc.setDrawColor(0, 0, 0)
+            doc.setFillColor(175, 175, 175);
+            doc.rect(160, 172, 30, 5, 'FD');
+            doc.setDrawColor(0, 0, 0)
+            doc.setFillColor(175, 175, 175);
+            doc.rect(190, 172, 30, 5, 'FD');
+            doc.setDrawColor(0, 0, 0)
+            doc.setFillColor(175, 175, 175);
+            doc.rect(130, 182, 30, 13, 'FD');
+            doc.setDrawColor(0, 0, 0)
+            doc.setFillColor(175, 175, 175);
+            doc.rect(160, 182, 30, 13, 'FD');
+            doc.setDrawColor(0, 0, 0)
+            doc.setFillColor(175, 175, 175);
+            doc.rect(190, 182, 30, 13, 'FD');
+            doc.setDrawColor(0, 0, 0);
+            doc.rect(0, 172, 250, 0);
+            doc.text(String("Summary"), 133, 176)
+            doc.text(String("This Pay"), 162, 176)
+            doc.text(String("YTD"), 190, 176)
+            doc.text(String("Gross"), 133, 185)
+            doc.text(String("PAYE"), 133, 189)
+            doc.text(String("Take Home"), 133, 193)
+            doc.text(String(($scope.totalHours * $scope.userPayRate) * .08 + ($scope.totalHours * $scope.userPayRate)), 162, 185)
             doc.text(String((($scope.totalHours * $scope.userPayRate) * .1)), 162, 189)
             doc.text(String(($scope.totalHours * $scope.userPayRate) - (($scope.totalHours * $scope.userPayRate) * .1)), 162, 193)
 
 
             doc.addImage($scope.qlhLogo, 'JPG', 180, 15, 15, 15);
 
-            doc.save($scope.name+' Payslip for .'+$scope.payPeriodStartDate+'-'+$scope.payPeriodEndDate+'.pdf')
+            doc.save($scope.name + ' Payslip for .' + $scope.payPeriodStartDate + '-' + $scope.payPeriodEndDate + '.pdf')
             doc.addFont('Raleway', 'Raleway', 'normal');
 
         }
@@ -3525,9 +3575,9 @@ doc.text(String("PAYE"), 133, 189)
             }, 500)
         }
         $scope.globalPayPeriodIndexATM = ""
-        $scope.turnOffOthers= false;
-        $scope.openProfileHome = function(){
-            $scope.profileHome =  true;
+        $scope.turnOffOthers = false;
+        $scope.openProfileHome = function () {
+            $scope.profileHome = true;
             $scope.historyPageOpenProfile = false;
             $scope.turnOffOthers = false;
             $scope.chartsPageOpen = false;
@@ -3535,10 +3585,10 @@ doc.text(String("PAYE"), 133, 189)
             $scope.composeMessagePageOpen = false
             $scope.curPeriod = null;
 
-            
+
 
         }
-        $scope.closeIndividualPayPeriod = function(){
+        $scope.closeIndividualPayPeriod = function () {
             $scope.turnOffOthers = false;
             $scope.curPeriod = null;
             $scope.removeRightBorder = false;
@@ -3546,7 +3596,7 @@ doc.text(String("PAYE"), 133, 189)
         $scope.openIndividualPayPeriod = function (index, history) {
             console.log(index)
             console.log(history)
-            $scope.turnOffOthers=true;
+            $scope.turnOffOthers = true;
             $scope.globalPayPeriodIndexATM = index;
             $scope.labels[0] = history.entry[0][0].date
             $scope.labels[1] = history.entry[1][0].date

@@ -4,7 +4,8 @@
 
     var app = angular.module("appRoutes", ['ngRoute']);
 
-    app.config(function ($routeProvider, $locationProvider) {//Only providers in config phase... no $rootScope or any other instances...
+    app.config(function ($routeProvider, $locationProvider) {
+        //Only providers in config phase... no $rootScope or any other instances...
 
 
 
@@ -98,6 +99,13 @@
 
             })
                        .when('/schedule/:date', {
+                templateUrl: '../views/pages/schedule.html',
+                name: "QLH | PROFILE",
+                controller: "profileCtrl",
+                controllerAs: 'profile'
+
+            })
+                             .when('/profile/:id/', {
                 templateUrl: '../views/pages/schedule.html',
                 name: "QLH | PROFILE",
                 controller: "profileCtrl",
