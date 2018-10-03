@@ -37,23 +37,62 @@ console.log(hearto);
 
 
 });
+app.directive('tenToEleven',function(){
+
+
+		return{
+
+			restrict: 'E',
+			scope:true,
+			
+			   link: function(scope, element, attrs, ngModel){
+				scope.time = ""
+				console.log(scope)
+     
+     
+    },
+			templateUrl:'../views/10-11.html',
+					controller: function() {
+        this.discoveryData2 = {
+            type:"",
+			test:"",
+            time:""
+        }
+        this.submitBooking2 = function(){
+            console.log(this.discoveryData2)
+			console.log(scope)
+        }
+
+	},
+		controllerAs: "tentoeleven"}});
 app.directive('nineToTen',function(){
 
 
 		return{
 
 			restrict: 'E',
+			scope:true,
+			
+			   link: function(scope, element, attrs){
+				scope.time = ""
+				console.log(scope)
+     
+     
+    },
 			templateUrl:'../views/9-10.html',
 					controller: function() {
-    	this.imageIndex = 0;
-    	this.currentImageChange = function(imageNumber) {
-      	console.log(imageNumber);
-      	this.imageIndex = imageNumber || 0;
-    	};},
-		controllerAs: 'gallery'
-		}
+        this.discoveryData2 = {
+            type:"",
+			test:"",
+            time:""
+        }
+        this.submitBooking2 = function(){
+            console.log(this.discoveryData2)
+			console.log(scope)
+        }
 
-	});
+	},
+		controllerAs: "ninetoten"}});
 app.directive('composeMessagePage',function(){
 
 

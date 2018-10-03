@@ -9,58 +9,67 @@
             </a>
             <p class="montserrat grey-text">Diana Moon</p>
         </div>
-       
+
     </div>
     <div class="row show-on-small center-align">
-            <div>
-              <div class="col s4 animated center-align" ng-class="{fadeOut:fadeOutMenu}">
-                    <a href="#">
-                        <p class="montserrat grey-text underline" ng-click="openInfoPage()">Home</p>
-                    </a>
-                </div>
-                <div class=" col s4 animated center-align" ng-class="{fadeOut:fadeOutMenu}">
+        <div>
+            <div class="col s4 animated center-align" ng-class="{fadeOut:fadeOutMenu}">
+                <a href="#">
+                    <p class="montserrat grey-text underline" ng-click="openInfoPage()">Home</p>
+                </a>
+            </div>
+            <div class=" col s4 animated center-align" ng-class="{fadeOut:fadeOutMenu}">
 
-                    <a href="#">
-                        <p class="montserrat grey-text underline" ng-click="openSchedulePage()">Schedule</p>
-                    </a>
-                </div>
-           
-                <div class=" col s4 animated center-align " ng-class="{fadeOut:fadeOutMenu}">
+                <a href="#">
+                    <p class="montserrat grey-text underline" ng-click="openSchedulePage()">Schedule</p>
+                </a>
+            </div>
 
+            <div class=" col s4 animated center-align " ng-class="{fadeOut:fadeOutMenu}">
+
+                <a href="#">
+                    <p class="montserrat grey-text underline" ng-click="selectMessageMenu()">Messages</p>
+                </a>
+                <div class="col s1">
+                </div>
+                <div ng-show="messageMenuSelected" class="col s11 blue-grey lighten-1">
                     <a href="#">
-                        <p class="montserrat grey-text underline" ng-click="selectMessageMenu()">Messages</p>
+                        <p class="montserrat white-text" ng-click="openMessagePage()" style="font-size:14px;">Inbox</p>
                     </a>
-                    <div class="col s1">
-                    </div>
-                    <div ng-show="messageMenuSelected" class="col s11 blue-grey lighten-1">
-                        <a href="#">
-                            <p class="montserrat white-text" ng-click="openMessagePage()" style="font-size:14px;">Inbox</p>
-                        </a>
-                        <a href="#">
-                            <p class="montserrat white-text" ng-click="openComposeMessagePage()" style="font-size:14px;">Compose</p>
-                        </a>
-                    </div>
+                    <a href="#">
+                        <p class="montserrat white-text" ng-click="openComposeMessagePage()" style="font-size:14px;">Compose</p>
+                    </a>
                 </div>
             </div>
-        
+        </div>
+
 
         <div ng-show="infoPageOpen" class="col 12 animated fadeIn">
             <info-page></info-page>
 
         </div>
-        <div ng-show="schedulePageOpen" class="col s12 animated fadeIn" >
+        <div ng-show="schedulePageOpen" class="col s12 animated fadeIn">
             <!--<div fc fc-options="calendarOoptions" ng-model="events"   >  </div> -->
             <div ng-show="!scheduledJobPageOpen && !scheduleSDOrCiPageOpen && !bookingPageOpen">
                 <schedule-page></schedule-page>
             </div>
-             <div ng-show="scheduledJobPageOpen">
+
+            <div ng-show="scheduledJobPageOpen">
                 <scheduled-job-page></scheduled-job-page>
             </div>
+
             <div ng-show="bookingPageOpen">
-                <nine-to-ten></nine-to-ten>
+                <div ng-show="slot == 2">
+                    <nine-to-ten></nine-to-ten>
+                </div>
             </div>
-               <div ng-show="scheduleSDOrCiPageOpen">
-                <schedule-s-d-or-ci-page></schedule-s-d-or-ci-page>
+            
+            <div ng-show="scheduleSDOrCiPageOpen">
+                <div ng-show="slot == 3">
+                    <ten-to-eleven></ten-to-eleven>
+                </div>
+
+                <!-- <schedule-s-d-or-ci-page></schedule-s-d-or-ci-page>-->
             </div>
         </div>
         <div ng-show="timesheetPageOpen" class="col s12 animated fadeIn" style="height:59px;">
@@ -135,12 +144,12 @@
             <info-page></info-page>
 
         </div>
-        <div ng-show="schedulePageOpen" class="col s10 animated fadeIn" >
+        <div ng-show="schedulePageOpen" class="col s10 animated fadeIn">
             <!--<div fc fc-options="calendarOoptions" ng-model="events"   >  </div> -->
             <div ng-show="!scheduledJobPageOpen">
                 <schedule-page></schedule-page>
             </div>
-             <div ng-show="scheduledJobPageOpen">
+            <div ng-show="scheduledJobPageOpen">
                 <scheduled-job-page></scheduled-job-page>
             </div>
         </div>
@@ -174,4 +183,3 @@
     </div>
 
 </div>
-
