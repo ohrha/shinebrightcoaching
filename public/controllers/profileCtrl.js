@@ -30,19 +30,19 @@
             if (!$scope.scheduleSDOrCiPageOpen) {
                 $scope.scheduledJobPageOpen = false;
                 $scope.scheduleSDOrCiPageOpen = true;
-                     if ($scope.dateInfo[slot][0] == 0 && $scope.dateInfo[slot][1] == 0 && $scope.dateInfo[slot][2] == 0 && $scope.dateInfo[slot][3] == 0 && $scope.dateInfo[slot][4] == 0 && $scope.dateInfo[slot][5] == 0) {
+                if ($scope.dateInfo[slot][0] == 0 && $scope.dateInfo[slot][1] == 0 && $scope.dateInfo[slot][2] == 0 && $scope.dateInfo[slot][3] == 0 && $scope.dateInfo[slot][4] == 0 && $scope.dateInfo[slot][5] == 0) {
 
-                //$scope.
-                //if(slot == 2){
+                    //$scope.
+                    //if(slot == 2){
                     $scope.bookDiscovery = true;
                     $scope.bookCheckup = true
                     console.log("9:40am available")
                     console.log("9:30am available")
-                console.log($scope.slot)
+                    console.log($scope.slot)
 
-               // }
+                    // }
 
-            }
+                }
 
             }
         }
@@ -59,46 +59,104 @@
         $scope.slot8 = 0
         $scope.slotTotal = 0;
         $scope.bookingPageOpen = false;
-        $scope.timeData ={}
+        $scope.timeData = {}
 
         $scope.discoveryData = {
-           
+
         }
-           $scope.checkupData = {
-           
+        $scope.checkupData = {
+
         }
-        $scope.submitBooking = function(){
+        $scope.submitDiscovery = function () {
             console.log($scope.discoveryData)
 
-            
-            
+            if($scope.discoveryData.time == "8:50am" || $scope.discoveryData.time == "9:50am"){
+                console.log("Hello")
+                           console.log($scope.dateInfo[$scope.slot])
+                console.log($scope.slot)
+                $scope.dateInfo[$scope.slot][5]= 1;
+                console.log($scope.dateInfo[$scope.slot])
+                $scope.bookDiscovery5 = false;
+                $scope.shakeOn      = true;
+            }
+
+        }
+        $scope.submitCheckUp = function () {
+            console.log($scope.checkupData)
+
+            if($scope.checkupData.time == "8:50am" || $scope.checkupData.time == "9:50am" || $scope.checkupData.time == "10:50am" || $scope.checkupData.time == "11:50am" ||
+               $scope.checkupData.time == "12:50pm"|| $scope.checkupData.time == "1:50pm" || $scope.checkupData.time == "2:50pm"  || $scope.checkupData.time == "3:50pm"  ||
+               $scope.checkupData.time == "4:50pm"){
+
+                console.log($scope.dateInfo[$scope.slot])
+                console.log($scope.slot)
+                $scope.dateInfo[$scope.slot][5]= 1;
+                console.log($scope.dateInfo[$scope.slot])
+                $scope.bookCheckup5 = false;
+                $scope.shakeOn      = true;
+                //$scope.bookCheckup1 = true;
+            }
+
+
         }
         $scope.bookDiscovery = true;
         $scope.bookeCheckup = true;
         $scope.openBookingPage = function (slot) {
-             $scope.slot = slot;
+            console.log(slot)
+            $scope.slot = slot;
             $scope.bookingPageOpen = true;
             $scope.scheduledJobPageOpen = false;
             $scope.scheduleSDOrCiPageOpen = false;
-        
-            
-            console.log($scope.dateInfo[slot])
-            if ($scope.dateInfo[slot][0] == 1 && $scope.dateInfo[slot][1] == 1 && $scope.dateInfo[slot][2] == 0 && $scope.dateInfo[slot][3] == 0 && $scope.dateInfo[slot][4] == 0 && $scope.dateInfo[slot][5] == 0) {
 
-                //$scope.
-                //if(slot == 2){
-                    $scope.bookDiscovery = true;
-                    $scope.bookCheckup = true
+
+            console.log($scope.dateInfo[slot])
+
+            if (slot == 2) {
+                
+                
+                if ($scope.dateInfo[slot][0] == 0 && $scope.dateInfo[slot][1] == 0 && $scope.dateInfo[slot][2] == 0 && $scope.dateInfo[slot][3] == 0 && $scope.dateInfo[slot][4] == 0 && $scope.dateInfo[slot][5] == 0) {
+
+                    $scope.bookDiscovery  = true;
+                    $scope.bookDiscovery1 = true;
+                    $scope.bookDiscovery2 = true;
+                    $scope.bookDiscovery3 = true;
+                    $scope.bookDiscovery4 = true;
+                    $scope.bookDiscovery5 = true;
+
+                    $scope.bookCheckup  = true
+                    $scope.bookCheckup1 = true
+                    $scope.bookCheckup2 = true
+                    $scope.bookCheckup3 = true
+                    $scope.bookCheckup4 = true
+                    $scope.bookCheckup5 = true
+                    
+
+                    console.log("9:50am available")
                     console.log("9:40am available")
                     console.log("9:30am available")
+                    console.log("9:20am available")
+                    console.log("$scope.bookCheckup",$scope.bookCheckup)
 
-               // }
+                }
+                if ($scope.dateInfo[slot][0] == 1 && $scope.dateInfo[slot][1] == 1 && $scope.dateInfo[slot][2] == 0 && $scope.dateInfo[slot][3] == 0 && $scope.dateInfo[slot][4] == 0 && $scope.dateInfo[slot][5] == 0) {
+
+                    $scope.bookDiscovery1 = true;
+                    $scope.bookCheckup1 = true
+                    console.log("9:40am available")
+                    console.log("9:30am available")
+                    console.log("$scope.bookCheckup1",$scope.bookCheckup1)
+
+                }
+      
+
 
             }
-                    if ($scope.dateInfo[slot][0] == 1 && $scope.dateInfo[slot][1] == 1 && $scope.dateInfo[slot][2] == 1 && $scope.dateInfo[slot][3] == 0 && $scope.dateInfo[slot][4] == 0 && $scope.dateInfo[slot][5] == 0) {
+
+
+            if ($scope.dateInfo[slot][0] == 1 && $scope.dateInfo[slot][1] == 1 && $scope.dateInfo[slot][2] == 1 && $scope.dateInfo[slot][3] == 0 && $scope.dateInfo[slot][4] == 0 && $scope.dateInfo[slot][5] == 0) {
 
                 //$scope.
-                if(slot == 2){
+                if (slot == 2) {
 
                     //console.log("9:40am available")
                     console.log("9:30am available")
@@ -106,18 +164,18 @@
                 }
 
             }
-                               if ($scope.dateInfo[slot][0] == 1 && $scope.dateInfo[slot][1] == 1 && $scope.dateInfo[slot][2] == 1 && $scope.dateInfo[slot][3] == 1 && $scope.dateInfo[slot][4] == 1 && $scope.dateInfo[slot][5] == 1) {
+            if ($scope.dateInfo[slot][0] == 1 && $scope.dateInfo[slot][1] == 1 && $scope.dateInfo[slot][2] == 1 && $scope.dateInfo[slot][3] == 1 && $scope.dateInfo[slot][4] == 1 && $scope.dateInfo[slot][5] == 1) {
 
                 //$scope.
-               // if(slot == 2){
+                // if(slot == 2){
 
-                    //console.log("9:40am available")
+                //console.log("9:40am available")
 
-                    console.log("9:30am available")
+                console.log("9:30am available")
 
                 //}
                 $scope.bookDiscovery = false;
-                    $scope.bookCheckup = false
+                $scope.bookCheckup = false
 
             }
             if ($scope.dateInfo[slot][1] == 1) {
