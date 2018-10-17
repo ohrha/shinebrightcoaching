@@ -68,8 +68,9 @@
 
         }
         $scope.bookDiscovery5 = true;
-        $scope.bookedDate= false;
+        $scope.booked = false;
         $scope.newDateInfo = []
+        $scope.audio = new Audio("../audio/fool.mp3")
         $scope.submitDiscovery = function () {
             console.log($scope.discoveryData)
 
@@ -95,6 +96,7 @@
                     User.updateDate($scope.id,$scope.newDateInfo,$scope.slot,$scope.timeSlot).then(function(data){
                         console.log(data)
                         $scope.bookedDate = true;
+                        $scope.audio.play();
                     })
                 })
             }
