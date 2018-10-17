@@ -74,7 +74,7 @@
         $scope.e = document.createEvent('TouchEvent');
         $scope.submitDiscovery = function () {
             console.log($scope.discoveryData)
-            // $scope.audio.play();
+             
 
             if($scope.discoveryData.time == "8:50am" || $scope.discoveryData.time == "9:50am"){
                 console.log("Hello")
@@ -85,6 +85,7 @@
                 console.log($scope.id)
                 $scope.bookDiscovery5 = false;
                 $scope.shakeOn      = true;
+                $scope.audio.play();
                 User.getDate($scope.id).then(function(data){
                     console.log(data)
                     console.log(data.data.date[$scope.slot][5])
