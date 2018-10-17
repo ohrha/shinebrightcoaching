@@ -71,6 +71,7 @@
         $scope.booked = false;
         $scope.newDateInfo = []
         $scope.audio = new Audio("../audio/fool.mp3")
+        $scope.e = document.createEvent('TouchEvent');
         $scope.submitDiscovery = function () {
             console.log($scope.discoveryData)
 
@@ -95,8 +96,10 @@
                     console.log($scope.id)
                     User.updateDate($scope.id,$scope.newDateInfo,$scope.slot,$scope.timeSlot).then(function(data){
                         console.log(data)
-                        $scope.bookedDate = true;
+                        $scope.e.initTouchEvent(function(){
+                            $scope.bookedDate = true;
                         $scope.audio.play();
+                        })
                     })
                 })
             }
