@@ -22,8 +22,15 @@
 
    </div>
     <div class ="col s3 datehover">
-<div ng-show = "slot2 <= 2"ng-click="openBookingPage('2')">
+<div ng-show = "slot2 == 2 || slot2 == 1"ng-click="openBookingPage('2')">
  <span class = " green-text">Discovery Or Checkup Available</span>
+       <p class = "montserrat">9:00am </p>
+              <span class = "montserrat">- </span>
+
+       <p class = "montserrat">9:50am </p>
+</div>
+<div ng-show = "slot2 == 0  "ng-click="openBookingPage('2')">
+ <span class = " green-text">Fully Available</span>
        <p class = "montserrat">9:00am </p>
               <span class = "montserrat">- </span>
 

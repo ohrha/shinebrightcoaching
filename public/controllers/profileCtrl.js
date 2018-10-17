@@ -67,6 +67,9 @@
         $scope.checkupData = {
 
         }
+        $scope.bookDiscovery5 = true;
+        $scope.bookedDate= false;
+        $scope.newDateInfo = []
         $scope.submitDiscovery = function () {
             console.log($scope.discoveryData)
 
@@ -76,8 +79,24 @@
                 console.log($scope.slot)
                 $scope.dateInfo[$scope.slot][5]= 1;
                 console.log($scope.dateInfo[$scope.slot])
+                console.log($scope.id)
                 $scope.bookDiscovery5 = false;
                 $scope.shakeOn      = true;
+                User.getDate($scope.id).then(function(data){
+                    console.log(data)
+                    console.log(data.data.date[$scope.slot][5])
+                    console.log(data.data.date[$scope.slot][5]=1)
+                    data.data.date[$scope.slot][5]=1
+                    $scope.newDateInfo = 1
+                    console.log($scope.newDateInfo)
+                    $scope.timeSlot = 5;
+
+                    console.log($scope.id)
+                    User.updateDate($scope.id,$scope.newDateInfo,$scope.slot,$scope.timeSlot).then(function(data){
+                        console.log(data)
+                        $scope.bookedDate = true;
+                    })
+                })
             }
 
         }
@@ -200,6 +219,7 @@
         }
         $scope.openScheduledJobPage = function (currentdate, id) {
             console.log(id)
+            $scope.id = id
             if (!$scope.scheduledJobPageOpen) {
                 $scope.scheduledJobPageOpen = true;
                 $scope.currentDate = currentdate
@@ -209,6 +229,7 @@
                     console.log(data.data.date[1].reduce($scope.reducer))
                     $scope.slot1 = data.data.date[1].reduce($scope.reducer)
                     $scope.slot2 = data.data.date[2].reduce($scope.reducer)
+                    console.log("$scope.slot2",$scope.slot2)
                     $scope.slot3 = data.data.date[3].reduce($scope.reducer)
                     $scope.slot4 = data.data.date[4].reduce($scope.reducer)
                     $scope.slot5 = data.data.date[5].reduce($scope.reducer)

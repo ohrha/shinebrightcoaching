@@ -59,38 +59,69 @@ module.exports = function (app) {
         })
 
         */
-    app.put('/months/getdate/:id', function(req,res){
-
-        Date.findOne({_id:req.params.id}, function(err,date){
-            if(err)throw err;
-            if(!date){
-                res.json({success: false, message:"Date not found.."})
-            }else{
-                res.json({success: true, message:"Date found..", date:date})
+    app.put('/months/updatedate/:id/:newdateinfo/:slot/:timeslot', function (req, res) {
+        console.log(req.params.slot)
+        console.log(req.params.newdateinfo)
+        console.log(req.params.timeslot)
+        Date.findOne({ _id: req.params.id }, function (err, date) {
+            if (err) throw err;
+            if (!date) {
+                res.json({ success: false, message: "Date not found.." })
+            } else {
+               console.log(date[req.params.slot])
+                date[req.params.slot][req.params.timeslot] = Number(req.params.newdateinfo)
+                date.save(function(err,date){
+                    if(err){
+                        res.json({success: false, message:"Date not found."})
+                    }else{
+                        res.json({success: true, message:"Date Saved Successfully", date:date})
+                    }
+                })
+              /*  Date.findOneAndUpdate({_id:req.params.id},{$set:{date:date[req.params.slot][req.params.timeslot]}},{new:true}, function(err,date){
+                    if(err)throw err;
+                    if(!date){
+                        res.json({success: false, message: "Date Not Found..."})
+                    }else{
+                        res.json({success: true, message:"Date Found And Updated..", date:date})
+                    }
+                })*/
+               // res.json({ success: true, message: "Date found..", date: date })
             }
         })
 
     })
-    app.post('/months/createdate', function(req,res){
+    app.put('/months/getdate/:id', function (req, res) {
+
+        Date.findOne({ _id: req.params.id }, function (err, date) {
+            if (err) throw err;
+            if (!date) {
+                res.json({ success: false, message: "Date not found.." })
+            } else {
+                res.json({ success: true, message: "Date found..", date: date })
+            }
+        })
+
+    })
+    app.post('/months/createdate', function (req, res) {
 
         var date = new Date()
-        date[1] = [1,1,1,1,1,1],
-        date[2] = [1,1,1,1,1,1],
-        date[3] = [1,1,1,1,1,1],
-        date[4] = [1,1,1,1,1,1],
-        date[5] = [1,1,1,1,1,1],
-        date[6] = [1,1,1,1,1,1],
-        date[7] = [1,1,1,1,1,1],
-        date[8] = [1,1,1,1,1,1]
+        date[1] = [1, 1, 1, 1, 1, 1],
+            date[2] = [1, 1, 1, 1, 1, 1],
+            date[3] = [1, 1, 1, 1, 1, 1],
+            date[4] = [1, 1, 1, 1, 1, 1],
+            date[5] = [1, 1, 1, 1, 1, 1],
+            date[6] = [1, 1, 1, 1, 1, 1],
+            date[7] = [1, 1, 1, 1, 1, 1],
+            date[8] = [1, 1, 1, 1, 1, 1]
         date.name = req.body.name,
-        date.month = req.body.month,
-        date.date = req.body.date
-        date.save(function(err,date){
+            date.month = req.body.month,
+            date.date = req.body.date
+        date.save(function (err, date) {
 
-            if(err){
-                res.json({success:false, message: "Save failed...",err:err})
-            }else{
-                res.json({success: true, message: "Successful save...", date: date})
+            if (err) {
+                res.json({ success: false, message: "Save failed...", err: err })
+            } else {
+                res.json({ success: true, message: "Successful save...", date: date })
             }
 
 
@@ -188,7 +219,7 @@ module.exports = function (app) {
                         if (!user) {
                             res.json({ success: false, message: "User not found..." })
                         } else {
-                            if (req.body.page.submittedtimesheetsindex || req.body.page.submittedtimesheetsindex ==0) {
+                            if (req.body.page.submittedtimesheetsindex || req.body.page.submittedtimesheetsindex == 0) {
                                 console.log("SUBMITTED TIME SHEET INDEX EXISGS")
                                 //user[0].submittedtimesheets.splice(req.body.page.submittedtimesheetsindex,1)
                                 user[0].submittedtimesheets[req.body.page.submittedtimesheetsindex].timein = req.body.timein
@@ -236,7 +267,7 @@ module.exports = function (app) {
                                 })
 
                             } else {
-console.log('Hereo')
+                                console.log('Hereo')
                                 User.findOneAndUpdate({ name: req.body.client }, { $push: { submittedtimesheets: req.body } }, { new: true }, function (err, user) {
 
                                     if (err) throw err
@@ -547,39 +578,39 @@ console.log('Hereo')
             if (!user) {
                 res.json({ success: false, message: "User not found" })
             } else {
-                user[0].approvednotbooked.splice(req.body.approvedjobindex,1)
+                user[0].approvednotbooked.splice(req.body.approvedjobindex, 1)
                 user[0].requestedjobs.push(req.body)
-            
-              
-              
-                   // user[0].approvednotbooked[req.body.index].approved = false;
-                    User.findOneAndUpdate({ userclass: "admin" }, { $set: { requestedjobs: user[0].requestedjobs, approvednotbooked: user[0].approvednotbooked } }, { new: true }, function (err, user) {
 
-                        if (err) throw err;
-                        if (!user) {
-                            res.json({ success: false, message: "User not found.." })
-                        } else {
-                            User.find({ name: req.body.client }, function (err, user) {
-                                if (err) throw err;
-                                if (!user) {
-                                    res.json({ success: false, message: "User found.." })
-                                } else {
-                                    user[0].requestedjobs[req.body.index].approved = false;
-                                    User.findOneAndUpdate({ name: req.body.client }, { $set: { requestedjobs: user[0].requestedjobs, approvednotbooked: user[0].requestedjobs } }, { new: true }, function (err, user) {
-                                        if (err) throw err;
-                                        if (!user) {
-                                            res.json({ success: false, message: "User not found.." })
-                                        } else {
-                                            res.json({ success: true, message: "User found and updated...", user: user })
-                                        }
-                                    })
-                                }
-                            })
-                        }
-                    })
-               
-                   
-                
+
+
+                // user[0].approvednotbooked[req.body.index].approved = false;
+                User.findOneAndUpdate({ userclass: "admin" }, { $set: { requestedjobs: user[0].requestedjobs, approvednotbooked: user[0].approvednotbooked } }, { new: true }, function (err, user) {
+
+                    if (err) throw err;
+                    if (!user) {
+                        res.json({ success: false, message: "User not found.." })
+                    } else {
+                        User.find({ name: req.body.client }, function (err, user) {
+                            if (err) throw err;
+                            if (!user) {
+                                res.json({ success: false, message: "User found.." })
+                            } else {
+                                user[0].requestedjobs[req.body.index].approved = false;
+                                User.findOneAndUpdate({ name: req.body.client }, { $set: { requestedjobs: user[0].requestedjobs, approvednotbooked: user[0].requestedjobs } }, { new: true }, function (err, user) {
+                                    if (err) throw err;
+                                    if (!user) {
+                                        res.json({ success: false, message: "User not found.." })
+                                    } else {
+                                        res.json({ success: true, message: "User found and updated...", user: user })
+                                    }
+                                })
+                            }
+                        })
+                    }
+                })
+
+
+
 
 
             }
@@ -629,94 +660,94 @@ console.log('Hereo')
 
                 //IF APPROVED REQUEST ARRAY VALUE DOES EXIST//
 
-                user[0].requestedjobs.splice(req.body.index,1)
+                user[0].requestedjobs.splice(req.body.index, 1)
                 req.body.requestedjoblocation = req.body.currentIndex
                 user[0].approvednotbooked.push(req.body)
 
 
-             
-                    console.log("approvednotbooked index exists")
-                   
 
-                   // user[0].requestedjobs[req.body.index].booked = false;
+                console.log("approvednotbooked index exists")
 
 
-                    User.findOneAndUpdate({ userclass: "admin" }, { $set: { requestedjobs: user[0].requestedjobs, approvednotbooked: user[0].approvednotbooked } }, { new: true }, function (err, user) {
-
-                        if (err) throw err;
-                        if (!user) {
-                            res.json({ success: false, message: "User not found.." })
-                        } else {
-                            User.find({ name: req.body.client }, function (err, user) {
-                                if (err) throw err;
-                                if (!user) {
-                                    res.json({ success: false, message: "User found.." })
-                                } else {
-                                    user[0].requestedjobs[req.body.index].approved = true;
-                                    User.findOneAndUpdate({ name: req.body.client }, { $set: { requestedjobs: user[0].requestedjobs } }, { new: true }, function (err, user) {
-
-                                        if (err) throw err;
-                                        if (!user) {
-                                            res.json({ success: false, message: "User not found" })
-                                        } else {
-
-                                            res.json({ success: true, message: "User found and upated...", user: user })
-                                        }
-                                    })
+                // user[0].requestedjobs[req.body.index].booked = false;
 
 
+                User.findOneAndUpdate({ userclass: "admin" }, { $set: { requestedjobs: user[0].requestedjobs, approvednotbooked: user[0].approvednotbooked } }, { new: true }, function (err, user) {
 
-                                }
-                            })
-                        }
-                    })
+                    if (err) throw err;
+                    if (!user) {
+                        res.json({ success: false, message: "User not found.." })
+                    } else {
+                        User.find({ name: req.body.client }, function (err, user) {
+                            if (err) throw err;
+                            if (!user) {
+                                res.json({ success: false, message: "User found.." })
+                            } else {
+                                user[0].requestedjobs[req.body.index].approved = true;
+                                User.findOneAndUpdate({ name: req.body.client }, { $set: { requestedjobs: user[0].requestedjobs } }, { new: true }, function (err, user) {
 
-                
-                
-              //IF IT DOESN'T EXIST (WHICH IT SHOULDN'T)//  
-            
+                                    if (err) throw err;
+                                    if (!user) {
+                                        res.json({ success: false, message: "User not found" })
+                                    } else {
+
+                                        res.json({ success: true, message: "User found and upated...", user: user })
+                                    }
+                                })
+
+
+
+                            }
+                        })
+                    }
+                })
+
+
+
+                //IF IT DOESN'T EXIST (WHICH IT SHOULDN'T)//  
+
 
 
             }
         })
 
     })
-   /* app.post('/users/removerequestedjob', function (req, res) {
-
-        User.find({ userclass: "admin" }, function (err, user) {
-
-            if (err) throw err;
-            if (!user)
-            { res.json({ success: false, message: "User Not Found" }) }
-            else {
-                user[0].requestedjobs.splice(req.body.index, 1)
-                User.findOneAndUpdate({ userclass: "admin" }, { $set: { requestedjobs: user[0].requestedjobs } }, { new: true }, function (err, user) {
-                    if (err) throw err;
-                    if (!user) {
-                        res.json({ success: false, message: "User not found" })
-                    } else {
-                        User.find({ name: req.body.name }, function (err, user) {
-                            if (err) throw err;
-                            if (!user) {
-                                res.json({ success: false, message: "User not found.." })
-                            } else {
-                                user[0].requestedjobs.splice(req.body.index, 1)
-                                User.findOneAndUpdate({ name: req.body.name }, { $set: { requestedjobs: user[0].requestedjobs } }, { new: true }, function (err, user) {
-                                    if (err) throw err;
-                                    if (!user) {
-                                        res.json({ success: false, message: "User not found.." })
-                                    } else {
-                                        res.json({ success: true, message: "User found and updated", user: user })
-                                    }
-                                })
-
-                            }
-                        })
-                    }
-                })
-            }
-        })
-    })*/
+    /* app.post('/users/removerequestedjob', function (req, res) {
+ 
+         User.find({ userclass: "admin" }, function (err, user) {
+ 
+             if (err) throw err;
+             if (!user)
+             { res.json({ success: false, message: "User Not Found" }) }
+             else {
+                 user[0].requestedjobs.splice(req.body.index, 1)
+                 User.findOneAndUpdate({ userclass: "admin" }, { $set: { requestedjobs: user[0].requestedjobs } }, { new: true }, function (err, user) {
+                     if (err) throw err;
+                     if (!user) {
+                         res.json({ success: false, message: "User not found" })
+                     } else {
+                         User.find({ name: req.body.name }, function (err, user) {
+                             if (err) throw err;
+                             if (!user) {
+                                 res.json({ success: false, message: "User not found.." })
+                             } else {
+                                 user[0].requestedjobs.splice(req.body.index, 1)
+                                 User.findOneAndUpdate({ name: req.body.name }, { $set: { requestedjobs: user[0].requestedjobs } }, { new: true }, function (err, user) {
+                                     if (err) throw err;
+                                     if (!user) {
+                                         res.json({ success: false, message: "User not found.." })
+                                     } else {
+                                         res.json({ success: true, message: "User found and updated", user: user })
+                                     }
+                                 })
+ 
+                             }
+                         })
+                     }
+                 })
+             }
+         })
+     })*/
     app.post('/users/requestjob', function (req, res) {
 
         User.find({ userclass: "admin" }, function (err, user) {
@@ -810,11 +841,11 @@ console.log('Hereo')
 
 
                 }
-                User.findOneAndUpdate({userclass:"admin"}, {$set:{disputedtimesheets:user[0].disputedtimesheets}}, {new:true}, function(err,user){
-                    if(err)throw err;
-                    if(!user){
-                        res.json({success:false, message:"User not found.."})
-                    }else{
+                User.findOneAndUpdate({ userclass: "admin" }, { $set: { disputedtimesheets: user[0].disputedtimesheets } }, { new: true }, function (err, user) {
+                    if (err) throw err;
+                    if (!user) {
+                        res.json({ success: false, message: "User not found.." })
+                    } else {
                         console.log("Admin Disputed Time Sheets Updated..")
                     }
                 })
@@ -1267,7 +1298,7 @@ console.log('Hereo')
                             res.json({ success: false, message: "User not found.." })
                         } else {
                             //res.json({success: true, mes})
-                            
+
                             console.log("User Delinquent Time Sheets Updated...")
 
                         }
@@ -1795,36 +1826,36 @@ console.log('Hereo')
 
 
     })
-    app.post('/users/removerequestedjob', function(req,res){
-        
-        User.find({name:req.body.client}, function(err,user){
-            if(err)throw err;
-            if(!user){
-                res.json({success: false, message:"User not found.."})
-            }else{
-                for(var z=0;z<user[0].requestedjobs.length;z++){
-                    if(user[0].requestedjobs[z].numberofworkers == req.body.numberofworkers && user[0].requestedjobs[z].hours == req.body.hours
-                    && user[0].requestedjobs[z].monthNum == req.body.monthNum  && user[0].requestedjobs[z].dateNum == req.body.dateNum){
-                        user[0].requestedjobs.splice(z,1)
+    app.post('/users/removerequestedjob', function (req, res) {
+
+        User.find({ name: req.body.client }, function (err, user) {
+            if (err) throw err;
+            if (!user) {
+                res.json({ success: false, message: "User not found.." })
+            } else {
+                for (var z = 0; z < user[0].requestedjobs.length; z++) {
+                    if (user[0].requestedjobs[z].numberofworkers == req.body.numberofworkers && user[0].requestedjobs[z].hours == req.body.hours
+                        && user[0].requestedjobs[z].monthNum == req.body.monthNum && user[0].requestedjobs[z].dateNum == req.body.dateNum) {
+                        user[0].requestedjobs.splice(z, 1)
                     }
                 }
-                User.findOneAndUpdate({name:req.body.client}, {$set:{requestedjobs:user[0].requestedjobs}},{new:true}, function(err,user){
-                    if(err)throw err;
-                    if(!user){
-                        res.json({success: false, message:"User not found.."})
-                    }else{
-                        User.find({userclass:"admin"}, function(err,user){
-                            if(err)throw err;
-                            if(!user){
-                                res.json({success: false, message:"user not found.."})
-                            }else{
-                                user[0].requestedjobs.splice(req.body.requestedjoblocation,1)
-                                User.findOneAndUpdate({userclass:"admin"}, {$set:{requestedjobs: user[0].requestedjobs}},{new:true}, function(err,user){
-                                    if(err)throw err;
-                                    if(!user){
-                                        res.json({success: false, message:"User not found.."})
-                                    }else{
-                                        res.json({sucess: true, message:"Requested Job removed..", user:user})
+                User.findOneAndUpdate({ name: req.body.client }, { $set: { requestedjobs: user[0].requestedjobs } }, { new: true }, function (err, user) {
+                    if (err) throw err;
+                    if (!user) {
+                        res.json({ success: false, message: "User not found.." })
+                    } else {
+                        User.find({ userclass: "admin" }, function (err, user) {
+                            if (err) throw err;
+                            if (!user) {
+                                res.json({ success: false, message: "user not found.." })
+                            } else {
+                                user[0].requestedjobs.splice(req.body.requestedjoblocation, 1)
+                                User.findOneAndUpdate({ userclass: "admin" }, { $set: { requestedjobs: user[0].requestedjobs } }, { new: true }, function (err, user) {
+                                    if (err) throw err;
+                                    if (!user) {
+                                        res.json({ success: false, message: "User not found.." })
+                                    } else {
+                                        res.json({ sucess: true, message: "Requested Job removed..", user: user })
                                     }
                                 })
                             }
@@ -2071,9 +2102,9 @@ console.log('Hereo')
                     if (!validPassword) {
                         res.json({ success: false, message: "Incorrect Password..." })
                     } else {
-                        var token = jwt.sign({ success:true,username: user.username, email: user.email, payrate: user.payrate, userclass: user.userclass, payperiod: user.payperiodnum, name: user.name, _id: user._id, phonenumber: user.phonenumber, messages: user.comments, locations: user.locations, supervisors: user.supervisors, approvednotbooked: user.approvednotbooked, requestedjobs: user.requestedjobs, submittedtimesheets: user.submittedtimesheets }, secret, { expiresIn: '3h' });
-                        var timelefttoken =  jwt.sign({ username: user.username, email: user.email}, secret, { expiresIn: '3h' });
-                        res.json({ success: true, message: 'User authenticated', token: token,timelefttoken:timelefttoken, user: user });
+                        var token = jwt.sign({ success: true, username: user.username, email: user.email, payrate: user.payrate, userclass: user.userclass, payperiod: user.payperiodnum, name: user.name, _id: user._id, phonenumber: user.phonenumber, messages: user.comments, locations: user.locations, supervisors: user.supervisors, approvednotbooked: user.approvednotbooked, requestedjobs: user.requestedjobs, submittedtimesheets: user.submittedtimesheets }, secret, { expiresIn: '3h' });
+                        var timelefttoken = jwt.sign({ username: user.username, email: user.email }, secret, { expiresIn: '3h' });
+                        res.json({ success: true, message: 'User authenticated', token: token, timelefttoken: timelefttoken, user: user });
                         //res.json({ success: true, message: "User authenticated...", user: user })
                     }
                 }
@@ -2173,34 +2204,34 @@ console.log('Hereo')
             }
         }
         if (month == 8) {
-            if (dateNow == 1 || dateNow == 2 || dateNow == 3 || dateNow ==4 || dateNow == 5) {
+            if (dateNow == 1 || dateNow == 2 || dateNow == 3 || dateNow == 4 || dateNow == 5) {
 
                 payperiodnum = 2;
                 console.log("payperiodnum", payperiodnum)
 
             }
-            if (dateNow == 6 || dateNow ==7 || dateNow ==8 ||dateNow == 9 ||dateNow == 10 ||dateNow == 11 ||dateNow == 12) {
+            if (dateNow == 6 || dateNow == 7 || dateNow == 8 || dateNow == 9 || dateNow == 10 || dateNow == 11 || dateNow == 12) {
 
                 payperiodnum = 3;
                 console.log("payperiodnum", payperiodnum)
 
 
             }
-            if (dateNow == 13 ||dateNow == 14 ||dateNow == 15 ||dateNow == 16 || dateNow ==17 ||dateNow == 18 ||dateNow == 19) {
+            if (dateNow == 13 || dateNow == 14 || dateNow == 15 || dateNow == 16 || dateNow == 17 || dateNow == 18 || dateNow == 19) {
 
                 payperiodnum = 4;
                 console.log("payperiodnum", payperiodnum)
 
 
             }
-            if (dateNow == 20 ||dateNow == 21 ||dateNow == 22 ||dateNow ==23 || dateNow ==24 ||dateNow == 25 || dateNow ==26) {
+            if (dateNow == 20 || dateNow == 21 || dateNow == 22 || dateNow == 23 || dateNow == 24 || dateNow == 25 || dateNow == 26) {
 
                 payperiodnum = 5;
                 console.log("payperiodnum", payperiodnum)
 
 
             }
-            if (dateNow == 27 || dateNow == 28 ||dateNow == 29 ||dateNow == 30 ||dateNow == 31) {
+            if (dateNow == 27 || dateNow == 28 || dateNow == 29 || dateNow == 30 || dateNow == 31) {
 
                 payperiodnum = 6;
                 console.log("payperiodnum", payperiodnum)
@@ -2361,10 +2392,10 @@ console.log('Hereo')
         user.username = req.body.userName;
         user.phonenumber = req.body.phonenumber;
         user.password = req.body.password.toString(),
-        user.email = req.body.email;
+            user.email = req.body.email;
         user.userclass = req.body.userclass;
         user.delinquenttimesheets = [[]];
-        user.disputedtimesheets= [];
+        user.disputedtimesheets = [];
 
         user.payrate = 17;
         user.requestedjobs = [];
