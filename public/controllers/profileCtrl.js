@@ -94,11 +94,15 @@
                     $scope.timeSlot = 5;
 
                     console.log($scope.id)
+                                $scope.playAudio = function(){
+     $scope.bookedDate = true;
+                        $scope.audio.play();
+                        }
                     User.updateDate($scope.id,$scope.newDateInfo,$scope.slot,$scope.timeSlot).then(function(data){
                         console.log(data)
+            $scope.playAudio();
                         $scope.e.initTouchEvent(function(){
-                            $scope.bookedDate = true;
-                        $scope.audio.play();
+                       
                         })
                     })
                 })
