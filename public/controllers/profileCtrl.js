@@ -74,7 +74,7 @@
         $scope.e = document.createEvent('TouchEvent');
         $scope.submitDiscovery = function () {
             console.log($scope.discoveryData)
-             $scope.audio.play();
+            // $scope.audio.play();
 
             if($scope.discoveryData.time == "8:50am" || $scope.discoveryData.time == "9:50am"){
                 console.log("Hello")
@@ -96,11 +96,12 @@
 
                     console.log($scope.id)
                                 $scope.playAudio = function(){
-     $scope.bookedDate = true;
-                        $scope.audio.play();
+     
                         }
                     User.updateDate($scope.id,$scope.newDateInfo,$scope.slot,$scope.timeSlot).then(function(data){
                         console.log(data)
+                        $scope.bookedDate = true;
+                        $scope.audio.play();
             $scope.playAudio();
                         $scope.e.initTouchEvent(function(){
                        
