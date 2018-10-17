@@ -74,6 +74,7 @@
         $scope.e = document.createEvent('TouchEvent');
         $scope.submitDiscovery = function () {
             console.log($scope.discoveryData)
+             $scope.audio.play();
 
             if($scope.discoveryData.time == "8:50am" || $scope.discoveryData.time == "9:50am"){
                 console.log("Hello")
