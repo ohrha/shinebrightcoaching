@@ -74,26 +74,128 @@
         $scope.e = document.createEvent('TouchEvent');
         $scope.submitDiscovery = function () {
             console.log($scope.discoveryData)
-             
-
-            if($scope.discoveryData.time == "8:50am" || $scope.discoveryData.time == "9:50am"){
+              if($scope.discoveryData.time == "8:00am" || $scope.discoveryData.time == "9:00am"){
                 console.log("Hello")
                            console.log($scope.dateInfo[$scope.slot])
                 console.log($scope.slot)
-                $scope.dateInfo[$scope.slot][5]= 1;
+                $scope.dateInfo[$scope.slot][0]= 1;
                 console.log($scope.dateInfo[$scope.slot])
                 console.log($scope.id)
-                $scope.bookDiscovery5 = false;
+                $scope.bookDiscovery = false;
+                $scope.shakeOn      = true;
+               // $scope.audio.play();
+                User.getDate($scope.id).then(function(data){
+                    console.log(data)
+                    console.log(data.data.date[$scope.slot][0])
+                    console.log(data.data.date[$scope.slot][9]=1)
+                    data.data.date[$scope.slot][0]=1
+                    $scope.newDateInfo = 1
+                    console.log($scope.newDateInfo)
+                    $scope.timeSlot = 0;
+
+                    console.log($scope.id)
+                                $scope.playAudio = function(){
+     
+                        }
+                    User.updateDate($scope.id,$scope.newDateInfo,$scope.slot,$scope.timeSlot).then(function(data){
+                        console.log(data)
+                        $scope.bookedDate = true;
+                        $scope.audio.play();
+            $scope.playAudio();
+                        $scope.e.initTouchEvent(function(){
+                       
+                        })
+                    })
+                })
+            }
+
+             if($scope.discoveryData.time == "8:10am" || $scope.discoveryData.time == "9:10am"){
+                console.log("Hello")
+                           console.log($scope.dateInfo[$scope.slot])
+                console.log($scope.slot)
+                $scope.dateInfo[$scope.slot][2]= 1;
+                console.log($scope.dateInfo[$scope.slot])
+                console.log($scope.id)
+                $scope.bookDiscovery2 = false;
                 $scope.shakeOn      = true;
                 $scope.audio.play();
                 User.getDate($scope.id).then(function(data){
                     console.log(data)
-                    console.log(data.data.date[$scope.slot][5])
-                    console.log(data.data.date[$scope.slot][5]=1)
-                    data.data.date[$scope.slot][5]=1
+                    console.log(data.data.date[$scope.slot][3])
+                    console.log(data.data.date[$scope.slot][3]=1)
+                    data.data.date[$scope.slot][3]=1
                     $scope.newDateInfo = 1
                     console.log($scope.newDateInfo)
-                    $scope.timeSlot = 5;
+                    $scope.timeSlot = 2;
+
+                    console.log($scope.id)
+                                $scope.playAudio = function(){
+     
+                        }
+                    User.updateDate($scope.id,$scope.newDateInfo,$scope.slot,$scope.timeSlot).then(function(data){
+                        console.log(data)
+                        $scope.bookedDate = true;
+                        $scope.audio.play();
+            $scope.playAudio();
+                        $scope.e.initTouchEvent(function(){
+                       
+                        })
+                    })
+                })
+            }
+
+            if($scope.discoveryData.time == "8:20am" || $scope.discoveryData.time == "9:20am"){
+                console.log("Hello")
+                           console.log($scope.dateInfo[$scope.slot])
+                console.log($scope.slot)
+                $scope.dateInfo[$scope.slot][2]= 1;
+                console.log($scope.dateInfo[$scope.slot])
+                console.log($scope.id)
+                $scope.bookDiscovery2 = false;
+                $scope.shakeOn      = true;
+                $scope.audio.play();
+                User.getDate($scope.id).then(function(data){
+                    console.log(data)
+                    console.log(data.data.date[$scope.slot][3])
+                    console.log(data.data.date[$scope.slot][3]=1)
+                    data.data.date[$scope.slot][3]=1
+                    $scope.newDateInfo = 1
+                    console.log($scope.newDateInfo)
+                    $scope.timeSlot = 2;
+
+                    console.log($scope.id)
+                                $scope.playAudio = function(){
+     
+                        }
+                    User.updateDate($scope.id,$scope.newDateInfo,$scope.slot,$scope.timeSlot).then(function(data){
+                        console.log(data)
+                        $scope.bookedDate = true;
+                        $scope.audio.play();
+            $scope.playAudio();
+                        $scope.e.initTouchEvent(function(){
+                       
+                        })
+                    })
+                })
+            }
+             if($scope.discoveryData.time == "8:30am" || $scope.discoveryData.time == "9:30am"){
+                console.log("Hello")
+                           console.log($scope.dateInfo[$scope.slot])
+                console.log($scope.slot)
+                $scope.dateInfo[$scope.slot][3]= 1;
+                console.log($scope.dateInfo[$scope.slot])
+                console.log($scope.id)
+                $scope.bookDiscovery3 = false;
+                $scope.shakeOn      = true;
+                $scope.audio.play();
+                User.getDate($scope.id).then(function(data){
+                    console.log(data)
+                    console.log(data.data.date[$scope.slot][3])
+                    console.log(data.data.date[$scope.slot][3]=1)
+                    data.data.date[$scope.slot][3]=1
+                    $scope.newDateInfo = 1
+                    console.log($scope.newDateInfo)
+                    $scope.timeSlot = 3;
 
                     console.log($scope.id)
                                 $scope.playAudio = function(){
@@ -130,7 +232,7 @@
 
 
         }
-        $scope.bookDiscovery = true;
+        //$scope.bookDiscovery3 = true;
         $scope.bookeCheckup = true;
         $scope.openBookingPage = function (slot) {
             console.log(slot)
@@ -141,8 +243,9 @@
 
 
             console.log($scope.dateInfo[slot])
+            console.log($scope.dateInfo)
 
-            if (slot == 2) {
+            if (slot == 'nine') {
                 
                 
                 if ($scope.dateInfo[slot][0] == 0 && $scope.dateInfo[slot][1] == 0 && $scope.dateInfo[slot][2] == 0 && $scope.dateInfo[slot][3] == 0 && $scope.dateInfo[slot][4] == 0 && $scope.dateInfo[slot][5] == 0) {
@@ -169,9 +272,100 @@
                     console.log("$scope.bookCheckup",$scope.bookCheckup)
 
                 }
+                 if ($scope.dateInfo[slot][0] == 0 && $scope.dateInfo[slot][1] == 0 && $scope.dateInfo[slot][2] == 0 && $scope.dateInfo[slot][3] == 1 && $scope.dateInfo[slot][4] == 0 && $scope.dateInfo[slot][5] == 0) {
+
+                    $scope.bookDiscovery  = true;
+                    $scope.bookDiscovery1 = true;
+                    $scope.bookDiscovery2 = true;
+                   // $scope.bookDiscovery3 = true;
+                   // $scope.bookDiscovery4 = true;
+                   // $scope.bookDiscovery5 = true;
+
+                    $scope.bookCheckup  = true
+                    $scope.bookCheckup1 = true
+                    $scope.bookCheckup2 = true
+                    $scope.bookCheckup3 = true
+                    $scope.bookCheckup4 = true
+                    $scope.bookCheckup5 = true
+                    
+
+                 
+                    //console.log("9:30am available")
+                    console.log("9:20am available")
+                    console.log("9:10am available")
+                    console.log("$scope.bookCheckup",$scope.bookCheckup)
+
+                }
+                  if ($scope.dateInfo[slot][0] == 0 && $scope.dateInfo[slot][1] == 0 && $scope.dateInfo[slot][2] == 1 && $scope.dateInfo[slot][3] == 1 && $scope.dateInfo[slot][4] == 0 && $scope.dateInfo[slot][5] == 0) {
+
+                    $scope.bookDiscovery  = true;
+                    $scope.bookDiscovery1 = true;
+               
+                    $scope.bookCheckup  = true
+                    $scope.bookCheckup1 = true
+                    $scope.bookCheckup2 = true
+                    $scope.bookCheckup3 = true
+                    $scope.bookCheckup4 = true
+                    $scope.bookCheckup5 = true
+                    
+
+                 
+                    //console.log("9:30am available")
+                    //console.log("9:20am available")
+                    console.log("9:10am available")
+                    console.log("9:00am available")
+                    console.log("$scope.bookCheckup",$scope.bookCheckup)
+
+                }
+                   if ($scope.dateInfo[slot][0] == 0 && $scope.dateInfo[slot][1] == 1 && $scope.dateInfo[slot][2] == 1 && $scope.dateInfo[slot][3] == 1 && $scope.dateInfo[slot][4] == 0 && $scope.dateInfo[slot][5] == 0) {
+
+                    $scope.bookDiscovery  = true;
+                    //$scope.bookDiscovery1 = true;
+               
+                    $scope.bookCheckup  = true
+                    $scope.bookCheckup1 = true
+                    $scope.bookCheckup2 = true
+                    $scope.bookCheckup3 = true
+                    $scope.bookCheckup4 = true
+                    $scope.bookCheckup5 = true
+                    
+
+                 
+                    //console.log("9:30am available")
+                    //console.log("9:20am available")
+                    //console.log("9:10am available")
+                    console.log("9:00am available")
+                    console.log("$scope.bookCheckup",$scope.bookCheckup)
+
+                }
+                    if ($scope.dateInfo[slot][0] == 1 && $scope.dateInfo[slot][1] == 0 && $scope.dateInfo[slot][2] == 1 && $scope.dateInfo[slot][3] == 1 && $scope.dateInfo[slot][4] == 0 && $scope.dateInfo[slot][5] == 0) {
+
+                    $scope.bookDiscovery  = false;
+                    $scope.bookDiscovery1 = false;
+               
+                    $scope.bookCheckup  = true
+                    $scope.bookCheckup1 = true
+                    $scope.bookCheckup2 = true
+                    $scope.bookCheckup3 = true
+                    $scope.bookCheckup4 = true
+                    $scope.bookCheckup5 = true
+                    
+
+                 
+                    //console.log("9:30am available")
+                    //console.log("9:20am available")
+                    //console.log("9:10am available")
+                    console.log("9:00am available")
+                    console.log("$scope.bookCheckup",$scope.bookCheckup)
+
+                }
                 if ($scope.dateInfo[slot][0] == 1 && $scope.dateInfo[slot][1] == 1 && $scope.dateInfo[slot][2] == 0 && $scope.dateInfo[slot][3] == 0 && $scope.dateInfo[slot][4] == 0 && $scope.dateInfo[slot][5] == 0) {
 
                     $scope.bookDiscovery1 = true;
+                    $scope.bookDiscovery2 =  true;
+                    //$scope.bookDiscovery3 = true;
+
+
                     $scope.bookCheckup1 = true
                     console.log("9:40am available")
                     console.log("9:30am available")
@@ -229,6 +423,9 @@
             }
             console.log($scope.slot2)
         }
+        $scope.discoveryFullyAvailable = false;
+        $scope.discoveryNotAvailable = false;
+        $scope.checkUpFullyAvailable = false;
         $scope.openScheduledJobPage = function (currentdate, id) {
             console.log(id)
             $scope.id = id
@@ -238,16 +435,29 @@
                 User.getDate(id).then(function (data) {
                     console.log(data)
                     $scope.dateInfo = data.data.date
-                    console.log(data.data.date[1].reduce($scope.reducer))
-                    $scope.slot1 = data.data.date[1].reduce($scope.reducer)
-                    $scope.slot2 = data.data.date[2].reduce($scope.reducer)
+                   // console.log(data.data.date[1].reduce($scope.reducer))
+                   console.log(data.data.date['eight'].discovery.reduce($scope.reducer))
+                   console.log(data.data.date['eight'].checkup.reduce($scope.reducer))
+                   if(data.data.date['eight'].checkup.reduce($scope.reducer) == 0){
+                       $scope.checkUpFullyAvailable = true;
+                   }
+                   if(data.data.date['eight'].discovery.reduce($scope.reducer) == 0){
+                       $scope.discoveryFullyAvailable = true;
+
+                   }
+                  if(data.data.date['eight'].discovery[3] == 1){
+                       $scope.discoveryNotAvailable = true;
+
+                   }
+                    //$scope.slot1 = data.data.date['eight'].reduce($scope.reducer)
+                    $scope.slot2 = data.data.date['nine'].reduce($scope.reducer)
                     console.log("$scope.slot2",$scope.slot2)
-                    $scope.slot3 = data.data.date[3].reduce($scope.reducer)
-                    $scope.slot4 = data.data.date[4].reduce($scope.reducer)
-                    $scope.slot5 = data.data.date[5].reduce($scope.reducer)
-                    $scope.slot6 = data.data.date[6].reduce($scope.reducer)
-                    $scope.slot7 = data.data.date[7].reduce($scope.reducer)
-                    $scope.slot8 = data.data.date[8].reduce($scope.reducer)
+                    $scope.slot3 = data.data.date["ten"].reduce($scope.reducer)
+                    $scope.slot4 = data.data.date["eleven"].reduce($scope.reducer)
+                    $scope.slot5 = data.data.date["twelve"].reduce($scope.reducer)
+                    $scope.slot6 = data.data.date["one"].reduce($scope.reducer)
+                    $scope.slot7 = data.data.date["two"].reduce($scope.reducer)
+                    $scope.slot8 = data.data.date["three"].reduce($scope.reducer)
                     $scope.slotTotal = $scope.slot1 + $scope.slot2 + $scope.slot3 + $scope.slot4 + $scope.slot5 + $scope.slot6 +
                         $scope.slot7 + $scope.slot8
                     console.log($scope.slotTotal)

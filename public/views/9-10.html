@@ -10,12 +10,11 @@
         <label for="Sex">Available Hours *</label>
         <select class="error browser-default animated" id="sex" ng-model="discoveryData.time" ng-class="{'shake':shakeOn}" name="time" required>
             <option value="" disabled selected>Hours</option>
-            <option ng-show="bookDiscovery" value="9:20am">9:00am</option>
-            <option ng-show="bookDiscovery1" value="9:30am">9:10am</option>
-            <option ng-show="bookDiscovery2" value="9:40am">9:20am</option>
-            <option ng-show="bookDiscovery3" value="9:40am">9:30am</option>
-            <option ng-show="bookDiscovery4" value="9:40am">9:40am</option>                          
-            <option ng-show="bookDiscovery5" value="9:50am">9:50am</option>
+            <option ng-show="bookDiscovery" value="9:00am">9:00am</option>
+            <option ng-show="bookDiscovery1" value="9:10am">9:10am</option>
+            <option ng-show="bookDiscovery2" value="9:20am">9:20am</option>
+            <option ng-show="bookDiscovery3" value="9:30am">9:30am</option>
+           
         </select>
         </div>
 <div ng-show="!bookDiscovery5">

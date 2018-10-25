@@ -10,8 +10,24 @@
    <div class ="col s3 datehover">
       
 
-<div ng-show = "slot1 == 6" ng-click="openModal()">
- <span class = " red-text">Fully Booked</span>
+<div  ng-click="openModal()">
+
+
+    <div ng-show="checkUpFullyAvailable">
+ <!--<span class = " red-text">Checkup Available</span>-->
+ <i class = "material-icons green-text text-lighten-2">assignment_turned_in
+</i>
+ 
+
+    </div>
+        <div ng-show="discoveryFullyAvailable">
+ <!--<span class = " red-text">Discovery Available</span>-->
+ <i class = "material-icons green-text text-lighten-2">free_breakfast</i>
+    </div>
+    <div ng-show="discoveryNotAvailable">
+ <!--<span class = " red-text">Discovery Available</span>-->
+ <i class = "material-icons red-text text-lighten-2">free_breakfast</i>
+    </div>
        <p class = "montserrat">8:00am </p>
               <span class = "montserrat">- </span>
 
@@ -22,14 +38,14 @@
 
    </div>
     <div class ="col s3 datehover">
-<div ng-show = "slot2 == 2 || slot2 == 1"ng-click="openBookingPage('2')">
+<div ng-show = "slot2 == 2 || slot2 == 1"ng-click="openBookingPage('nine')">
  <span class = " green-text">Discovery Or Checkup Available</span>
        <p class = "montserrat">9:00am </p>
               <span class = "montserrat">- </span>
 
        <p class = "montserrat">9:50am </p>
 </div>
-<div ng-show = "slot2 == 0  "ng-click="openBookingPage('2')">
+<div ng-show = "slot2 == 0  "ng-click="openBookingPage('ten')">
  <span class = " green-text">Fully Available</span>
        <p class = "montserrat">9:00am </p>
               <span class = "montserrat">- </span>

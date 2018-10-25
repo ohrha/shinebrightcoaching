@@ -65,18 +65,29 @@ module.exports = function (app) {
         console.log(req.params.timeslot)
         Date.findOne({ _id: req.params.id }, function (err, date) {
             if (err) throw err;
-            if (!date) {
+            if (!date) { 
                 res.json({ success: false, message: "Date not found.." })
             } else {
-               console.log(date[req.params.slot])
-                date[req.params.slot][req.params.timeslot] = Number(req.params.newdateinfo)
-                date.save(function(err,date){
+               console.log(date)
+               //console.log(date.eight)
+               console.log( date[String(req.params.slot)])
+                date[String(req.params.slot)][req.params.timeslot] = Number(req.params.newdateinfo)
+                Date.findOneAndUpdate({_id:req.params.id},{$set:{ten:date[String(req.params.slot)]}},{new:true}, function(err,data){
+                    if(err)throw err;
+                    if(!date){
+                        res.json({success: false, message:"Date not found.."})
+                    }else{
+                        res.json({success: true, message:"Date Found And Updated", date:date})
+                    }
+
+                })
+               /* date.save(function(err,date){
                     if(err){
                         res.json({success: false, message:"Date not found."})
                     }else{
                         res.json({success: true, message:"Date Saved Successfully", date:date})
                     }
-                })
+                })*/
               /*  Date.findOneAndUpdate({_id:req.params.id},{$set:{date:date[req.params.slot][req.params.timeslot]}},{new:true}, function(err,date){
                     if(err)throw err;
                     if(!date){
