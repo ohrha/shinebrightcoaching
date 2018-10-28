@@ -14,9 +14,9 @@ angular.module('userServices', []).config(function () {
         userFactory.getDate = function (id) {
             return $http.put('/api/months/getdate/' + id)
         }
-        userFactory.updateDate = function (id,newdateinfo,slot, timeslot) {
-            console.log("update date")
-            return $http.put('/api/months/updatedate/' + id +'/'+newdateinfo+'/'+slot+'/'+timeslot)
+        userFactory.updateDate = function (info) {
+            console.log(info)
+            return $http.post('/api/months/updatedate',info)
         }
         userFactory.create = function (regData) {
 

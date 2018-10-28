@@ -10,16 +10,16 @@ var DateSchema = new Schema({
     name: {type:String,dropDups:true},
     date: {type:Number},
     month:{type:String},
-    eight: {type:Object, required:true },
-    nine: {type:Array, required:true },
-    twenty: {type:Array, required:true },
-    thirty: {type:Array, required:true },
-    fourty: {type:Array, required:true },
-    fifty: {type:Array, required:true },
+    eight: {type:Object },
+    nine: {type:Object },
+    twenty: {type:Array },
+    thirty: {type:Array},
+    fourty: {type:Array },
+    fifty: {type:Array },
    
 
-    7: {type:Array, required:true },
-    8: {type:Array, required:true }
+    7: {type:Array },
+    8: {type:Array }
     
     
 

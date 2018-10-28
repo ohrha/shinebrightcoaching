@@ -37,6 +37,34 @@ console.log(hearto);
 
 
 });
+app.directive('eightToNine',function(){
+
+
+		return{
+
+			restrict: 'E',
+			scope:true,
+			
+			   link: function(scope, element, attrs, ngModel){
+				scope.time = ""
+				console.log(scope)
+     
+     
+    },
+			templateUrl:'../views/8-9.html',
+					controller: function() {
+        this.discoveryData2 = {
+            type:"",
+			test:"",
+            time:""
+        }
+        this.submitBooking2 = function(){
+            console.log(this.discoveryData2)
+			console.log(scope)
+        }
+
+	},
+		controllerAs: "eighttonine"}});
 app.directive('tenToEleven',function(){
 
 

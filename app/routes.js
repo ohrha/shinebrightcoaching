@@ -59,20 +59,51 @@ module.exports = function (app) {
         })
 
         */
-    app.put('/months/updatedate/:id/:newdateinfo/:slot/:timeslot', function (req, res) {
-        console.log(req.params.slot)
-        console.log(req.params.newdateinfo)
-        console.log(req.params.timeslot)
-        Date.findOne({ _id: req.params.id }, function (err, date) {
+    app.post('/months/updatedate', function (req, res) {
+        console.log(req.body)
+        console.log(req.body.id)
+        Date.findOne({ _id: req.body.id }, function (err, date) {
             if (err) throw err;
             if (!date) { 
                 res.json({ success: false, message: "Date not found.." })
             } else {
                console.log(date)
+               if(req.body.discoverycrossover0){
+
+                   date["eight"].state[4] = 1
+                   date["eight"].state[5] = 1
+                   date["nine"].state[0] = 1
+date.save(function(err,date){
+                    if(err){
+                        res.json({success: false, message:"Date not found.",err:err})
+                    }else{
+                        res.json({success: true, message:"Date Saved Successfully", date:date})
+                    }
+                })
+                   
+               }
+               if(req.body.discoverycrossover10){
+
+                   //date["eight"].state[4] = 1
+                   date["eight"].state[5] = 1
+                   date["nine"].state[0] = 1
+                   date["nine"].state[1] = 1
+                date.save(function(err,date){
+                    if(err){
+                        res.json(
+                            {success: false, message:"Date not found.",err:err}
+                            )
+                    }else{
+                        res.json({success: true, message:"Date Saved Successfully", date:date})
+                    }
+                })
+                   
+               }
                //console.log(date.eight)
-               console.log( date[String(req.params.slot)])
+            /*   console.log( date[String(req.params.slot)])
                 date[String(req.params.slot)][req.params.timeslot] = Number(req.params.newdateinfo)
-                Date.findOneAndUpdate({_id:req.params.id},{$set:{ten:date[String(req.params.slot)]}},{new:true}, function(err,data){
+
+                Date.findOneAndUpdate({_id:req.params.id},{$set:{eight:date[String(req.params.slot)]}},{new:true}, function(err,data){
                     if(err)throw err;
                     if(!date){
                         res.json({success: false, message:"Date not found.."})
@@ -80,7 +111,7 @@ module.exports = function (app) {
                         res.json({success: true, message:"Date Found And Updated", date:date})
                     }
 
-                })
+                })*/
                /* date.save(function(err,date){
                     if(err){
                         res.json({success: false, message:"Date not found."})
