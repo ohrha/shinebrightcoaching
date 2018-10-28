@@ -700,12 +700,7 @@
                         console.log(data.data.date['eight'].state[0])
 
                     }
-                    /*  if (data.data.date['eight'].state[2] == 1 && data.data.date['eight'].state[3] == 1
-                          && data.data.date['eight'].state[4] == 1 && data.data.date['eight'].state[5] == 1) {
-                          $scope.discoveryNotAvailable = true;
-                          console.log(data.data.date['eight'].state[0])
-  
-                      }*/
+   
                     if (data.data.date['eight'].state[3] == 1
                         && data.data.date['eight'].state[4] == 1 && data.data.date['eight'].state[5] == 1) {
                         $scope.discoveryAlmostFull = true;
