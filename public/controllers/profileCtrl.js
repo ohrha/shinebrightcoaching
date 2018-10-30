@@ -820,15 +820,15 @@
                         $scope.discoveryAlmostFull10 = true;
                         $scope.discoveryAlmostFull11 = true;
                         $scope.discoveryAlmostFull12 = true;
-                        $scope.discoveryAlmostFull1 = true;
-                        $scope.discoveryAlmostFull2 = true;
+                       // $scope.discoveryAlmostFull1 = true;
+                       // $scope.discoveryAlmostFull2 = true;
                        // $scope.discoveryAlmostFull3 = true;
                         $scope.sessionAlmostFull9 = true;
                         $scope.sessionAlmostFull10 = true;
                         $scope.sessionAlmostFull11 = true;
                         $scope.sessionAlmostFull12 = true;
-                        $scope.sessionAlmostFull1 = true;
-                        $scope.sessionAlmostFull2 = true;
+                        //$scope.sessionAlmostFull1 = true;
+                       // $scope.sessionAlmostFull2 = true;
                        // $scope.sessionAlmostFull3 = true;
                         console.log(820)
 
@@ -839,15 +839,15 @@
                         $scope.discoveryAlmostFull10 = true;
                         $scope.discoveryAlmostFull11 = true;
                         $scope.discoveryAlmostFull12 = true;
-                        $scope.discoveryAlmostFull1 = true;
-                        $scope.discoveryAlmostFull2 = true;
+                        //$scope.discoveryAlmostFull1 = true;
+                        //$scope.discoveryAlmostFull2 = true;
                        // $scope.discoveryAlmostFull3 = true;
                         $scope.sessionAlmostFull9 = true;
                         $scope.sessionAlmostFull10 = true;
                         $scope.sessionAlmostFull11 = true;
                         $scope.sessionAlmostFull12 = true;
-                        $scope.sessionAlmostFull1 = true;
-                        $scope.sessionAlmostFull2 = true;
+                        //$scope.sessionAlmostFull1 = true;
+                        //$scope.sessionAlmostFull2 = true;
                         //$scope.sessionAlmostFull3 = true;
                         console.log(820)
 
@@ -858,15 +858,15 @@
                         $scope.discoveryAlmostFull10 = true;
                         $scope.discoveryAlmostFull11 = true;
                         $scope.discoveryAlmostFull12 = true;
-                        $scope.discoveryAlmostFull1 = true;
-                        $scope.discoveryAlmostFull2 = true;
+                        //$scope.discoveryAlmostFull1 = true;
+                        //$scope.discoveryAlmostFull2 = true;
                        // $scope.discoveryAlmostFull3 = true;
                         $scope.sessionAlmostFull9 = true;
                         $scope.sessionAlmostFull10 = true;
                         $scope.sessionAlmostFull11 = true;
                         $scope.sessionAlmostFull12 = true;
-                        $scope.sessionAlmostFull1 = true;
-                        $scope.sessionAlmostFull2 = true;
+                        //$scope.sessionAlmostFull1 = true;
+                       // $scope.sessionAlmostFull2 = true;
                        // $scope.sessionAlmostFull3 = true;
                         console.log(820)
 
@@ -877,15 +877,15 @@
                         $scope.discoveryAlmostFull10 = true;
                         $scope.discoveryAlmostFull11 = true;
                         $scope.discoveryAlmostFull12 = true;
-                        $scope.discoveryAlmostFull1 = true;
-                        $scope.discoveryAlmostFull2 = true;
+                        //$scope.discoveryAlmostFull1 = true;
+                        //$scope.discoveryAlmostFull2 = true;
                         //$scope.discoveryAlmostFull3 = true;
                         $scope.sessionAlmostFull9 = true;
                         $scope.sessionAlmostFull10 = true;
                         $scope.sessionAlmostFull11 = true;
                         $scope.sessionAlmostFull12 = true;
-                        $scope.sessionAlmostFull1 = true;
-                        $scope.sessionAlmostFull2 = true;
+                      //  $scope.sessionAlmostFull1 = true;
+                        //$scope.sessionAlmostFull2 = true;
                         //$scope.sessionAlmostFull3 = true;
                         console.log(820)
 
@@ -896,15 +896,15 @@
                         $scope.discoveryAlmostFull10 = true;
                         $scope.discoveryAlmostFull11 = true;
                         $scope.discoveryAlmostFull12 = true;
-                        $scope.discoveryAlmostFull1 = true;
-                        $scope.discoveryAlmostFull2 = true;
+                       // $scope.discoveryAlmostFull1 = true;
+                       // $scope.discoveryAlmostFull2 = true;
                         //$scope.discoveryAlmostFull3 = true;
                         $scope.sessionAlmostFull9 = true;
                         $scope.sessionAlmostFull10 = true;
                         $scope.sessionAlmostFull11 = true;
                         $scope.sessionAlmostFull12 = true;
-                        $scope.sessionAlmostFull1 = true;
-                        $scope.sessionAlmostFull2 = true;
+                       // $scope.sessionAlmostFull1 = true;
+                       /// $scope.sessionAlmostFull2 = true;
                        // $scope.sessionAlmostFull3 = true;
                         console.log(820)
 
@@ -915,19 +915,29 @@
                         $scope.discoveryAlmostFull10 = true;
                         $scope.discoveryAlmostFull11 = true;
                         $scope.discoveryAlmostFull12 = true;
-                        $scope.discoveryAlmostFull1 = true;
-                        $scope.discoveryAlmostFull2 = true;
+                        //$scope.discoveryAlmostFull1 = true;
+                        //$scope.discoveryAlmostFull2 = true;
 //$scope.discoveryAlmostFull3 = true;
                         $scope.sessionAlmostFull9 = true;
                         $scope.sessionAlmostFull10 = true;
                         $scope.sessionAlmostFull11 = true;
                         $scope.sessionAlmostFull12 = true;
-                        $scope.sessionAlmostFull1 = true;
-                        $scope.sessionAlmostFull2 = true;
+                        //$scope.sessionAlmostFull1 = true;
+                        //$scope.sessionAlmostFull2 = true;
                         //$scope.sessionAlmostFull3 = true;
                         console.log(820)
 
                     }
+                                 if (data.data.date['one'].state[0] == 2 && data.data.date['one'].state[1] == 2 && data.data.date['one'].state[2] == 0 && data.data.date['one'].state[3] == 0
+                        && data.data.date['one'].state[4] == 0 && data.data.date['two'].state[5] == 0) {
+
+                        $scope.discoveryFullyAvailable1 = true;
+
+                         $scope.sessionFullyAvailable1 = true;
+                        console.log(820)
+
+                    }
+
                     if (data.data.date['two'].state[0] == 1 && data.data.date['two'].state[1] == 1 && data.data.date['two'].state[2] == 1 && data.data.date['two'].state[3] == 1
                         && data.data.date['two'].state[4] == 0 && data.data.date['two'].state[5] == 0) {
 
@@ -940,9 +950,9 @@
                     if (data.data.date['two'].state[0] == 2 && data.data.date['two'].state[1] == 2 && data.data.date['two'].state[2] == 2 && data.data.date['two'].state[3] == 2
                         && data.data.date['two'].state[4] == 0 && data.data.date['two'].state[5] == 0) {
 
-                        $scope.discoveryAlmostFull2 = true;
+                        $scope.discoveryFull2 = true;
 
-                        // $scope.sessionAlmostFull3 = true;
+                         $scope.sessionAlmostFull2 = true;
                         console.log(820)
 
                     }
