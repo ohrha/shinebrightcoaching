@@ -823,14 +823,14 @@
                         && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
                         $scope.discoveryAlmostFull10 = true;
                         $scope.discoveryAlmostFull11 = true;
-                        $scope.discoveryAlmostFull12 = true;
+                        //$scope.discoveryAlmostFull12 = true;
                         // $scope.discoveryAlmostFull1 = true;
                         // $scope.discoveryAlmostFull2 = true;
                         // $scope.discoveryAlmostFull3 = true;
                         $scope.sessionAlmostFull9 = true;
                         $scope.sessionAlmostFull10 = true;
                         $scope.sessionAlmostFull11 = true;
-                        $scope.sessionAlmostFull12 = true;
+                        //$scope.sessionAlmostFull12 = true;
                         //$scope.sessionAlmostFull1 = true;
                         // $scope.sessionAlmostFull2 = true;
                         // $scope.sessionAlmostFull3 = true;
@@ -842,14 +842,14 @@
                         && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
                         $scope.discoveryAlmostFull10 = true;
                         $scope.discoveryAlmostFull11 = true;
-                        $scope.discoveryAlmostFull12 = true;
+                        //$scope.discoveryAlmostFull12 = true;
                         //$scope.discoveryAlmostFull1 = true;
                         //$scope.discoveryAlmostFull2 = true;
                         // $scope.discoveryAlmostFull3 = true;
                         $scope.sessionAlmostFull9 = true;
                         $scope.sessionAlmostFull10 = true;
                         $scope.sessionAlmostFull11 = true;
-                        $scope.sessionAlmostFull12 = true;
+                       // $scope.sessionAlmostFull12 = true;
                         //$scope.sessionAlmostFull1 = true;
                         //$scope.sessionAlmostFull2 = true;
                         //$scope.sessionAlmostFull3 = true;
@@ -861,14 +861,14 @@
                         && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
                         $scope.discoveryAlmostFull10 = true;
                         $scope.discoveryAlmostFull11 = true;
-                        $scope.discoveryAlmostFull12 = true;
+                       // $scope.discoveryAlmostFull12 = true;
                         //$scope.discoveryAlmostFull1 = true;
                         //$scope.discoveryAlmostFull2 = true;
                         // $scope.discoveryAlmostFull3 = true;
                         $scope.sessionAlmostFull9 = true;
                         $scope.sessionAlmostFull10 = true;
                         $scope.sessionAlmostFull11 = true;
-                        $scope.sessionAlmostFull12 = true;
+                        //$scope.sessionAlmostFull12 = true;
                         //$scope.sessionAlmostFull1 = true;
                         // $scope.sessionAlmostFull2 = true;
                         // $scope.sessionAlmostFull3 = true;
@@ -880,14 +880,14 @@
                         && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
                         $scope.discoveryAlmostFull10 = true;
                         $scope.discoveryAlmostFull11 = true;
-                        $scope.discoveryAlmostFull12 = true;
+                       // $scope.discoveryAlmostFull12 = true;
                         //$scope.discoveryAlmostFull1 = true;
                         //$scope.discoveryAlmostFull2 = true;
                         //$scope.discoveryAlmostFull3 = true;
                         $scope.sessionAlmostFull9 = true;
                         $scope.sessionAlmostFull10 = true;
                         $scope.sessionAlmostFull11 = true;
-                        $scope.sessionAlmostFull12 = true;
+                        //$scope.sessionAlmostFull12 = true;
                         //  $scope.sessionAlmostFull1 = true;
                         //$scope.sessionAlmostFull2 = true;
                         //$scope.sessionAlmostFull3 = true;
@@ -899,14 +899,14 @@
                         && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
                         $scope.discoveryAlmostFull10 = true;
                         $scope.discoveryAlmostFull11 = true;
-                        $scope.discoveryAlmostFull12 = true;
+                        //$scope.discoveryAlmostFull12 = true;
                         // $scope.discoveryAlmostFull1 = true;
                         // $scope.discoveryAlmostFull2 = true;
                         //$scope.discoveryAlmostFull3 = true;
                         $scope.sessionAlmostFull9 = true;
                         $scope.sessionAlmostFull10 = true;
                         $scope.sessionAlmostFull11 = true;
-                        $scope.sessionAlmostFull12 = true;
+                        //$scope.sessionAlmostFull12 = true;
                         // $scope.sessionAlmostFull1 = true;
                         /// $scope.sessionAlmostFull2 = true;
                         // $scope.sessionAlmostFull3 = true;
@@ -914,6 +914,395 @@
 
                     }
 
+
+
+                    if (data.data.date['twelve'].state[0] == 0 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 1) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryAlmostFull12 = true;
+                        console.log(820)
+
+                    }
+
+                    if (data.data.date['twelve'].state[0] == 2 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 1) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryAlmostFull12 = true;
+                        console.log(820)
+
+                    }
+
+                    if (data.data.date['twelve'].state[0] == 2 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 3
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 1) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryAlmostFull12 = true;
+                        $scope.checkUpAlmostFull12 = true;
+                        console.log(820)
+
+                    }
+
+                    if (data.data.date['twelve'].state[0] == 2 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 3
+                        && data.data.date['twelve'].state[4] == 3 && data.data.date['twelve'].state[5] == 1) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpFull12 = true;
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 0 && data.data.date['twelve'].state[1] == 2 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 1) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpAlmostFull12 = true;
+
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 2 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 2) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpAlmostFull12 = true;
+
+                        console.log(820)
+
+                    }
+                                        if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 2
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 0) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpAvailable12 = true;
+
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 3 && data.data.date['twelve'].state[2] == 2 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 2) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpAlmostFull12 = true;
+
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 0 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 2 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 2) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpAvailable12 = true;
+
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 2 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 3
+                        && data.data.date['twelve'].state[4] == 3 && data.data.date['twelve'].state[5] == 2) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpFull12 = true;
+
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 2 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 3
+                        && data.data.date['twelve'].state[4] == 3 && data.data.date['twelve'].state[5] == 3) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpAlmostFull12 = true;
+
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 2 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 3 && data.data.date['twelve'].state[5] == 3) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpAlmostFull12 = true;
+
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 2 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 3) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpAlmostFull12 = true;
+
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 2 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 0) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryAlmostFull12 = true;
+                        $scope.checkUpAvailable12 = true;
+
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 2 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 2) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryAlmostFull12 = true;
+                        $scope.checkUpAlmostFull12 = true;
+
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 3) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryAlmostFull12 = true;
+                        $scope.checkUpAvailable12 = true;
+
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 2) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryAlmostFull12 = true;
+                        $scope.checkUpAvailable12 = true;
+
+                        console.log(820)
+
+                    }
+
+                    if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 1) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryAlmostFull12 = true;
+                        $scope.checkUpAvailable12 = true;
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 2 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 1) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpAlmostFull12 = true;
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 3 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 1) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryAlmostFull12 = true;
+                        $scope.checkUpAvailable12 = true;
+                        console.log(820)
+
+                    }
+
+                    if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 3 && data.data.date['twelve'].state[2] == 2 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 1) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpFull12 = true;
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 3 && data.data.date['twelve'].state[2] == 2 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 3) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpFull12 = true;
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 3 && data.data.date['twelve'].state[2] == 3 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 3) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpAlmostFull12 = true;
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 3 && data.data.date['twelve'].state[2] == 3 && data.data.date['twelve'].state[3] == 3
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 3) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpAlmostFull12 = true;
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 3 && data.data.date['twelve'].state[2] == 3 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 3 && data.data.date['twelve'].state[5] == 3) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpAlmostFull12 = true;
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 3 && data.data.date['twelve'].state[2] == 2 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 1) {
+
+
+                        //$scope.sessionFull1 = true;
+                        //$scope.discoveryAlmostFull1 = true;
+                        //$scope.checkUpAlmostFull1 = true;
+                        console.log(820)
+
+                    }
+
+
+                    if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 3 && data.data.date['twelve'].state[2] == 3 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 1) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpAlmostFull12 = true;
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 3 && data.data.date['twelve'].state[2] == 3 && data.data.date['twelve'].state[3] == 3
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 1) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpAlmostFull12 = true;
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 3 && data.data.date['twelve'].state[2] == 3 && data.data.date['twelve'].state[3] == 3
+                        && data.data.date['twelve'].state[4] == 3 && data.data.date['twelve'].state[5] == 1) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpFull12 = true;
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 3 && data.data.date['twelve'].state[1] == 3 && data.data.date['twelve'].state[2] == 3 && data.data.date['twelve'].state[3] == 3
+                        && data.data.date['twelve'].state[4] == 3 && data.data.date['twelve'].state[5] == 3) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpFull12 = true;
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 1) {
+
+
+                        $scope.sessionFull12 = true;
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpFull12 = true;
+
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 0 && data.data.date['twelve'].state[1] == 1 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 0) {
+
+
+                        $scope.sessionFull12 = true;
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 0 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 1 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 0) {
+
+
+                        $scope.sessionFull12 = true;
+                        console.log(820)
+
+                    }
+
+
+                    if (data.data.date['twelve'].state[0] == 0 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 1
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 0) {
+
+
+                        $scope.sessionAlmostFull12 = true;
+                        console.log(820)
+
+                    }
+                    if (data.data.date['twelve'].state[0] == 0 && data.data.date['twelve'].state[1] == 0 && data.data.date['twelve'].state[2] == 0 && data.data.date['twelve'].state[3] == 0
+                        && data.data.date['twelve'].state[4] == 1 && data.data.date['twelve'].state[5] == 0) {
+
+
+                        $scope.sessionAlmostFull12 = true;
+                        console.log(820)
+
+                    }
+
+                    if (data.data.date['twelve'].state[0] == 2 && data.data.date['twelve'].state[1] == 2 && data.data.date['twelve'].state[2] == 2 && data.data.date['twelve'].state[3] == 2
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 0) {
+
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpFull12 - true;
+                        $scope.sessionFull12 = true;
+                        console.log(820)
+
+
+                    }
+                                        if (data.data.date['twelve'].state[0] == 2 && data.data.date['twelve'].state[1] == 2 && data.data.date['twelve'].state[2] == 2 && data.data.date['twelve'].state[3] == 2
+                        && data.data.date['twelve'].state[4] == 0 && data.data.date['twelve'].state[5] == 0) {
+
+                        $scope.discoveryFull12 = true;
+                        $scope.checkUpFull12 - true;
+                        $scope.sessionFull12 = true;
+                        console.log(820)
+
+
+                    }
+
+'one'
+1
+//ONE LOGIC//
                     if (data.data.date['one'].state[0] == 0 && data.data.date['one'].state[1] == 0 && data.data.date['one'].state[2] == 0 && data.data.date['one'].state[3] == 0
                         && data.data.date['one'].state[4] == 0 && data.data.date['one'].state[5] == 1) {
 
@@ -966,6 +1355,50 @@
                         console.log(820)
 
                     }
+                    if (data.data.date['one'].state[0] == 3 && data.data.date['one'].state[1] == 0 && data.data.date['one'].state[2] == 2 && data.data.date['one'].state[3] == 0
+                        && data.data.date['one'].state[4] == 0 && data.data.date['one'].state[5] == 2) {
+
+
+                        $scope.sessionFull1 = true;
+                        $scope.discoveryFull1 = true;
+                        $scope.checkUpAlmostFull1 = true;
+
+                        console.log(820)
+
+                    }
+                    if (data.data.date['one'].state[0] == 3 && data.data.date['one'].state[1] == 3 && data.data.date['one'].state[2] == 2 && data.data.date['one'].state[3] == 0
+                        && data.data.date['one'].state[4] == 0 && data.data.date['one'].state[5] == 2) {
+
+
+                        $scope.sessionFull1 = true;
+                        $scope.discoveryFull1 = true;
+                        $scope.checkUpAlmostFull1 = true;
+
+                        console.log(820)
+
+                    }
+                    if (data.data.date['one'].state[0] == 0 && data.data.date['one'].state[1] == 0 && data.data.date['one'].state[2] == 2 && data.data.date['one'].state[3] == 0
+                        && data.data.date['one'].state[4] == 0 && data.data.date['one'].state[5] == 2) {
+
+
+                        $scope.sessionFull1 = true;
+                        $scope.discoveryFull1 = true;
+                        $scope.checkUpAvailable1 = true;
+
+                        console.log(820)
+
+                    }
+                    if (data.data.date['one'].state[0] == 2 && data.data.date['one'].state[1] == 0 && data.data.date['one'].state[2] == 0 && data.data.date['one'].state[3] == 3
+                        && data.data.date['one'].state[4] == 3 && data.data.date['one'].state[5] == 2) {
+
+
+                        $scope.sessionFull1 = true;
+                        $scope.discoveryFull1 = true;
+                        $scope.checkUpFull1 = true;
+
+                        console.log(820)
+
+                    }
                     if (data.data.date['one'].state[0] == 2 && data.data.date['one'].state[1] == 0 && data.data.date['one'].state[2] == 0 && data.data.date['one'].state[3] == 3
                         && data.data.date['one'].state[4] == 3 && data.data.date['one'].state[5] == 3) {
 
@@ -999,7 +1432,7 @@
                         console.log(820)
 
                     }
-                                    if (data.data.date['one'].state[0] == 2 && data.data.date['one'].state[1] == 0 && data.data.date['one'].state[2] == 0 && data.data.date['one'].state[3] == 0
+                    if (data.data.date['one'].state[0] == 2 && data.data.date['one'].state[1] == 0 && data.data.date['one'].state[2] == 0 && data.data.date['one'].state[3] == 0
                         && data.data.date['one'].state[4] == 0 && data.data.date['one'].state[5] == 0) {
 
 
@@ -1010,7 +1443,7 @@
                         console.log(820)
 
                     }
-                                                        if (data.data.date['one'].state[0] == 2 && data.data.date['one'].state[1] == 0 && data.data.date['one'].state[2] == 0 && data.data.date['one'].state[3] == 0
+                    if (data.data.date['one'].state[0] == 2 && data.data.date['one'].state[1] == 0 && data.data.date['one'].state[2] == 0 && data.data.date['one'].state[3] == 0
                         && data.data.date['one'].state[4] == 0 && data.data.date['one'].state[5] == 2) {
 
 
@@ -1032,7 +1465,7 @@
                         console.log(820)
 
                     }
-                                        if (data.data.date['one'].state[0] == 3 && data.data.date['one'].state[1] == 0 && data.data.date['one'].state[2] == 0 && data.data.date['one'].state[3] == 0
+                    if (data.data.date['one'].state[0] == 3 && data.data.date['one'].state[1] == 0 && data.data.date['one'].state[2] == 0 && data.data.date['one'].state[3] == 0
                         && data.data.date['one'].state[4] == 0 && data.data.date['one'].state[5] == 2) {
 
 
@@ -1081,18 +1514,57 @@
 
                         $scope.sessionFull1 = true;
                         $scope.discoveryFull1 = true;
-                        $scope.checkUpAvailable1 = true;
+                        $scope.checkUpFull1 = true;
                         console.log(820)
 
                     }
+                    if (data.data.date['one'].state[0] == 3 && data.data.date['one'].state[1] == 3 && data.data.date['one'].state[2] == 2 && data.data.date['one'].state[3] == 0
+                        && data.data.date['one'].state[4] == 0 && data.data.date['one'].state[5] == 3) {
 
+
+                        $scope.sessionFull1 = true;
+                        $scope.discoveryFull1 = true;
+                        $scope.checkUpFull1 = true;
+                        console.log(820)
+
+                    }
+                    if (data.data.date['one'].state[0] == 3 && data.data.date['one'].state[1] == 3 && data.data.date['one'].state[2] == 3 && data.data.date['one'].state[3] == 0
+                        && data.data.date['one'].state[4] == 0 && data.data.date['one'].state[5] == 3) {
+
+
+                        $scope.sessionFull1 = true;
+                        $scope.discoveryFull1 = true;
+                        $scope.checkUpAlmostFull1 = true;
+                        console.log(820)
+
+                    }
+                    if (data.data.date['one'].state[0] == 3 && data.data.date['one'].state[1] == 3 && data.data.date['one'].state[2] == 3 && data.data.date['one'].state[3] == 3
+                        && data.data.date['one'].state[4] == 0 && data.data.date['one'].state[5] == 3) {
+
+
+                        $scope.sessionFull1 = true;
+                        $scope.discoveryFull1 = true;
+                        $scope.checkUpAlmostFull1 = true;
+                        console.log(820)
+
+                    }
+                    if (data.data.date['one'].state[0] == 3 && data.data.date['one'].state[1] == 3 && data.data.date['one'].state[2] == 3 && data.data.date['one'].state[3] == 0
+                        && data.data.date['one'].state[4] == 3 && data.data.date['one'].state[5] == 3) {
+
+
+                        $scope.sessionFull1 = true;
+                        $scope.discoveryFull1 = true;
+                        $scope.checkUpAlmostFull1 = true;
+                        console.log(820)
+
+                    }
                     if (data.data.date['one'].state[0] == 3 && data.data.date['one'].state[1] == 3 && data.data.date['one'].state[2] == 2 && data.data.date['one'].state[3] == 0
                         && data.data.date['one'].state[4] == 0 && data.data.date['one'].state[5] == 1) {
 
 
-                        $scope.sessionFull1 = true;
-                        $scope.discoveryAlmostFull1 = true;
-                        $scope.checkUpAlmostFull1 = true;
+                        //$scope.sessionFull1 = true;
+                        //$scope.discoveryAlmostFull1 = true;
+                        //$scope.checkUpAlmostFull1 = true;
                         console.log(820)
 
                     }

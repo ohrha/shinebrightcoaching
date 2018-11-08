@@ -147,18 +147,32 @@
 <div class="row center-align show-on-small">
 
     <div class="col s3 datehover">
-        <div ng-show="checkUpFullyAvailable">
+        <div ng-show="checkUpAvailable12">
+            <!--<span class = " red-text">Checkup Available</span>-->
+            <i class="material-icons green-text text-lighten-2">assignment_turned_in
+</i>
+
+
+        </div>
+                <div ng-show="checkUpAlmostFull12">
             <!--<span class = " red-text">Checkup Available</span>-->
             <i class="material-icons yellow-text text-lighten-2">assignment_turned_in
 </i>
 
 
         </div>
-        <div ng-show="discoveryFullyAvailable12">
+                        <div ng-show="checkUpFull12">
+            <!--<span class = " red-text">Checkup Available</span>-->
+            <i class="material-icons red-text text-lighten-2">assignment_turned_in
+</i>
+
+
+        </div>
+        <div ng-show="discoveryAvailable12">
             <!--<span class = " red-text">Discovery Available</span>-->
             <i class="material-icons green-text text-lighten-2">free_breakfast</i>
         </div>
-        <div ng-show="discoveryNotAvailable12">
+        <div ng-show="discoveryFull12">
             <!--<span class = " red-text">Discovery Available</span>-->
             <i class="material-icons red-text text-lighten-2">free_breakfast</i>
         </div>
@@ -166,9 +180,17 @@
             <!--<span class = " red-text">Discovery Available</span>-->
             <i class="material-icons yellow-text text-lighten-2">free_breakfast</i>
         </div>
-        <div ng-show="sessionAlmostFull12">
+        <div ng-show="sessionAvailable12">
+            <!--<span class = " red-text">Discovery Available</span>-->
+            <i class="material-icons green-text text-lighten-2">hearing</i>
+        </div>
+                <div ng-show="sessionAlmostFull12">
             <!--<span class = " red-text">Discovery Available</span>-->
             <i class="material-icons yellow-text text-lighten-2">hearing</i>
+        </div>
+                <div ng-show="sessionFull12">
+            <!--<span class = " red-text">Discovery Available</span>-->
+            <i class="material-icons red-text text-lighten-2">hearing</i>
         </div>
         <p class="montserrat">12:00pm </p>
         <p class="montserrat">- </p>
@@ -178,9 +200,23 @@
 
     </div>
     <div class="col s3 datehover">
-        <div ng-show="checkUpFullyAvailable">
+        <div ng-show="checkUpAvailable1">
             <!--<span class = " red-text">Checkup Available</span>-->
             <i class="material-icons green-text text-lighten-2">assignment_turned_in
+</i>
+
+
+        </div>
+                <div ng-show="checkUpFull1">
+            <!--<span class = " red-text">Checkup Available</span>-->
+            <i class="material-icons red-text text-lighten-2">assignment_turned_in
+</i>
+
+
+        </div>
+                        <div ng-show="checkUpAlmostFull1">
+            <!--<span class = " red-text">Checkup Available</span>-->
+            <i class="material-icons yellow-text text-lighten-2">assignment_turned_in
 </i>
 
 
