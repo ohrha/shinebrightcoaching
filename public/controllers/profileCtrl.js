@@ -1643,6 +1643,13 @@
         $scope.hourAvailable2 = true;
         $scope.hourAvailable3 = true;
 
+        $scope.closeBookingPage = function(){
+            $scope.slot = null;
+            $scope.bookingPageOpen = false;
+            $scope.scheduledJobPageOpen = true;
+            //$scope.scheduleSDOrCiPageOpen = true;
+
+        }
         $scope.openBookingPage = function (slot) {
             console.log(slot)
             $scope.slot = slot;
@@ -1844,6 +1851,10 @@
         $scope.sessionAlmostFull9 = false;
         $scope.discoveryAlmostFull9 = false;
         $scope.checkUpFullyAvailable = false;
+        $scope.exitScheduledJobPage = function(){
+            $scope.scheduledJobPageOpen = false;
+            $scope.currentDate = null;
+        }
         $scope.openScheduledJobPage = function (currentdate, id) {
             console.log(id)
             $scope.id = id
@@ -7138,6 +7149,24 @@
 
 
                     }
+                    if (data.data.date['nine'].state[0] == 3 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 0 && data.data.date['nine'].state[3] == 2 && data.data.date['nine'].state[4] == 2) {
+
+                        $scope.discoveryFull9 = true;
+                        $scope.discoveryAvailable9 = false;
+                        $scope.discoveryAlmostFull9 = false;
+
+                        $scope.checkUpAvailable9 = false;
+                        $scope.checkUpFull9 = false;
+                        $scope.checkUpAlmostFull9 = true;
+
+                        $scope.sessionFull9 = true;
+                        $scope.sessionAvailable9 = false;
+                        $scope.sessionAlmostFull9 = false;
+
+                        console.log("new eight")
+
+
+                    }
 
                     // NEW EIGHT //// NEW EIGHT //
 
@@ -7826,9 +7855,45 @@
 
 
                     }
+                    if (data.data.date['ten'].state[0] == 3 && data.data.date['ten'].state[1] == 0 && data.data.date['ten'].state[2] == 0 && data.data.date['ten'].state[3] == 2 && data.data.date['ten'].state[4] == 2) {
+
+                        $scope.discoveryFull10 = true;
+                        $scope.discoveryAvailable10 = false;
+                        $scope.discoveryAlmostFull10 = false;
+
+                        $scope.checkUpAvailable10 = false;
+                        $scope.checkUpFull10 = false;
+                        $scope.checkUpAlmostFull10 = true;
+
+                        $scope.sessionFull10 = true;
+                        $scope.sessionAvailable10 = false;
+                        $scope.sessionAlmostFull10 = false;
+
+                        console.log("new eight")
+
+
+                    }
 
                     // NEW EIGHT //// NEW EIGHT //
 
+                    if (data.data.date['eleven'].state[0] == 3 && data.data.date['eleven'].state[1] == 0 && data.data.date['eleven'].state[2] == 0 && data.data.date['eleven'].state[3] == 2 && data.data.date['eleven'].state[4] == 2) {
+
+                        $scope.discoveryFull11 = true;
+                        $scope.discoveryAvailable11 = false;
+                        $scope.discoveryAlmostFull11 = false;
+
+                        $scope.checkUpAvailable11 = false;
+                        $scope.checkUpFull11 = false;
+                        $scope.checkUpAlmostFull11 = true;
+
+                        $scope.sessionFull11 = true;
+                        $scope.sessionAvailable11 = false;
+                        $scope.sessionAlmostFull11 = false;
+
+                        console.log("new eight")
+
+
+                    }
                     if (data.data.date['eleven'].state[0] == 0 && data.data.date['eleven'].state[1] == 0 && data.data.date['eleven'].state[2] == 0 && data.data.date['eleven'].state[3] == 0 && data.data.date['eleven'].state[4] == 0) {
 
                         $scope.discoveryFull11 = false;
@@ -7847,6 +7912,7 @@
 
 
                     }
+
 
                     if (data.data.date['eleven'].state[0] == 1 && data.data.date['eleven'].state[1] == 1 && data.data.date['eleven'].state[2] == 1 && data.data.date['eleven'].state[3] == 1 && data.data.date['eleven'].state[4] == 1) {
 
@@ -11961,6 +12027,24 @@
                     // NEW EIGHT //
                     //EIGHT//
 
+                    if (data.data.date['eight'].state[0] == 3 && data.data.date['eight'].state[1] == 0 && data.data.date['eight'].state[2] == 0 && data.data.date['eight'].state[3] == 2 && data.data.date['eight'].state[4] == 2) {
+
+                        $scope.discoveryFull8 = true;
+                        $scope.discoveryAvailable8 = false;
+                        $scope.discoveryAlmostFull8 = false;
+
+                        $scope.checkUpAvailable8 = false;
+                        $scope.checkUpFull8 = false;
+                        $scope.checkUpAlmostFull8 = true;
+
+                        $scope.sessionFull8 = true;
+                        $scope.sessionAvailable8 = false;
+                        $scope.sessionAlmostFull8 = false;
+
+                        console.log("new eight")
+
+
+                    }
                     if (data.data.date['eight'].state[0] == 0 && data.data.date['eight'].state[1] == 1 && data.data.date['eight'].state[2] == 1 && data.data.date['eight'].state[3] == 1 && data.data.date['eight'].state[4] == 1) {
 
                         $scope.discoveryFull8 = true;
