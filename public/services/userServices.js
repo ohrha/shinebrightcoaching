@@ -18,6 +18,9 @@ angular.module('userServices', []).config(function () {
             console.log(info)
             return $http.post('/api/months/updatedate',info)
         }
+        userFactory.updateDateNextHour = function(info){
+            return $http.post('/api/months/updatedatenexthour', info)
+        }
         userFactory.create = function (regData) {
 
             return $http.post('/api/users', regData);

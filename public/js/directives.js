@@ -1,43 +1,74 @@
-(function(){
+(function () {
 
-    var app = angular.module('storeDirectives',[]);
+	var app = angular.module('storeDirectives', []);
 
-//var hearto = 0;
-//var status =0;
-app.directive("heartAdder",function(){
+	//var hearto = 0;
+	//var status =0;
+	app.directive("heartAdder", function () {
 
-return{
+		return {
 
-	restrict: 'E',
-	templateUrl: '../views/directives/heart-adder.html',
-	controller: function(){ 
-		
-		
-		this.addHeart = function(id){
+			restrict: 'E',
+			templateUrl: '../views/directives/heart-adder.html',
+			controller: function () {
 
-		 if(status===0){
-				
-				hearto++;
-				status= 1;
-		}else{
 
-			//this.status=1;
-		hearto--;
-			status=0;
+				this.addHeart = function (id) {
+
+					if (status === 0) {
+
+						hearto++;
+						status = 1;
+					} else {
+
+						//this.status=1;
+						hearto--;
+						status = 0;
+					}
+					console.log(hearto);
+				}
+
+			},
+			controllerAs: 'heartCtrl'
+
+
 		}
-console.log(hearto);
+
+
+
+	});
+	app.directive('eightToNine', function () {
+
+
+		return {
+
+			restrict: 'E',
+			scope: true,
+
+			link: function (scope, element, attrs, ngModel) {
+				scope.time = ""
+				console.log(scope)
+
+
+			},
+			templateUrl: '../views/8-9.html',
+			controller: function () {
+				this.discoveryData2 = {
+					type: "",
+					test: "",
+					time: ""
+				}
+				this.submitBooking2 = function () {
+					console.log(this.discoveryData2)
+					console.log(scope)
+				}
+
+			},
+			controllerAs: "eighttonine"
 		}
-     
-	},
-	controllerAs:'heartCtrl'
+	});
 
-
-}
-
-
-
-});
-app.directive('eightToNine',function(){
+	app.directive('elevenToTwelve',function(){
 
 
 		return{
@@ -51,7 +82,7 @@ app.directive('eightToNine',function(){
      
      
     },
-			templateUrl:'../views/8-9.html',
+			templateUrl:'../views/11-12.html',
 					controller: function() {
         this.discoveryData2 = {
             type:"",
@@ -64,8 +95,9 @@ app.directive('eightToNine',function(){
         }
 
 	},
-		controllerAs: "eighttonine"}});
-app.directive('tenToEleven',function(){
+		controllerAs: "eleventotwelve"}});
+
+		app.directive('twelveToOne',function(){
 
 
 		return{
@@ -79,7 +111,7 @@ app.directive('tenToEleven',function(){
      
      
     },
-			templateUrl:'../views/10-11.html',
+			templateUrl:'../views/12-1.html',
 					controller: function() {
         this.discoveryData2 = {
             type:"",
@@ -92,8 +124,8 @@ app.directive('tenToEleven',function(){
         }
 
 	},
-		controllerAs: "tentoeleven"}});
-app.directive('nineToTen',function(){
+		controllerAs: "twelvetoone"}});
+		app.directive('oneToTwo',function(){
 
 
 		return{
@@ -101,13 +133,13 @@ app.directive('nineToTen',function(){
 			restrict: 'E',
 			scope:true,
 			
-			   link: function(scope, element, attrs){
+			   link: function(scope, element, attrs, ngModel){
 				scope.time = ""
 				console.log(scope)
      
      
     },
-			templateUrl:'../views/9-10.html',
+			templateUrl:'../views/1-2.html',
 					controller: function() {
         this.discoveryData2 = {
             type:"",
@@ -120,159 +152,284 @@ app.directive('nineToTen',function(){
         }
 
 	},
-		controllerAs: "ninetoten"}});
-app.directive('composeMessagePage',function(){
+		controllerAs: "onetotwo"}});
+		app.directive('twoToThree',function(){
 
 
 		return{
 
 			restrict: 'E',
-			templateUrl:'../views/compose-message-page.html',
+			scope:true,
+			
+			   link: function(scope, element, attrs, ngModel){
+				scope.time = ""
+				console.log(scope)
+     
+     
+    },
+			templateUrl:'../views/2-3.html',
 					controller: function() {
-    	this.imageIndex = 0;
-    	this.currentImageChange = function(imageNumber) {
-      	console.log(imageNumber);
-      	this.imageIndex = imageNumber || 0;
-    	};},
-		controllerAs: 'gallery'
-		}
+        this.discoveryData2 = {
+            type:"",
+			test:"",
+            time:""
+        }
+        this.submitBooking2 = function(){
+            console.log(this.discoveryData2)
+			console.log(scope)
+        }
 
-	});
-app.directive('messagePage',function(){
+	},
+		controllerAs: "twotothree"}});
+		app.directive('threeToFour',function(){
 
 
 		return{
 
 			restrict: 'E',
-			templateUrl:'../views/message-page.html',
+			scope:true,
+			
+			   link: function(scope, element, attrs, ngModel){
+				scope.time = ""
+				console.log(scope)
+     
+     
+    },
+			templateUrl:'../views/3-4.html',
 					controller: function() {
-    	this.imageIndex = 0;
-    	this.currentImageChange = function(imageNumber) {
-      	console.log(imageNumber);
-      	this.imageIndex = imageNumber || 0;
-    	};},
-		controllerAs: 'gallery'
-		}
+        this.discoveryData2 = {
+            type:"",
+			test:"",
+            time:""
+        }
+        this.submitBooking2 = function(){
+            console.log(this.discoveryData2)
+			console.log(scope)
+        }
 
-	});
-app.directive('timesheetPage',function(){
-
-
-		return{
-
-			restrict: 'E',
-			templateUrl:'../views/timesheet-page.html',
-					controller: function() {
-    	this.imageIndex = 0;
-    	this.currentImageChange = function(imageNumber) {
-      	console.log(imageNumber);
-      	this.imageIndex = imageNumber || 0;
-    	};},
-		controllerAs: 'gallery'
-		}
-
-	});
-    app.directive('infoPage',function(){
+	},
+		controllerAs: "threetofour"}});
+	app.directive('tenToEleven', function () {
 
 
-		return{
+		return {
 
 			restrict: 'E',
-			templateUrl:'../views/info-page.html',
-					controller: function() {
-    	this.imageIndex = 0;
-    	this.currentImageChange = function(imageNumber) {
-      	console.log(imageNumber);
-      	this.imageIndex = imageNumber || 0;
-    	};},
-		controllerAs: 'gallery'
+			scope: true,
+
+			link: function (scope, element, attrs, ngModel) {
+				scope.time = ""
+				console.log(scope)
+
+
+			},
+			templateUrl: '../views/10-11.html',
+			controller: function () {
+				this.discoveryData2 = {
+					type: "",
+					test: "",
+					time: ""
+				}
+				this.submitBooking2 = function () {
+					console.log(this.discoveryData2)
+					console.log(scope)
+				}
+
+			},
+			controllerAs: "tentoeleven"
 		}
-
 	});
-	 app.directive('schedulePage',function(){
+
+	app.directive('nineToTen', function () {
 
 
-		return{
+		return {
 
 			restrict: 'E',
-			templateUrl:'../views/schedule-page.html',
-				controller: function() {
-    	this.imageIndex = 0;
-    	this.currentImageChange = function(imageNumber) {
-      	console.log(imageNumber);
-      	this.imageIndex = imageNumber || 0;
-    	};},
-		controllerAs: 'gallery'
-		
+			scope: true,
+
+			link: function (scope, element, attrs) {
+				scope.time = ""
+				console.log(scope)
+
+
+			},
+			templateUrl: '../views/9-10.html',
+			controller: function () {
+				this.discoveryData2 = {
+					type: "",
+					test: "",
+					time: ""
+				}
+				this.submitBooking2 = function () {
+					console.log(this.discoveryData2)
+					console.log(scope)
+				}
+
+			},
+			controllerAs: "ninetoten"
 		}
-
 	});
-	 app.directive('scheduledJobPage',function(){
+	app.directive('composeMessagePage', function () {
 
 
-		return{
+		return {
 
 			restrict: 'E',
-			templateUrl:'../views/scheduled-job-page.html',
-				controller: function() {
-					
-    	this.imageIndex = 0;
-		     this.labels = ["Activity"];
-  this.data = [ 100];
-    	this.currentImageChange = function(imageNumber) {
-      	console.log(imageNumber);
-      	this.imageIndex = imageNumber || 0;
-    	};},
-		controllerAs: 'scheduledJob'
-		
+			templateUrl: '../views/compose-message-page.html',
+			controller: function () {
+				this.imageIndex = 0;
+				this.currentImageChange = function (imageNumber) {
+					console.log(imageNumber);
+					this.imageIndex = imageNumber || 0;
+				};
+			},
+			controllerAs: 'gallery'
 		}
 
 	});
-	 app.directive('scheduleSDOrCiPage',function(){
+	app.directive('messagePage', function () {
 
 
-		return{
+		return {
 
 			restrict: 'E',
-			templateUrl:'../views/schedule-s-d-or-ci-page.html',
-				controller: function() {
-					
-    	this.imageIndex = 0;
-		     this.labels = ["Activity"];
-  this.data = [ 100];
-    	this.currentImageChange = function(imageNumber) {
-      	console.log(imageNumber);
-      	this.imageIndex = imageNumber || 0;
-    	};},
-		controllerAs: 'scheduledJob'
-		
+			templateUrl: '../views/message-page.html',
+			controller: function () {
+				this.imageIndex = 0;
+				this.currentImageChange = function (imageNumber) {
+					console.log(imageNumber);
+					this.imageIndex = imageNumber || 0;
+				};
+			},
+			controllerAs: 'gallery'
 		}
 
 	});
-	
-    app.directive('landingGalleryShop',function(){
+	app.directive('timesheetPage', function () {
 
 
-		return{
+		return {
 
 			restrict: 'E',
-			templateUrl:'../views/landing-gallery-shop.html',
-					controller: function() {
-    	this.imageIndex = 0;
-    	this.currentImageChange = function(imageNumber) {
-      	console.log(imageNumber);
-      	this.imageIndex = imageNumber || 0;
-    	};},
-		controllerAs: 'gallery'
+			templateUrl: '../views/timesheet-page.html',
+			controller: function () {
+				this.imageIndex = 0;
+				this.currentImageChange = function (imageNumber) {
+					console.log(imageNumber);
+					this.imageIndex = imageNumber || 0;
+				};
+			},
+			controllerAs: 'gallery'
 		}
 
 	});
-	app.directive('landingPage',function(){
+	app.directive('infoPage', function () {
 
-		return{
 
-				restrict:'E',
-				templateUrl:'../views/landing-page.html'
+		return {
+
+			restrict: 'E',
+			templateUrl: '../views/info-page.html',
+			controller: function () {
+				this.imageIndex = 0;
+				this.currentImageChange = function (imageNumber) {
+					console.log(imageNumber);
+					this.imageIndex = imageNumber || 0;
+				};
+			},
+			controllerAs: 'gallery'
+		}
+
+	});
+	app.directive('schedulePage', function () {
+
+
+		return {
+
+			restrict: 'E',
+			templateUrl: '../views/schedule-page.html',
+			controller: function () {
+				this.imageIndex = 0;
+				this.currentImageChange = function (imageNumber) {
+					console.log(imageNumber);
+					this.imageIndex = imageNumber || 0;
+				};
+			},
+			controllerAs: 'gallery'
+
+		}
+
+	});
+	app.directive('scheduledJobPage', function () {
+
+
+		return {
+
+			restrict: 'E',
+			templateUrl: '../views/scheduled-job-page.html',
+			controller: function () {
+
+				this.imageIndex = 0;
+				this.labels = ["Activity"];
+				this.data = [100];
+				this.currentImageChange = function (imageNumber) {
+					console.log(imageNumber);
+					this.imageIndex = imageNumber || 0;
+				};
+			},
+			controllerAs: 'scheduledJob'
+
+		}
+
+	});
+	app.directive('scheduleSDOrCiPage', function () {
+
+
+		return {
+
+			restrict: 'E',
+			templateUrl: '../views/schedule-s-d-or-ci-page.html',
+			controller: function () {
+
+				this.imageIndex = 0;
+				this.labels = ["Activity"];
+				this.data = [100];
+				this.currentImageChange = function (imageNumber) {
+					console.log(imageNumber);
+					this.imageIndex = imageNumber || 0;
+				};
+			},
+			controllerAs: 'scheduledJob'
+
+		}
+
+	});
+
+	app.directive('landingGalleryShop', function () {
+
+
+		return {
+
+			restrict: 'E',
+			templateUrl: '../views/landing-gallery-shop.html',
+			controller: function () {
+				this.imageIndex = 0;
+				this.currentImageChange = function (imageNumber) {
+					console.log(imageNumber);
+					this.imageIndex = imageNumber || 0;
+				};
+			},
+			controllerAs: 'gallery'
+		}
+
+	});
+	app.directive('landingPage', function () {
+
+		return {
+
+			restrict: 'E',
+			templateUrl: '../views/landing-page.html'
 
 
 		}
@@ -282,58 +439,62 @@ app.directive('timesheetPage',function(){
 
 	});
 
-    app.directive('productGallery', function(){
+	app.directive('productGallery', function () {
 
-	return{
+		return {
 
-		restrict: 'E',
-		templateUrl: '../views/product-gallery.html',
-		controller: function() {
-    	this.imageIndex = 0;
-    	this.currentImageChange = function(imageNumber) {
-      	console.log(imageNumber);
-      	this.imageIndex = imageNumber || 0;
-    	};},
-		controllerAs: 'gallery'
+			restrict: 'E',
+			templateUrl: '../views/product-gallery.html',
+			controller: function () {
+				this.imageIndex = 0;
+				this.currentImageChange = function (imageNumber) {
+					console.log(imageNumber);
+					this.imageIndex = imageNumber || 0;
+				};
+			},
+			controllerAs: 'gallery'
 		};
-});
-//Custom element directive w/no controller.
-app.directive('productTitle', function() {
+	});
+	//Custom element directive w/no controller.
+	app.directive('productTitle', function () {
 
-	return{
+		return {
 
-		restrict: 'E',
-		templateUrl: '../views/product-title.html'
-		
+			restrict: 'E',
+			templateUrl: '../views/product-title.html'
 
-	};
 
-});
-//Custom controller directive w/PanelController controller
-app.directive('productPanels',function(){
+		};
 
-	return{
+	});
+	//Custom controller directive w/PanelController controller
+	app.directive('productPanels', function () {
 
-		restrict: 'E',
-		templateUrl:'../views/product-panels.html',
-		//move controller functionality into directive.
-		controller: function(){
-       this.tab = 1;
+		return {
 
-       this.selectTab = function(setTab){
+			restrict: 'E',
+			templateUrl: '../views/product-panels.html',
+			//move controller functionality into directive.
+			controller: function () {
+				this.tab = 1;
 
-       this.tab = setTab;
+				this.selectTab = function (setTab) {
 
-	   };
-	   this.isSelected = function(checkTab){
+					this.tab = setTab;
 
-		return this.tab === checkTab;};},
-		controllerAs: 'panel'};
-});
+				};
+				this.isSelected = function (checkTab) {
 
-app.directive('specificationPanel',function(){
+					return this.tab === checkTab;
+				};
+			},
+			controllerAs: 'panel'
+		};
+	});
 
-		return{
+	app.directive('specificationPanel', function () {
+
+		return {
 
 			restrict: 'E',
 			templateUrl: '../views/specification-panel.html'
@@ -344,18 +505,18 @@ app.directive('specificationPanel',function(){
 
 
 
-});
-app.directive('fadeIn', function($timeout){
-    return {
-        restrict: 'A',
-        link: function($scope, $element, attrs){
-            $element.addClass("ng-hide-remove");
-            $element.on('load', function() {
-                $element.addClass("ng-hide-add");
-            });
-        }
-    };
-})
+	});
+	app.directive('fadeIn', function ($timeout) {
+		return {
+			restrict: 'A',
+			link: function ($scope, $element, attrs) {
+				$element.addClass("ng-hide-remove");
+				$element.on('load', function () {
+					$element.addClass("ng-hide-add");
+				});
+			}
+		};
+	})
 
 
 

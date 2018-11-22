@@ -12,14 +12,18 @@ var DateSchema = new Schema({
     month:{type:String},
     eight: {type:Object },
     nine: {type:Object },
+    ten: {type:Object },
+    eleven: {type:Object },
+    twelve: {type:Object },
+    one: {type:Object },
+    two: {type:Object },
+    three: {type:Object },
     twenty: {type:Array },
     thirty: {type:Array},
     fourty: {type:Array },
-    fifty: {type:Array },
-   
+    fifty: {type:Array }
 
-    7: {type:Array },
-    8: {type:Array }
+   
     
     
 

@@ -59,78 +59,266 @@ module.exports = function (app) {
         })
 
         */
+    app.post('/months/updatedatenexthour', function (req, res) {
+
+        Date.findOne({ _id: req.body.id }, function (err, date) {
+            if (err) throw err;
+            if (!date) {
+                res.json({ success: false, message: "Date not found.." })
+            } else {
+                console.log(date)
+                date[req.body.hour].state = req.body.dateInfo
+                date[req.body.nexthour].state = req.body.dateInfoNextHour
+                console.log(date[req.body.hour].state)
+                if (req.body.hour == 'eight') {
+
+                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { eight: date[req.body.hour], nine: date[req.body.nexthour] } }, { new: true }, function (err, date) {
+
+                        if (err) throw err;
+                        if (!date) {
+                            res.json({ success: false, message: "Date not found..." })
+                        } else {
+                            res.json({ success: true, message: "Date Found And Updated...", date: date })
+                        }
+
+
+                    })
+
+                }
+                if (req.body.hour == 'nine') {
+
+                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { nine: date[req.body.hour], ten: date[req.body.nexthour] } }, { new: true }, function (err, date) {
+
+                        if (err) throw err;
+                        if (!date) {
+                            res.json({ success: false, message: "Date not found..." })
+                        } else {
+                            res.json({ success: true, message: "Date Found And Updated...", date: date })
+                        }
+
+
+                    })
+
+                }
+                if (req.body.hour == 'ten') {
+
+                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { ten: date[req.body.hour], eleven: date[req.body.nexthour] } }, { new: true }, function (err, date) {
+
+                        if (err) throw err;
+                        if (!date) {
+                            res.json({ success: false, message: "Date not found..." })
+                        } else {
+                            res.json({ success: true, message: "Date Found And Updated...", date: date })
+                        }
+
+
+                    })
+
+                }
+                if (req.body.hour == 'eleven') {
+
+                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { eleven: date[req.body.hour], twelve: date[req.body.nexthour] } }, { new: true }, function (err, date) {
+
+                        if (err) throw err;
+                        if (!date) {
+                            res.json({ success: false, message: "Date not found..." })
+                        } else {
+                            res.json({ success: true, message: "Date Found And Updated...", date: date })
+                        }
+
+
+                    })
+
+                }
+                if (req.body.hour == 'twelve') {
+
+                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { twelve: date[req.body.hour], one: date[req.body.nexthour] } }, { new: true }, function (err, date) {
+
+                        if (err) throw err;
+                        if (!date) {
+                            res.json({ success: false, message: "Date not found..." })
+                        } else {
+                            res.json({ success: true, message: "Date Found And Updated...", date: date })
+                        }
+
+
+                    })
+
+                }
+                if (req.body.hour == 'one') {
+
+                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { one: date[req.body.hour], two: date[req.body.nexthour] } }, { new: true }, function (err, date) {
+
+                        if (err) throw err;
+                        if (!date) {
+                            res.json({ success: false, message: "Date not found..." })
+                        } else {
+                            res.json({ success: true, message: "Date Found And Updated...", date: date })
+                        }
+
+
+                    })
+
+                }
+                if (req.body.hour == 'two') {
+
+                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { two: date[req.body.hour], three: date[req.body.nexthour] } }, { new: true }, function (err, date) {
+
+                        if (err) throw err;
+                        if (!date) {
+                            res.json({ success: false, message: "Date not found..." })
+                        } else {
+                            res.json({ success: true, message: "Date Found And Updated...", date: date })
+                        }
+
+
+                    })
+
+                }
+
+
+
+
+            }
+
+        })
+    })
     app.post('/months/updatedate', function (req, res) {
         console.log(req.body)
         console.log(req.body.id)
         Date.findOne({ _id: req.body.id }, function (err, date) {
             if (err) throw err;
-            if (!date) { 
+            if (!date) {
                 res.json({ success: false, message: "Date not found.." })
             } else {
-               console.log(date)
-               if(req.body.discoverycrossover0){
+                console.log(date['ten'])
+                date[req.body.hour].state = req.body.dateInfo
+                console.log(date[req.body.hour].state)
+                if(req.body.hour == 'eight'){
 
-                   date["eight"].state[4] = 1
-                   date["eight"].state[5] = 1
-                   date["nine"].state[0] = 1
-date.save(function(err,date){
-                    if(err){
-                        res.json({success: false, message:"Date not found.",err:err})
-                    }else{
-                        res.json({success: true, message:"Date Saved Successfully", date:date})
+                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { eight: date[req.body.hour] } }, { new: true }, function (err, date) {
+
+                    if (err) throw err;
+                    if (!date) {
+                        res.json({ success: false, message: "Date not found..." })
+                    } else {
+                        res.json({ success: true, message: "Date Found And Updated...", date: date })
                     }
+
+
                 })
-                   
-               }
-               if(req.body.discoverycrossover10){
+                }
+                if(req.body.hour == 'nine'){
 
-                   //date["eight"].state[4] = 1
-                   date["eight"].state[5] = 1
-                   date["nine"].state[0] = 1
-                   date["nine"].state[1] = 1
-                date.save(function(err,date){
-                    if(err){
-                        res.json(
-                            {success: false, message:"Date not found.",err:err}
-                            )
-                    }else{
-                        res.json({success: true, message:"Date Saved Successfully", date:date})
+                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { nine: date[req.body.hour] } }, { new: true }, function (err, date) {
+
+                    if (err) throw err;
+                    if (!date) {
+                        res.json({ success: false, message: "Date not found..." })
+                    } else {
+                        res.json({ success: true, message: "Date Found And Updated...", date: date })
                     }
+
+
                 })
-                   
-               }
-               //console.log(date.eight)
-            /*   console.log( date[String(req.params.slot)])
-                date[String(req.params.slot)][req.params.timeslot] = Number(req.params.newdateinfo)
+                    
+                }
+                if(req.body.hour == 'ten'){
 
-                Date.findOneAndUpdate({_id:req.params.id},{$set:{eight:date[String(req.params.slot)]}},{new:true}, function(err,data){
-                    if(err)throw err;
-                    if(!date){
-                        res.json({success: false, message:"Date not found.."})
-                    }else{
-                        res.json({success: true, message:"Date Found And Updated", date:date})
+                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { ten: date[req.body.hour] } }, { new: true }, function (err, date) {
+
+                    if (err) throw err;
+                    if (!date) {
+                        res.json({ success: false, message: "Date not found..." })
+                    } else {
+                        res.json({ success: true, message: "Date Found And Updated...", date: date })
                     }
 
-                })*/
-               /* date.save(function(err,date){
-                    if(err){
-                        res.json({success: false, message:"Date not found."})
-                    }else{
-                        res.json({success: true, message:"Date Saved Successfully", date:date})
+
+                })
+                    
+                }
+                if(req.body.hour == 'eleven'){
+
+                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { eleven: date[req.body.hour] } }, { new: true }, function (err, date) {
+
+                    if (err) throw err;
+                    if (!date) {
+                        res.json({ success: false, message: "Date not found..." })
+                    } else {
+                        res.json({ success: true, message: "Date Found And Updated...", date: date })
                     }
-                })*/
-              /*  Date.findOneAndUpdate({_id:req.params.id},{$set:{date:date[req.params.slot][req.params.timeslot]}},{new:true}, function(err,date){
-                    if(err)throw err;
-                    if(!date){
-                        res.json({success: false, message: "Date Not Found..."})
-                    }else{
-                        res.json({success: true, message:"Date Found And Updated..", date:date})
+
+
+                })
+                    
+                }
+                if(req.body.hour == 'twelve'){
+
+                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { twelve: date[req.body.hour] } }, { new: true }, function (err, date) {
+
+                    if (err) throw err;
+                    if (!date) {
+                        res.json({ success: false, message: "Date not found..." })
+                    } else {
+                        res.json({ success: true, message: "Date Found And Updated...", date: date })
                     }
-                })*/
-               // res.json({ success: true, message: "Date found..", date: date })
+
+
+                })
+                    
+                }
+                if(req.body.hour == 'one'){
+
+                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { one: date[req.body.hour] } }, { new: true }, function (err, date) {
+
+                    if (err) throw err;
+                    if (!date) {
+                        res.json({ success: false, message: "Date not found..." })
+                    } else {
+                        res.json({ success: true, message: "Date Found And Updated...", date: date })
+                    }
+
+
+                })
+                    
+                }
+                if(req.body.hour == 'two'){
+
+                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { two: date[req.body.hour] } }, { new: true }, function (err, date) {
+
+                    if (err) throw err;
+                    if (!date) {
+                        res.json({ success: false, message: "Date not found..." })
+                    } else {
+                        res.json({ success: true, message: "Date Found And Updated...", date: date })
+                    }
+
+
+                })
+                    
+                }
+                if(req.body.hour == 'three'){
+
+                    Date.findOneAndUpdate({ _id: req.body.id }, { $set: { three: date[req.body.hour] } }, { new: true }, function (err, date) {
+
+                    if (err) throw err;
+                    if (!date) {
+                        res.json({ success: false, message: "Date not found..." })
+                    } else {
+                        res.json({ success: true, message: "Date Found And Updated...", date: date })
+                    }
+
+
+                })
+                    
+                }
+               /* 
+*/
+
             }
-        })
 
+        })
     })
     app.put('/months/getdate/:id', function (req, res) {
 
