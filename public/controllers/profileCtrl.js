@@ -32797,7 +32797,7 @@ $scope.discoveryAlmostFull2 = false;
                             $scope.bookDiscovery312 = false
                             //$scope.bookCheckUp312 = false;
                             $scope.bookDiscovery412 = false;
-                            $scope.bookCheckUp412 = false;
+                            //$scope.bookCheckUp412 = false;
 
                         }
                     }
