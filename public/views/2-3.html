@@ -1,12 +1,12 @@
 <div class="row">
     <div class="row">
-         <div class = "col s4 right-align">
+         <div class = "col s3 right-align">
     <i class = "material-icons" ng-click="closeBookingPage()">keyboard_return</i>
 </div>
-<div class="col s4 center-align">
+<div class="col s6 center-align">
     <span class='montserrat underline' style="font-size:20px;"> {{currentDate}}</span>
 </div>
-<div class = "col s4">
+<div class = "col s3">
 </div>
     </div>
     <div>
@@ -18,12 +18,12 @@
         <label for="Sex">Available Hours *</label>
         <select class="error browser-default animated" id="sex" ng-model="discoveryData.time" ng-class="{'shake':shakeOn}" name="time" required>
             <option value="" disabled selected>Hours</option>
-            <option ng-show="bookDiscovery1" value="1:00am">1:00am</option>
-            <option ng-show="bookDiscovery11" value="1:10am">1:10am</option>
-            <option ng-show="bookDiscovery21" value="1:20am">1:20am</option>
-            <option ng-show="bookDiscovery31" value="1:30am">1:30am</option>
-            <option ng-show="bookDiscovery41" value="1:40am">1:40am</option>      
-            <option ng-show="bookDiscovery51" value="1:50am">1:50am</option>
+            <option ng-show="bookDiscovery2" value="2:00pm">2:00pm</option>
+            <option ng-show="bookDiscovery12" value="2:10pm">2:10pm</option>
+            <option ng-show="bookDiscovery22" value="2:20pm">2:20pm</option>
+            <option ng-show="bookDiscovery32" value="2:30pm">2:30pm</option>
+            <option ng-show="bookDiscovery42" value="2:40pm">2:40pm</option>      
+            <option ng-show="bookDiscovery52" value="2:50pm">2:50pm</option>
            
         </select>
         
@@ -35,7 +35,7 @@
             <div class = "col s3">
   </div>
         <div class = "col s9 ">
-             <a ng-click="submitDiscovery('discovery')" class="waves-effect waves-light btn">Submit</a>
+             <a ng-click="submitDiscovery('two')" class="waves-effect waves-light btn">Submit</a>
 
     </div>
       </div>
@@ -52,18 +52,18 @@
             <label for="Sex">Available Hours *</label>
             <select class="error browser-default animated " ng-class="{'shake':shakeOn}" id="sex" ng-model="checkUpData.time" name="time" required>
                 <option value="" disabled selected>Hours</option>
-                <option ng-show="bookCheckUp2" value="2:00am">2:00am</option>
-                <option ng-show="bookCheckUp12" value="2:10am">2:10am</option>
-                <option ng-show="bookCheckUp22" value="2:20am">2:20am</option>
-                <option ng-show="bookCheckUp32" value="2:30am">2:30am</option>
-                <option ng-show="bookCheckUp42" value="2:40am">2:40am</option>                          
-                <option ng-show="bookCheckUp52" value="2:50am">2:50am</option>
+                <option ng-show="bookCheckUp2" value="2:00pm">2:00pm</option>
+                <option ng-show="bookCheckUp12" value="2:10pm">2:10pm</option>
+                <option ng-show="bookCheckUp22" value="2:20pm">2:20pm</option>
+                <option ng-show="bookCheckUp32" value="2:30pm">2:30pm</option>
+                <option ng-show="bookCheckUp42" value="2:40pm">2:40pm</option>                          
+                <option ng-show="bookCheckUp52" value="2:50pm">2:50pm</option>
             </select>
         </div>
           <div class = "col s3">
   </div>
         <div class = "col s9 ">
-             <a ng-click="submitCheckUp()" class="waves-effect waves-light btn">Submit</a>
+             <a ng-click="submitCheckUp('two')" class="waves-effect waves-light btn">Submit</a>
 
     </div>
         <div class="col s3">
@@ -74,12 +74,12 @@
             <label for="Sex">Available Hours *</label>
             <select class="error browser-default animated " ng-class="{'shake':shakeOn}" id="sex" ng-model="sessionData.time" name="time" required>
                 <option value="" disabled selected>Hours</option>
-                <option ng-show="bookSession2" value="2:00am">2:00am</option>
-                <option ng-show="bookSession12" value="2:10am">2:10am</option>
-                <option ng-show="bookSession22" value="2:20am">2:20am</option>
-                <option ng-show="bookSession32" value="2:30am">2:30am</option>
-                <option ng-show="bookSession42" value="2:40am">2:40am</option>                          
-                <option ng-show="bookSession52" value="2:50am">2:50am</option>
+                <option ng-show="bookSession2" value="2:00pm">2:00pm</option>
+                <option ng-show="bookSession12" value="2:10pm">2:10pm</option>
+                <option ng-show="bookSession22" value="2:20pm">2:20pm</option>
+                <option ng-show="bookSession32" value="2:30pm">2:30pm</option>
+                <option ng-show="bookSession42" value="2:40pm">2:40pm</option>                          
+                <option ng-show="bookSession52" value="2:50pm">2:50pm</option>
             </select>
         </div>
 
@@ -91,7 +91,7 @@
     <div class = "col s3">
   </div>
         <div class = "col s9 ">
-             <a ng-click="submitSession()" class="waves-effect waves-light btn">Submit</a>
+             <a ng-click="submitSession('two')" class="waves-effect waves-light btn">Submit</a>
 
     </div>
 
