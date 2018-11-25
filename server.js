@@ -14,7 +14,7 @@ mongoose.connect(database.url, function(err){
     if(err){
         console.log("Not connected to the database: " +err)
     }else{
-        console.log("Successfully connected to Mlab/MongoDb @ "+database.url)
+        console.log("Successfully connected to Mlab/MongoDb @ "+ database.url)
     }
 })
 app.use(express.static(__dirname+'/public'));
