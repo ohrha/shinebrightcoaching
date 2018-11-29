@@ -7,6 +7,13 @@
  main {
      flex: 1 0 auto;
  }
+ @font-face {
+    font-family: 'atypewriter'; /*a name to be used later*/
+    src: url('./american_typewriter.woff'); /*URL to font*/
+}
+.atypewriter {
+    font-family: 'atypewriter';
+}
  th{
      font-weight: normal;
      font-family:'Railway';
@@ -381,3 +388,43 @@ span{
 
      
  }
+ .naum{
+font-family: 'Nanum Gothic', sans-serif;
+ }
+ nav {
+    height: 200px;
+    line-height: 30px;
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    height: 30px;
+    line-height: 30px;
+}
+
+nav .button-collapse i {
+    height: 30px;
+    line-height: 30px;
+}
+
+nav .brand-logo { 
+    font-size: 1.6rem; 
+}
+nav.nav-center ul {
+    /*position:absolute;
+    top:120px;
+    left:35%;*/
+    text-align: center;
+}
+nav.nav-center ul li {
+    display: inline;
+    float: none;
+}
+nav.nav-center ul li a {
+    display: inline-block;
+}
+@media only screen and (min-width: 601px){
+    nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+        height: 180px;
+        line-height: 30px;
+    }
+}

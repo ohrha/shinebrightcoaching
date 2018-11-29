@@ -7,6 +7,20 @@ angular.module('userServices', []).config(function () {
     .factory('User', function ($http) {
 
         userFactory = {};
+        userFactory.messageAdmin = function (messageObject) {
+            return $http.post("/api/users/messageadmin", messageObject)
+
+
+        }
+        userFactory.addBooking = function (dateInfo) {
+            return $http.post("/api/users/addbooking", dateInfo)
+        }
+        userFactory.changeMessageToRead = function (id, index) {
+            return $http.put('/api/users/changemessagetoread/' + id + "/" + index)
+        }
+        userFactory.changeMessageToUnRead = function (id, index) {
+            return $http.put('/api/users/changemessagetounread/' + id + "/" + index)
+        }
         //User.create(regData)
         userFactory.createDate = function (dateInfo) {
             return $http.post('/api/months/createdate', dateInfo)
@@ -16,9 +30,9 @@ angular.module('userServices', []).config(function () {
         }
         userFactory.updateDate = function (info) {
             console.log(info)
-            return $http.post('/api/months/updatedate',info)
+            return $http.post('/api/months/updatedate', info)
         }
-        userFactory.updateDateNextHour = function(info){
+        userFactory.updateDateNextHour = function (info) {
             return $http.post('/api/months/updatedatenexthour', info)
         }
         userFactory.create = function (regData) {
@@ -187,16 +201,11 @@ angular.module('userServices', []).config(function () {
             return $http.put('/api/users/' + userid + '/' + month + '/' + date + '/' + boolean);
 
         }
-        userFactory.getMessages = function (name) {
+        userFactory.getMessages = function (id) {
 
-            return $http.put('/api/users/getmessages/' + name)
+            return $http.put('/api/users/getmessages/' + id)
         }
-        userFactory.changeMessageToRead = function (name, index) {
-            return $http.put('/api/users/changemessagetoread/' + name + "/" + index)
-        }
-        userFactory.changeMessageToUnRead = function (name, index) {
-            return $http.put('/api/users/changemessagetounread/' + name + "/" + index)
-        }
+
         userFactory.removeMessage = function (name, index) {
             return $http.put('/api/users/removemessage/' + name + "/" + index)
         }

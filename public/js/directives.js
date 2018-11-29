@@ -37,6 +37,37 @@
 
 
 	});
+	app.directive('bookingPage', function () {
+
+
+		return {
+
+			restrict: 'E',
+			scope: true,
+
+			link: function (scope, element, attrs, ngModel) {
+				scope.time = ""
+				console.log(scope)
+
+
+			},
+			templateUrl: '../views/pages/bookingpage.html',
+			controller: function () {
+				this.shino = true;
+				this.discoveryData2 = {
+					type: "",
+					test: "",
+					time: ""
+				}
+				this.submitBooking2 = function () {
+					console.log(this.discoveryData2)
+					console.log(scope)
+				}
+
+			},
+			controllerAs: "bookingpage"
+		}
+	});
 	app.directive('eightToNine', function () {
 
 

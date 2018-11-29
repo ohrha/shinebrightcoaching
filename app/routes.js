@@ -59,6 +59,58 @@ module.exports = function (app) {
         })
 
         */
+        app.post('/users/messageadmin', function(req,res){
+            console.log(req.body.month)
+            console.log(req.body.datecondensed)
+            User.findOne({_id:req.body.id}, function(err,user){
+                if(err)throw err;
+                if(!user){
+                    res.json({success: false, message:"User not found.."})
+                }else{
+                   // user.calender[req.body.month][req.body.datecondensed]= true
+                   console.log("i'm here")
+                   
+                    User.findOneAndUpdate({_id:req.body.id}, {$push:{messages:req.body}}, {new:true}, function(err,user){
+
+                if(err) throw err;
+                if(!user){
+                    res.json({success: false,message:"User not found"})
+                }else{
+                    res.json({success: true, message:"Message Successfully Sent", user:user})
+                }
+
+            })
+                }
+            })
+            
+
+        })
+        app.post('/users/addbooking', function(req,res){
+            console.log(req.body.month)
+            console.log(req.body.datecondensed)
+            User.findOne({_id:req.body.id}, function(err,user){
+                if(err)throw err;
+                if(!user){
+                    res.json({success: false, message:"User not found.."})
+                }else{
+                    user.calender[req.body.month][req.body.datecondensed]= true
+                   console.log("i'm here")
+                   
+                    User.findOneAndUpdate({_id:req.body.id}, {$set:{calender:user.calender},$push:{bookings:req.body, datescondensed:req.body.datecondensed}}, {new:true}, function(err,user){
+
+                if(err) throw err;
+                if(!user){
+                    res.json({success: false,message:"User not found"})
+                }else{
+                    res.json({success: true, message:"Bookking Successfully Added", user:user})
+                }
+
+            })
+                }
+            })
+            
+
+        })
     app.post('/months/updatedatenexthour', function (req, res) {
 
         Date.findOne({ _id: req.body.id }, function (err, date) {
@@ -1309,15 +1361,15 @@ module.exports = function (app) {
             }
         })
     })
-    app.put('/users/changemessagetounread/:name/:index', function (req, res) {
-        User.find({ name: req.params.name }, function (err, user) {
+    app.put('/users/changemessagetounread/:id/:index', function (req, res) {
+        User.find({ _id: req.params.id }, function (err, user) {
             if (err) throw err;
             if (!user) {
                 res.json({ success: false, message: "User not found..." })
             } else {
                 //res.json({success: true,})
-                user[0].comments[req.params.index].read = false;
-                User.findOneAndUpdate({ name: req.params.name }, { $set: { comments: user[0].comments } }, { new: true }, function (err, user) {
+                user[0].messages[req.params.index].read = false;
+                User.findOneAndUpdate({ _id: req.params.id }, { $set: { messages: user[0].messages } }, { new: true }, function (err, user) {
                     if (err) throw err;
                     if (!user) {
                         res.json({ success: false, message: "User found and updated..." })
@@ -1328,15 +1380,16 @@ module.exports = function (app) {
             }
         })
     })
-    app.put('/users/changemessagetoread/:name/:index', function (req, res) {
-        User.find({ name: req.params.name }, function (err, user) {
+    app.put('/users/changemessagetoread/:id/:index', function (req, res) {
+        User.find({ _id: req.params.id }, function (err, user) {
             if (err) throw err;
             if (!user) {
                 res.json({ success: false, message: "User not found..." })
             } else {
                 //res.json({success: true,})
-                user[0].comments[req.params.index].read = true;
-                User.findOneAndUpdate({ name: req.params.name }, { $set: { comments: user[0].comments } }, { new: true }, function (err, user) {
+                user[0].messages[req.params.index].read = true;
+                console.log(user[0].messages[req.params.index])
+                User.findOneAndUpdate({ _id: req.params.id }, { $set: { messages: user[0].messages } }, { new: true }, function (err, user) {
                     if (err) throw err;
                     if (!user) {
                         res.json({ success: false, message: "User found and updated..." })
@@ -1347,14 +1400,14 @@ module.exports = function (app) {
             }
         })
     })
-    app.put('/users/getmessages/:name', function (req, res) {
+    app.put('/users/getmessages/:id', function (req, res) {
 
-        User.find({ name: req.params.name }, function (err, user) {
+        User.find({ _id: req.params.id }, function (err, user) {
             if (err) throw err;
             if (!user) {
                 res.json({ success: false, message: "User not found..." })
             } else {
-                res.json({ success: true, message: "User found...", messages: user[0].comments })
+                res.json({ success: true, message: "User found...", messages: user[0].messages })
             }
         })
 
@@ -1421,14 +1474,14 @@ module.exports = function (app) {
 
             console.log(payperiod)
         })
-        User.find({}, function (err, users) {
+       /* User.find({}, function (err, users) {
             if (err) throw err;
             if (!users) {
                 res.json({ success: false, message: "Users not found..." })
             } else {
                 res.json({ success: true, message: "Users found..", users: users })
             }
-        })
+        })*/
         //res.json({ success: true, message: "Payperiod Update, and History Updated Parameter Update, Complete...", users: user })
 
 
@@ -2180,7 +2233,7 @@ module.exports = function (app) {
 
         })
     })
-
+/*
     app.put('/users/:input', function (req, res) {
         User.find({ name: { $regex: "^" + req.params.input } }, function (err, users) {
             if (err) throw err;
@@ -2191,7 +2244,7 @@ module.exports = function (app) {
             }
         })
     })
-
+*/
     app.get('/users', function (req, res) {
 
         User.find({}, function (err, users) {
@@ -2296,7 +2349,8 @@ module.exports = function (app) {
         })
     })
     app.put('/users/:userid', function (req, res) {
-        // console.log(req.params.userid,"OU")
+         console.log(req.params.userid,"OU")
+         
         User.findOne({ _id: req.params.userid }, function (err, user) {
             if (!user) {
                 res.json({ success: false, message: "User not found..." })
@@ -2344,276 +2398,11 @@ module.exports = function (app) {
     app.post('/users', function (req, res) {
         console.log("Route Hit")
         var user = new User();
-        var date = new Date();
-        var dateNow = date.getDate()
-        var month = date.getMonth() + 1;
-        console.log(month)
-        var payperiodnum = 0;
-
-        if (month == 6) {
-
-            if (dateNow == 1 || dateNow == 2 || dateNow == 3) {
-
-                payperiodnum = 1;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 4 || dateNow == 5 || dateNow == 6 || dateNow == 7 || dateNow == 8 || dateNow == 9 || dateNow == 10) {
-
-                payperiodnum = 2;
-                console.log("payperiodnum", payperiodnum)
-                newPPObject = {}
-                newPPObject.newpayperiod = payperiodnum;
-
-
-            }
-            if (dateNow == 11 || dateNow == 12 || dateNow == 13 || dateNow == 14 || dateNow == 15 || dateNow == 16 || dateNow == 17) {
-
-                payperiodnum = 3;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 18 || dateNow == 19 || dateNow == 20 || dateNow == 21 || dateNow == 22 || dateNow == 23 || dateNow == 24) {
-
-                payperiodnum = 4;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 25 || dateNow == 26 || dateNow == 27 || dateNow == 28 || dateNow == 39 || dateNow == 30) {
-
-                payperiodnum = 5;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-        }
-        if (month == 7) {
-            if (dateNow == 1) {
-
-                payperiodnum = 5;
-                console.log("payperiodnum", payperiodnum)
-
-            }
-            if (dateNow == 2 || dateNow == 3 || dateNow == 4 || dateNow == 5 || dateNow == 6 || dateNow == 7 || dateNow == 8) {
-
-                payperiodnum = 6;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 9 || dateNow == 10 || dateNow == 11 || dateNow == 12 || dateNow == 13 || dateNow == 14 || dateNow == 15) {
-
-                payperiodnum = 7;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 16 || dateNow == 17 || dateNow == 18 || dateNow == 19 || dateNow == 20 || dateNow == 21 || dateNow == 22) {
-
-                payperiodnum = 8;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 23 || dateNow == 24 || dateNow == 25 || dateNow == 26 || dateNow == 27 || dateNow == 28 || dateNow == 29) {
-
-                payperiodnum = 9;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 30 || dateNow == 31) {
-
-                payperiodnum = 10;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-        }
-        if (month == 8) {
-            if (dateNow == 1 || dateNow == 2 || dateNow == 3 || dateNow == 4 || dateNow == 5) {
-
-                payperiodnum = 2;
-                console.log("payperiodnum", payperiodnum)
-
-            }
-            if (dateNow == 6 || dateNow == 7 || dateNow == 8 || dateNow == 9 || dateNow == 10 || dateNow == 11 || dateNow == 12) {
-
-                payperiodnum = 3;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 13 || dateNow == 14 || dateNow == 15 || dateNow == 16 || dateNow == 17 || dateNow == 18 || dateNow == 19) {
-
-                payperiodnum = 4;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 20 || dateNow == 21 || dateNow == 22 || dateNow == 23 || dateNow == 24 || dateNow == 25 || dateNow == 26) {
-
-                payperiodnum = 5;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 27 || dateNow == 28 || dateNow == 29 || dateNow == 30 || dateNow == 31) {
-
-                payperiodnum = 6;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-        }
-        if (month == 9) {
-            if (dateNow == 1 || 2) {
-
-                payperiodnum = 15;
-                console.log("payperiodnum", payperiodnum)
-
-            }
-            if (dateNow == 3 || 4 || 5 || 6 || 7 || 8 || 9) {
-
-                payperiodnum = 16;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 10 || 11 || 12 || 13 || 14 || 15 || 16) {
-
-                payperiodnum = 17;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 17 || 18 || 19 || 20 || 21 || 22 || 23) {
-
-                payperiodnum = 18;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 24 || 25 || 26 || 27 || 28 || 29 || 30) {
-
-                payperiodnum = 19;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-        }
-        if (month == 10) {
-            if (dateNow == 1 || 2 || 3 || 4 || 5 || 6 || 7) {
-
-                payperiodnum = 20;
-                console.log("payperiodnum", payperiodnum)
-
-            }
-            if (dateNow == 8 || 9 || 10 || 11 || 12 || 13 || 14) {
-
-                payperiodnum = 21;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 15 || 16 || 17 || 18 || 19 || 20 || 21) {
-
-                payperiodnum = 22;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 22 || 23 || 24 || 25 || 26 || 27 || 28) {
-
-                payperiodnum = 23;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 29 || 30 || 31) {
-
-                payperiodnum = 24;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-        }
-        if (month == 11) {
-            if (dateNow == 1 || 2 || 3 || 4) {
-
-                payperiodnum = 24;
-                console.log("payperiodnum", payperiodnum)
-
-            }
-            if (dateNow == 5 || 6 || 7 || 8 || 9 || 10 || 11) {
-
-                payperiodnum = 25;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 12 || 13 || 14 || 15 || 16 || 17 || 18) {
-
-                payperiodnum = 26;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 19 || 20 || 21 || 22 || 23 || 24 || 25) {
-
-                payperiodnum = 27;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 26 || 27 || 28 || 29 || 30) {
-
-                payperiodnum = 28;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-        }
-        if (month == 12) {
-            if (dateNow == 1 || 2) {
-
-                payperiodnum = 29;
-                console.log("payperiodnum", payperiodnum)
-
-            }
-            if (dateNow == 3 || 4 || 5 || 6 || 7 || 8 || 9) {
-
-                payperiodnum = 30;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 10 || 11 || 12 || 13 || 14 || 15 || 16) {
-
-                payperiodnum = 31;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 17 || 18 || 19 || 20 || 21 || 22 || 23) {
-
-                payperiodnum = 32;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-            if (dateNow == 24 || 25 || 26 || 27 || 28 || 29 || 30) {
-
-                payperiodnum = 33;
-                console.log("payperiodnum", payperiodnum)
-
-
-            }
-        }
-
+        //var date = new Date();
+       // var dateNow = date.getDate()
+        //var month = date.getMonth() + 1;
+      
+       
 
 
 
@@ -2631,7 +2420,7 @@ module.exports = function (app) {
         user.requestedjobs = [];
         user.approvedjobs = [];
         user.name = req.body.name;
-        user.payperiodnum = payperiodnum;
+        //user.payperiodnum = payperiodnum;
         user.historyupdated = false;
         //user.complaints = []
         user.comments = []
@@ -2644,17 +2433,9 @@ module.exports = function (app) {
 
         } else {
             console.log("Here i am")
-            PayPeriod.find({ payperiodnum: payperiodnum }, function (err, payperiod) {
 
-                if (err) throw err;
-                if (!user) {
-                    res.json({ success: false, message: "Pay Period Not Found..." })
-                } else {
-                    for (var z = 0; z < payperiod[0].jobDetails.length; z++) {
-                        payperiod[0].jobDetails[z].currentuser = req.body.name
-                    }
-                    console.log(payperiod)
-                    user.payperiods = payperiod
+                  
+                
                     user.save(function (err) {
                         if (err) {
                             res.json({ success: false, message: "Save Failed..." })
@@ -2664,9 +2445,9 @@ module.exports = function (app) {
 
                     })
 
-                }
+                
 
-            })
+           
             /* PayPeriod.find({payperiodnum:payperiodnum}, function (err, payperiods) {
                  console.log("hello", payperiods.length)
                  for (var i = 0; i < payperiods.length; i++) {

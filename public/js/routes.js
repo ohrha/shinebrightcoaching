@@ -105,13 +105,13 @@
                 controllerAs: 'profile'
 
             })
-                             .when('/profile/:id/', {
+                      /*       .when('/profile/:id/', {
                 templateUrl: '../views/pages/schedule.html',
                 name: "QLH | PROFILE",
                 controller: "profileCtrl",
                 controllerAs: 'profile'
 
-            })
+            })*/
                  .when('/clienttoc', {
                 templateUrl: '../views/pages/clienttoc.html',
                 name: "QLH | CLIENT TOC",

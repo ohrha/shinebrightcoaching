@@ -22,6 +22,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Jura|Montserrat|Playfair+Display+SC|Pontano+Sans|Quicksand|Spectral+SC" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />  
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" />
 
@@ -80,6 +81,10 @@
  
   <script type="text/javascript" src="../controllers/mainCtrl.js"></script>
     <script type="text/javascript" src="../controllers/profileCtrl.js"></script>
+        <script type="text/javascript" src="../controllers/registerCtrl.js"></script>
+
+    <script type="text/javascript" src="../controllers/loginCtrl.js"></script>
+    <script type="text/javascript" src="../services/authServices.js"></script>
 
  
 
@@ -97,24 +102,22 @@
 </head>
 
 
- <nav class="grey">
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-    </div>
-  </nav>
+
+  <div class="navbar-fixed">
+    <nav class="white nav-center" style="border:1px solid black; opacity:.8;">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo animated fadeIn"><img src="../img/bannerstr.gif"</a>
+        <ul class=" hide-on-med-and-down">
+          <div class = "row">
+          </div>
+          <br>
+          <li><a href="/register"  style="font-size:40px;"class="indigo-text text-lighten-2 animated slideInLeft atypewriter ">Register</a></li>
+          <li><a href="/login" style="font-size:40px;" class="indigo-text text-lighten-2 animated slideInLeft atypewriter">Login</a></li>
+        </ul>
+        
+      </div>
+    </nav>
+  </div>
 
     <div  ng-view></div>
 

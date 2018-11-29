@@ -24,6 +24,15 @@ var UserSchema = new Schema({
     resettoken:{type:String, required:false, default:'user'},
     //viewhistory:{type:Array},
     payperiods:{type:Array},
+    bookings:{
+        type:Array
+    },
+    datescondensed:{
+        type:Array
+    },
+    calender:{
+        type:Object
+    },
     //alreadyapplied:{type:Array},
     //calender:{type:Object},
     //June:{type:Array},
@@ -36,7 +45,9 @@ var UserSchema = new Schema({
     submittedtimesheets:{type:Array},
     disputedtimesheets:{type:Array},
     jobcount:{type:Array},
-    reqjobcount:{type:Array}
+    reqjobcount:{type:Array},
+    messages:{type:Array}
+
 
 
 
